@@ -1,9 +1,9 @@
 Vim
 =====
 
-This is where I keep my vim stuff.
+This is where I keep my vimrc
 ----------------------------------
-Plugins:
+Plugins I like to use:
 
 -   [Dispatch] (https://github.com/tpope/vim-dispatch)
     -   Allows vim to communicate with tmux, screen, iTerm, and Windows
