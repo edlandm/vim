@@ -87,8 +87,8 @@ set title
 
 " Tab = 4 spaces
 set tabstop=4
+
 " Smartindent makes indenting a little, well, smarter
-"
 set smartindent
 
 " Number of spaces to use for each step of (auto)indent
@@ -381,6 +381,34 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 "==============================================================================
+" Vimpanel settings ===========================================================
+"==============================================================================
+" Configuration
+let g:VimpanelStorage=$HOME.'/.vim/vimpanel_storage'
+let g:VimpanelShowHidden = 1
+" Abbreviations and Maps
+" Create new panel
+cabbrev pc VimpanelCreate
+nnoremap <Leader>pc :VimpanelCreate
+" Load panel
+cabbrev pl VimpanelLoad
+nnoremap <Leader>pl :VimpanelLoad
+" Save panel
+cabbrev ps VimpanelSave
+nnoremap <Leader>ps :VimpanelSave
+" Toggles last loaded panel (you may specify a panel with the command)
+cabbrev pp VimpanelToggleLeft
+nnoremap <Leader>pp :VimpanelToggleLeft<CR>
+" Add a root to panel
+cabbrev pa Vimpanel
+nnoremap <Leader>pa :Vimpanel
+": Remove a root from panel
+cabbrev pr VimpanelRemove<CR>
+nnoremap <Leader>pr :VimpanelRemove<CR>
+" Edit panel
+cabbrev pe   VimpanelEdit
+nnoremap <Leader>pe :VimpanelEdit
+"==============================================================================
 " Activate Pathogen ===========================================================
 execute pathogen#infect()
 "==============================================================================
@@ -388,6 +416,9 @@ execute pathogen#infect()
 "==============================================================================
 " CSS Colors ==================================================================
 let g:cssColorVimDoNotMessMyUpdateTime = 1
+"==============================================================================
+" Javascript Libraries settings ===============================================
+let g:used_javascript_libs = 'jquery,underscore,backbone'
 "==============================================================================
 " Matchit macro (allows % to match html/xml tags as well) =====================
 runtime macros/matchit.vim
