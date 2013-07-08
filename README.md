@@ -39,7 +39,9 @@ Plugins I like to use:
     -   Sidebar to browse tags of source code files
 -   [Tlib] (https://github.com/tomtom/tlib_vim)
     -   Utility functions
--   [VimPanel] (https://github.com/mihaifm/vimpanel)
-    -   A different take on plugins like NERDTree
+-   [Unite] (https://github.com/Shougo/unite.vim)
+    -   For quickly navigating between files and buffers
+    -   [Vimproc] (https://github.com/Shougo/vimproc.vim):
+        Allows searching while results are populated acynchronously
 -   [YouCompleteMe] (https://github.com/Valloric/YouCompleteMe)
     -   Fast, as-you-type fuzzy search code completion engine

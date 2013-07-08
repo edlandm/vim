@@ -357,7 +357,9 @@ inoremap <silent><C-j> <ESC>mz:m+<CR>`zi
 "==============================================================================
 " Escape spaces in command-mode by pressing space twice
 cnoremap <Space><Space> \<Space>
-
+" Leave escape mode by pressing jk/kj
+cnoremap jk <ESC>
+cnoremap kj <ESC>
 "==============================================================================
 " Visual Mode Mappings ========================================================
 "==============================================================================
@@ -389,33 +391,23 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 "==============================================================================
-" Vimpanel settings ===========================================================
+" Unite Settings ===========================================================
 "==============================================================================
-" Configuration
-let g:VimpanelStorage=$HOME.'/.vim/vimpanel_storage'
-let g:VimpanelShowHidden = 1
-" Abbreviations and Maps
-" Create new panel
-cabbrev pc VimpanelCreate
-nnoremap <Leader>pc :VimpanelCreate
-" Load panel
-cabbrev pl VimpanelLoad
-nnoremap <Leader>pl :VimpanelLoad
-" Save panel
-cabbrev ps VimpanelSave
-nnoremap <Leader>ps :VimpanelSave
-" Toggles last loaded panel (you may specify a panel with the command)
-cabbrev pp VimpanelToggleLeft
-nnoremap <Leader>pp :VimpanelToggleLeft<CR>
-" Add a root to panel
-cabbrev pa Vimpanel
-nnoremap <Leader>pa :Vimpanel
-": Remove a root from panel
-cabbrev pr VimpanelRemove<CR>
-nnoremap <Leader>pr :VimpanelRemove<CR>
-" Edit panel
-cabbrev pe   VimpanelEdit
-nnoremap <Leader>pe :VimpanelEdit
+" Window Width
+let g:unite_enable_split_vertically = 1
+let g:unite_enable_use_short_source_names = 1
+let g:unite_winwidth = 50
+" Opens Unity
+nnoremap <Space><Space> :Unite -start-insert file_rec/async<CR>
+" Open unity to grep
+nnoremap <Space>/ :Unite -vertical -auto-preview grep:
+" Quick buffer switching
+nnoremap <Space>b :Unite -quick-match buffer<CR>
+" Open list of recently accessed directories
+" Selecting one changes working directory
+nnoremap <Space>d :Unite -buffer-name=files -default-action=lcd directory_mru<CR>
+" Opens unity and searches for word under cursor
+nnoremap <Space>. :UniteWithCursorWord file buffer file_rec<CR>
 "==============================================================================
 " Activate Pathogen ===========================================================
 execute pathogen#infect()
