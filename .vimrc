@@ -193,14 +193,16 @@ function! LineNumberToggle()
 endfunc
 nmap <silent> <Leader>2 :call RelNumberToggle()<CR>
 
-" New Tab - :tabnew
-nnoremap <Leader>' :tabnew<CR>
-
+" Tab Navigation
+" Use vim's builtin <count>gt to jump to specific tabs
+" Open new tab
+nnoremap <Leader>;n :tabnew<CR>
 " Switch to next tab
-nnoremap <Leader>; :tabNext<CR>
-
+nnoremap <Leader>;' :tabnext<CR>
+" Switch to previous tab
+nnoremap <Leader>;; :tabprevious<CR>
 " Close Tab
-nnoremap <Leader>/ :tabclose<CR>
+nnoremap <Leader>;c :tabclose<CR>
 
 " Search and replace selected text
 function! CmdLine(str)
