@@ -393,6 +393,7 @@ let g:html_indent_style1 = "inc"
 "==============================================================================
 " Unite Settings ===========================================================
 "==============================================================================
+<<<<<<< HEAD
 " Window Width
 let g:unite_enable_split_vertically = 1
 let g:unite_enable_use_short_source_names = 1
@@ -408,6 +409,33 @@ nnoremap <Space>b :Unite -quick-match buffer<CR>
 nnoremap <Space>d :Unite -buffer-name=files -default-action=lcd directory_mru<CR>
 " Opens unity and searches for word under cursor
 nnoremap <Space>. :UniteWithCursorWord file buffer file_rec<CR>
+=======
+" Configuration
+let g:VimpanelStorage=$HOME.'/.vim/vimpanel_storage'
+let g:VimpanelShowHidden = 1
+" Abbreviations and Maps
+" Create new panel
+cabbrev pc VimpanelCreate
+nnoremap <Leader>pc :VimpanelCreate
+" Load panel
+cabbrev pl VimpanelToggleLeft
+nnoremap <Leader>pl :VimpanelToggleLeft
+" Save panel
+cabbrev ps VimpanelSave
+nnoremap <Leader>ps :VimpanelSave
+" Toggles last loaded panel (you may specify a panel with the command)
+cabbrev pp VimpanelToggleLeft
+nnoremap <Leader>pp :VimpanelToggleLeft<CR>
+" Add a root to panel
+cabbrev pa Vimpanel
+nnoremap <Leader>pa :Vimpanel
+": Remove a root from panel
+cabbrev pr VimpanelRemove<CR>
+nnoremap <Leader>pr :VimpanelRemove<CR>
+" Edit panel
+cabbrev pe   VimpanelEdit
+nnoremap <Leader>pe :VimpanelEdit
+>>>>>>> f291657f781ebd2f716fe041e1544fa08838869f
 "==============================================================================
 " Activate Pathogen ===========================================================
 execute pathogen#infect()
