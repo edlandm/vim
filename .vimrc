@@ -397,7 +397,7 @@ let g:html_indent_style1 = "inc"
 let g:unite_enable_split_vertically = 1
 let g:unite_enable_use_short_source_names = 1
 let g:unite_winwidth = 50
-" Opens Unity
+" Opens Unite
 nnoremap <Space><Space> :Unite -start-insert file_rec/async<CR>
 " Open unity to grep
 nnoremap <Space>/ :Unite -vertical -auto-preview grep:
