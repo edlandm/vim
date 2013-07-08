@@ -88,6 +88,7 @@ set title
 " Tab = 4 spaces
 set tabstop=4
 " Smartindent makes indenting a little, well, smarter
+"
 set smartindent
 
 " Number of spaces to use for each step of (auto)indent
