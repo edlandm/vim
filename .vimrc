@@ -399,8 +399,8 @@ let g:VimpanelShowHidden = 1
 cabbrev pc VimpanelCreate
 nnoremap <Leader>pc :VimpanelCreate
 " Load panel
-cabbrev pl VimpanelLoad
-nnoremap <Leader>pl :VimpanelLoad
+cabbrev pl VimpanelToggleLeft
+nnoremap <Leader>pl :VimpanelToggleLeft
 " Save panel
 cabbrev ps VimpanelSave
 nnoremap <Leader>ps :VimpanelSave
