@@ -3,6 +3,13 @@ if v:progname =~? "evim"
   finish
 endif
 
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
+
 "===============================General Settings===============================
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
