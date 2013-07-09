@@ -14,7 +14,7 @@ Plugins I like to use:
     -   Syntax for handlebars files
 -   [Improved Javascript syntax] (https://github.com/pangloss/vim-javascript)
 -   [Interactive-replace] (https://github.com/hwrod/interactive-replace)
-    -   Lets you interactively choose replacement text while pou search/replace
+    -   Lets you interactively choose replacement text while you search/replace
 -   [Javascript-libraries-syntax.vim] (https://github.com/othree/javascript-libraries-syntax.vim)
     -   Provides syntax for js libraries including jQuery and Backbone
 -   [Join] (https://github.com/sk1418/Join)
