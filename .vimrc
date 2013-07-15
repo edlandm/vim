@@ -410,7 +410,6 @@ nnoremap <Space>b :Unite -quick-match buffer<CR>
 nnoremap <Space>d :Unite -buffer-name=files -default-action=lcd directory_mru<CR>
 " Opens unity and searches for word under cursor
 nnoremap <Space>. :UniteWithCursorWord file buffer file_rec<CR>
-"==============================================================================
 
 "==============================================================================
 " Syntasatic Settings =========================================================
@@ -427,6 +426,18 @@ let g:syntastic_php_checkers = ['php']
 let g:syntastic_python_checkers = ['pylint', 'python']
 let g:syntastic_sh_checkers = ['sh']
 let g:syntastic_zsh_checkers = ['zsh']
+
+"==============================================================================
+" Multiple Cursors Settings ===================================================
+"==============================================================================
+" This is kind of buggy at the moment, I will need to see what I can do to fix
+" this plugin because it is awesome
+" It might be buggy due to conflicts with other plugins
+" Keep all cursors after leaving visual mode
+let g:multi_cursor_exit_from_visual_mode = 0
+" Keep all cursors after leaving insert mode
+let g:multi_cursor_exit_from_insert_mode = 0
+
 "==============================================================================
 " Activate Pathogen ===========================================================
 execute pathogen#infect()
