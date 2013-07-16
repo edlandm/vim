@@ -291,6 +291,10 @@ nnoremap <C-m> i<C-m><Esc>
 " Execute Macros with Q
 nnoremap Q @q
 
+" Maps ' to ` so that it jumps to line AND column of mark. It's just easier to
+" than hitting ` (it also eliminates the need to excape it from tmux)
+nnoremap ' `
+
 " Y yanks to end of line, making it consistant with D and C
 nnoremap Y y$
 
