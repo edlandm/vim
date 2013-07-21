@@ -432,17 +432,6 @@ let g:syntastic_sh_checkers = ['sh']
 let g:syntastic_zsh_checkers = ['zsh']
 
 "==============================================================================
-" Multiple Cursors Settings ===================================================
-"==============================================================================
-" This is kind of buggy at the moment, I will need to see what I can do to fix
-" this plugin because it is awesome
-" It might be buggy due to conflicts with other plugins
-" Keep all cursors after leaving visual mode
-let g:multi_cursor_exit_from_visual_mode = 0
-" Keep all cursors after leaving insert mode
-let g:multi_cursor_exit_from_insert_mode = 0
-
-"==============================================================================
 "=Airline Settings ============================================================
 "==============================================================================
 let g:airline_powerline_fonts = 1
