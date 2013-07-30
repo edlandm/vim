@@ -278,8 +278,8 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " Insert blank lines without going into insert mode
-noremap t o<ESC>k
-noremap T O<ESC>j
+nnoremap t o<ESC>k
+nnoremap T O<ESC>j
 
 " Jump to start and end of line using homerow keys
 noremap H ^
