@@ -282,8 +282,8 @@ nnoremap t o<ESC>k
 nnoremap T O<ESC>j
 
 " Jump to start and end of line using homerow keys
-noremap H ^
-noremap L $
+nnoremap H ^
+nnoremap L $
 
 " Makes 'Enter' insert a <CR> it's like the opposite of J
 nnoremap <C-m> i<C-m><Esc>
