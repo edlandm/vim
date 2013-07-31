@@ -377,8 +377,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Move current visual selection up or down
-vnoremap <C-i> <ESC> `<gv:m '<-2<CR>gv
-vnoremap <C-o> <ESC> `<gv:m '>+1<CR>gv
+vnoremap <C-i> <ESC> `<gv:m '>+1<CR>gv
+vnoremap <C-o> <ESC> `<gv:m '<-2<CR>gv
 
 "============================== Plugin Settings ===============================
 " SuperTab settings ===========================================================
