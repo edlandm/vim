@@ -25,7 +25,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Colorscheme
-colo gruvbox
+colo mustang
 
 " Sets a vertical rule to 80 chars
 execute "set colorcolumn=".join(range(81,200), ',')
@@ -363,7 +363,7 @@ inoremap <silent><C-j> <ESC>mz:m+<CR>`zi
 "==============================================================================
 " Escape spaces in command-mode by pressing space twice
 cnoremap <Space><Space> \<Space>
-" Leave escape mode by pressing jk/kj
+" Leave command-mode by pressing jk/kj
 cnoremap jk <ESC>
 cnoremap kj <ESC>
 "==============================================================================
@@ -390,7 +390,8 @@ let g:SuperTabDefaultCompletionType = "<C-n>"
 " TagBar settings =============================================================
 "==============================================================================
 " Toggles TagBar
-nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <Leader>t :TagbarOpen fj<CR>
+nnoremap <Leader>T :TagbarClose<CR>
 
 "==============================================================================
 " Pangloss javascript syntax/indent settings ==================================
@@ -420,7 +421,7 @@ nnoremap <Space>d :Unite -buffer-name=files -default-action=lcd directory_mru<CR
 nnoremap <Space>. :UniteWithCursorWord file buffer file_rec<CR>
 
 "==============================================================================
-" Syntasatic Settings =========================================================
+" Syntastic Settings =========================================================
 "==============================================================================
 " Which syntax checkers to use
 let g:syntastic_ada_checkers = ['gcc']
