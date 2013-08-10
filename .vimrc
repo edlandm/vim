@@ -1,8 +1,3 @@
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 if &term =~ '256color'
     " Disable Background Color Erase (BCE) so that color schemes
     " work properly when Vim is used inside tmux and GNU screen.
@@ -24,11 +19,8 @@ if &t_Co > 2 || has("gui_running")
   syntax enable
 endif
 
-" Colorscheme
-colo mustang
-
-" Sets a vertical rule to 80 chars
-execute "set colorcolumn=".join(range(81,200), ',')
+" Sets a vertical rule at 80 chars
+execute "set colorcolumn=".join(range(81,200), ",")
 
 " display incomplete commands
 set showcmd
@@ -434,7 +426,7 @@ let g:syntastic_zsh_checkers = ['zsh']
 "==============================================================================
 "=Airline Settings ============================================================
 "==============================================================================
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 
 "==============================================================================
 " Activate Pathogen ===========================================================
@@ -457,10 +449,7 @@ let hostname = substitute(system('hostname'), '\n', '', '')
 let current_dir = substitute(system('hostname'), '\n', '', '')
 " Gravelpit ===================================================================
 if hostname == "gravelpit"
-    "Touch wsqi.py after saving python files
-    if match(current_dir, 'resnet\/') >= 0
-        autocmd BufWritePre *.py ! touch /home/edlandm/resnet/resnet_core/main.wsgi
-    elseif match(current_dir, 'wwu_housing\/') >= 0
-        autocmd BufWritePre *.py ! touch /home/edlandm/django/wwu_housing/wsgi.py
-    endif
+    source ~/.vimrc.gravel
+else
+    source ~/.vimrc.local
 endif
