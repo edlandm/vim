@@ -1,3 +1,8 @@
+" Colorscheme
+colorscheme mustang
+
+highlight ColorColumn term=bold ctermbg=8
+
 "Restart Apache if after saving python files in resnet
 if match(current_dir, 'resnet\/') >= 0
     autocmd BufWritePre *.py ! sag
