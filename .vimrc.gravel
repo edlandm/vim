@@ -1,0 +1,7 @@
+"Restart Apache if after saving python files in resnet
+if match(current_dir, 'resnet\/') >= 0
+    autocmd BufWritePre *.py ! sag
+"Touch wsqi.py after saving python files in housing
+elseif match(current_dir, 'wwu_housing\/') >= 0
+    autocmd BufWritePre *.py ! touch /home/edlandm/django/wwu_housing/wsgi.py
+endif

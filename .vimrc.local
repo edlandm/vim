@@ -1,0 +1,5 @@
+" Colorscheme
+set background=dark
+colorscheme mustang
+
+highlight ColorColumn term=bold ctermbg=25
