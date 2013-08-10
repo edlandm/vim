@@ -325,14 +325,6 @@ inoremap kj <ESC>
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-" Autoclosing parenthesis/brackets
-inoremap ( ()<Left>
-inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-inoremap { {}<Left>
-inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-inoremap [ []<Left>
-inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-
 " Next two set indenting in insert-mode
 inoremap << <C-d>
 inoremap >> <C-t>
