@@ -267,6 +267,9 @@ nnoremap <Leader>d :call ToggleDvorak()<CR>
 " Re-sources .vimrc
 nnoremap <F5> :source $MYVIMRC<CR>
 
+" Re-set syntax highlighting
+nnoremap <F6> <ESC>:syntax sync fromstart<CR>
+
 " Easier Split Window Navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -390,8 +393,8 @@ let g:SuperTabDefaultCompletionType = "<C-n>"
 " TagBar settings =============================================================
 "==============================================================================
 " Toggles TagBar
-nnoremap <Leader>t :TagbarOpen fj<CR>
-nnoremap <Leader>T :TagbarClose<CR>
+nnoremap <silent><Leader>t :TagbarOpen fj<CR>
+nnoremap <silent><Leader>T :TagbarClose<CR>
 
 "==============================================================================
 " Pangloss javascript syntax/indent settings ==================================
