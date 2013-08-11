@@ -1,7 +1,7 @@
 " Colorscheme
 colorscheme mustang
 
-highlight ColorColumn term=bold ctermbg=8
+highlight ColorColumn term=bold ctermbg=236
 
 "Restart Apache if after saving python files in resnet
 if match(current_dir, 'resnet\/') >= 0
