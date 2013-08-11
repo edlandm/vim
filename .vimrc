@@ -257,10 +257,10 @@ nnoremap <Leader>d :call ToggleDvorak()<CR>
 " Normal Mode Mappings ========================================================
 "==============================================================================
 " Re-sources .vimrc
-nnoremap <F5> :source $MYVIMRC<CR>
+nnoremap <silent><F5> <ESC>:source $MYVIMRC<CR>
 
 " Re-set syntax highlighting
-nnoremap <F6> <ESC>:syntax sync fromstart<CR>
+nnoremap <silent><F6> <ESC>:syntax sync fromstart<CR>
 
 " Easier Split Window Navigation
 nnoremap <C-h> <C-w>h
