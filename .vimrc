@@ -19,6 +19,9 @@ if &t_Co > 2 || has("gui_running")
   syntax enable
 endif
 
+" Set to auto read when a file is changed from the outside
+set autoread
+
 " Sets a vertical rule at 80 chars
 execute "set colorcolumn=".join(range(81,200), ",")
 
@@ -27,6 +30,12 @@ set showcmd
 
 " Underlines the line your cursor is on
 set cursorline
+
+" Set utf8 as standard encoding and en_US as standard language
+set encoding=utf8
+
+" Highlight trailing white spaces
+match ErrorMsg '\s\+$'
 
 " Make search case-insensitive
 set ignorecase
@@ -87,8 +96,10 @@ set title
 " Tab = 4 spaces
 set tabstop=4
 
+" Autoindent does exactly what you'd expect
+set autoindent
+
 " Smartindent makes indenting a little, well, smarter
-"
 set smartindent
 
 " Number of spaces to use for each step of (auto)indent
@@ -160,9 +171,6 @@ autocmd BufReadPost *
 " Maps leader key to ,
 let mapleader = ","
 
-" Open NERDTree
-nnoremap <silent> <Leader>o :NERDTree<CR>
-
 " Toggle relative/absolute line-numbers
 function! RelNumberToggle()
     if(&relativenumber == 1)
@@ -195,6 +203,13 @@ nnoremap <Leader>;' :tabnext<CR>
 nnoremap <Leader>;; :tabprevious<CR>
 " Close Tab
 nnoremap <Leader>;c :tabclose<CR>
+
+" Insert blank lines without going into insert mode
+nnoremap <Leader>o o<ESC>k
+nnoremap <Leader>O O<ESC>j
+
+" Toggle search highlighting
+nnoremap <silent> <Leader>h :set hlsearch!<CR>
 
 " Search and replace selected text
 function! CmdLine(str)
@@ -271,10 +286,6 @@ nnoremap <C-l> <C-w>l
 " Next two enable faster scrolling with <C-e> and <C-y>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-
-" Insert blank lines without going into insert mode
-nnoremap t o<ESC>k
-nnoremap T O<ESC>j
 
 " Jump to start and end of line using homerow keys
 nnoremap H ^
@@ -424,14 +435,19 @@ let g:syntastic_sh_checkers = ['sh']
 let g:syntastic_zsh_checkers = ['zsh']
 
 "==============================================================================
-"=Airline Settings ============================================================
+" Airline Settings ============================================================
 "==============================================================================
 let g:airline_powerline_fonts=1
 
 "==============================================================================
-" Activate Pathogen ===========================================================
-execute pathogen#infect()
+" Easymotion Settings =========================================================
 "==============================================================================
+let g:EasyMotion_leader_key = '<Space>'
+
+"==============================================================================
+" Activate Pathogen ===========================================================
+"==============================================================================
+execute pathogen#infect()
 
 "==============================================================================
 " CSS Colors ==================================================================
@@ -447,7 +463,7 @@ runtime macros/matchit.vim
 "============================Host Dependent Settings===========================
 let hostname = substitute(system('hostname'), '\n', '', '')
 let current_dir = substitute(system('hostname'), '\n', '', '')
-" Gravelpit ===================================================================
+
 if hostname == "gravelpit"
     source ~/.vimrc.gravel
 else
