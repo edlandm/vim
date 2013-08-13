@@ -239,35 +239,6 @@ function! VisualSelection(direction) range
 endfunction
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
-" Toggles keymap between Dvorak and QWERTY
-function! ToggleDvorak()
-    let isDvorak = &keymap=='dvorak'
-    if isDvorak
-        " If Dvorak, change keymap to '' and remap keys
-        " Unmap Dvorak mappings
-        " Reassign any mappings that have been affected from toggling
-        set keymap=
-        echo "Dvorak disabled"
-        iunmap ,.
-        iunmap .,
-        inoremap jk <ESC>
-        inoremap kj <ESC>
-    else
-        " If not Dvorak, change keymap to 'dvorak'
-        " Map keys for Dvorak
-        " (providing your physical keyboard is QWERTY, mappings take the
-        " values of the characters printed on the keys)
-        " Reassign any mappings that have been affected from toggling
-        set keymap=dvorak
-        echo "Dvorak enabled"
-        iunmap jk
-        iunmap kj
-        inoremap ,. <ESC>
-        inoremap ., <ESC>
-    endif
-endfunction
-nnoremap <Leader>d :call ToggleDvorak()<CR>
-
 "==============================================================================
 " Normal Mode Mappings ========================================================
 "==============================================================================
@@ -321,8 +292,8 @@ nnoremap <silent><C-o> mz:m-2<CR>`z
 "==============================================================================
 
 " A quicker alternative to pushing <ESC>
-inoremap jk <ESC>
-inoremap kj <ESC>
+"inoremap jk <ESC>
+"inoremap kj <ESC>
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -361,9 +332,6 @@ inoremap <silent><C-j> <ESC>mz:m+<CR>`zi
 "==============================================================================
 " Escape spaces in command-mode by pressing space twice
 cnoremap <Space><Space> \<Space>
-" Leave command-mode by pressing jk/kj
-cnoremap jk <ESC>
-cnoremap kj <ESC>
 "==============================================================================
 " Visual Mode Mappings ========================================================
 "==============================================================================
@@ -448,6 +416,14 @@ let g:EasyMotion_leader_key = '<Space>'
 " Activate Pathogen ===========================================================
 "==============================================================================
 execute pathogen#infect()
+
+"==============================================================================
+" Arpeggio Mappings
+"==============================================================================
+call arpeggio#load()
+
+" Quicker alternatives to pressing <ESC>
+Arpeggio inoremap jk <Esc>
 
 "==============================================================================
 " CSS Colors ==================================================================
