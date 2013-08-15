@@ -292,8 +292,8 @@ nnoremap <silent><C-o> mz:m-2<CR>`z
 "==============================================================================
 
 " A quicker alternative to pushing <ESC>
-"inoremap jk <ESC>
-"inoremap kj <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -425,10 +425,10 @@ execute pathogen#infect()
 "==============================================================================
 " Arpeggio Mappings
 "==============================================================================
-call arpeggio#load()
-
+"let g:arpeggio_timeoutlen=60 "default=40
+"call arpeggio#load()
 " Quicker alternatives to pressing <ESC>
-Arpeggio inoremap jk <Esc>
+"Arpeggio inoremap jk <Esc>
 
 "==============================================================================
 " CSS Colors ==================================================================
