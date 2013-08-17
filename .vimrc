@@ -368,7 +368,7 @@ let g:unite_winwidth = 50
 " Opens Unite
 nnoremap <Space><Space> :Unite -start-insert file_rec/async<CR>
 " Open unity to grep
-nnoremap <Space>/ :Unite -vertical -auto-preview grep:
+nnoremap <Space>/ :Unite -horizontal -direction=below -auto-preview grep:
 " Quick buffer switching
 nnoremap <Space>b :Unite -quick-match buffer<CR>
 " Open list of recently accessed directories
