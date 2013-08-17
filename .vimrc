@@ -300,12 +300,6 @@ inoremap <C-U> <C-G>u<C-U>
 inoremap << <C-d>
 inoremap >> <C-t>
 
-"**********
-" All insert-mode mappings with ctrl stay the same even if in Dvorak
-"<C-h> means you press ctrl and the key physically marked 'h'
-"(Providing you didn't physically rearrange your keys)
-"**********
-
 " Go to beginning of line in insert mode
 inoremap <C-a> <ESC>I
 
