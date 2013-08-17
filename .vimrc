@@ -113,7 +113,7 @@ set expandtab
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+      \ | wincmd p | diffthis
 endif
 
 " Wraps the range of lines with the specified arguments
@@ -136,15 +136,12 @@ endfunction
 command! -range -nargs=+ Wrap <line1>,<line2>call TextWrap(<f-args>)
 
 "=============================Autocommand Settings=============================
-" For all text files set 'textwidth' to 80 characters.
-autocmd FileType text setlocal textwidth=80
-
 " removes trailing white spaces... I think
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Turns autocompletion on for various filetypes
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
@@ -159,7 +156,7 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
