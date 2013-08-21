@@ -13,6 +13,8 @@ set nocompatible
 " Enable file type detection.
 filetype plugin indent on
 
+set hidden
+
 " Switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || has("gui_running")
   syntax on
