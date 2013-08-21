@@ -14,6 +14,7 @@ set nocompatible
 filetype plugin indent on
 
 set hidden
+set switchbuf=useopen
 
 " Switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || has("gui_running")
