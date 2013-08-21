@@ -48,9 +48,9 @@ set smartcase
 " Sets margin between cursor and top/bottom of window to three lines
 set scrolloff=3
 
-" Store all swap-files in ~/.vim-tmp
-set backupdir=~/.vim-tmp
-set directory=~/.vim-tmp
+" Disable vim backups just save your stuff more often
+set nobackup
+set noswapfile
 
 " Shows line number and percentage through document in bottom-right
 set ruler
@@ -178,7 +178,7 @@ function! RelNumberToggle()
         set relativenumber
     endif
 endfunc
-nmap <silent> <Leader>1 :call LineNumberToggle()<CR>
+"nmap <silent> <Leader>1 :call LineNumberToggle()<CR>
 
 " Toggle line-numbers
 function! LineNumberToggle()
@@ -190,18 +190,7 @@ function! LineNumberToggle()
         set number
     endif
 endfunc
-nmap <silent> <Leader>2 :call RelNumberToggle()<CR>
-
-" Tab Navigation
-" Use vim's builtin <count>gt to jump to specific tabs
-" Open new tab
-nnoremap <Leader>;n :tabnew<CR>
-" Switch to next tab
-nnoremap <Leader>;' :tabnext<CR>
-" Switch to previous tab
-nnoremap <Leader>;; :tabprevious<CR>
-" Close Tab
-nnoremap <Leader>;c :tabclose<CR>
+"nmap <silent> <Leader>2 :call RelNumberToggle()<CR>
 
 " Insert blank lines without going into insert mode
 nnoremap <Leader>o o<ESC>k
@@ -286,6 +275,30 @@ nnoremap k gk
 nnoremap <silent><C-i> mz:m+<CR>`z
 nnoremap <silent><C-o> mz:m-2<CR>`z
 
+" Tab Navigation
+" Use vim's builtin :<count>gt to jump to specific tabs
+"
+" Open new tab
+nnoremap <silent> <Leader>[n :tabnew<CR>
+" Switch to next tab
+nnoremap <silent> <Leader>[] :tabnext<CR>
+" Switch to previous tab
+nnoremap <silent> <Leader>[[ :tabprevious<CR>
+" Close Tab
+nnoremap <silent> <Leader>[c :tabclose<CR>
+
+" Buffer Navigation
+" Use vim's builtin :<count>bu to jump to specific buffers
+"
+" Switch to next buffer
+nnoremap <silent> <Leader>;' :bn<CR>
+" Switch to previous buffer
+nnoremap <silent> <Leader>;; :bp<CR>
+" Close buffer
+nnoremap <Leader>;c :bd<CR>
+" Previously edited buffer
+nnoremap <Leader>;, :b#<CR>
+
 "==============================================================================
 " Insert Mode Mappings ========================================================
 "==============================================================================
@@ -368,16 +381,16 @@ let g:unite_enable_split_vertically = 1
 let g:unite_enable_use_short_source_names = 1
 let g:unite_winwidth = 50
 " Opens Unite
-nnoremap <Space><Space> :Unite -start-insert file_rec/async<CR>
+nnoremap <Tab><Tab> :Unite -start-insert file_rec/async<CR>
 " Open unity to grep
-nnoremap <Space>/ :Unite -horizontal -direction=below -auto-preview grep:
+nnoremap <Tab>/ :Unite -horizontal -direction=below -auto-preview grep:
 " Quick buffer switching
-nnoremap <Space>b :Unite -quick-match buffer<CR>
+nnoremap <Tab>b :Unite -quick-match buffer<CR>
 " Open list of recently accessed directories
 " Selecting one changes working directory
-nnoremap <Space>d :Unite -buffer-name=files -default-action=lcd directory_mru<CR>
+nnoremap <Tab>d :Unite -buffer-name=files -default-action=lcd directory_mru<CR>
 " Opens unity and searches for word under cursor
-nnoremap <Space>. :UniteWithCursorWord file buffer file_rec<CR>
+nnoremap <Tab>. :UniteWithCursorWord file buffer file_rec<CR>
 
 "==============================================================================
 " Syntastic Settings =========================================================
@@ -433,6 +446,12 @@ let g:used_javascript_libs = 'jquery,underscore,backbone'
 " Matchit macro (allows % to match html/xml tags as well) =====================
 runtime macros/matchit.vim
 "==============================================================================
+
+"==============================================================================
+" BufferLine settings =========================================================
+"==============================================================================
+" Echo bufferline in statusline
+let g:bufferline_echo = 1
 
 "============================Host Dependent Settings===========================
 let hostname = substitute(system('hostname'), '\n', '', '')
