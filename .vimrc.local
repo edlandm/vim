@@ -1,5 +1,11 @@
 " Colorscheme
 set background=dark
-colorscheme mustang
+let g:solarized_termtrans = 1
+let g:solarized_termcolors = 256
+let g:solarized_contrast = "high"
+let g:solarized_visibility = "high"
+colorscheme solarized
+"set background=dark
+"colorscheme mustang
 
-highlight ColorColumn term=bold ctermbg=25
+"highlight ColorColumn term=bold ctermbg=25
