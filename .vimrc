@@ -102,8 +102,8 @@ set tabstop=4
 " Autoindent does exactly what you'd expect
 set autoindent
 
-" Smartindent makes indenting a little, well, smarter
-set smartindent
+" Cindent, for a less depricated version of smartindent
+set cindent
 
 " Number of spaces to use for each step of (auto)indent
 set shiftwidth=4
@@ -145,6 +145,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Turns autocompletion on for various filetypes
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
@@ -288,18 +289,6 @@ nnoremap <silent> <Leader>[[ :tabprevious<CR>
 " Close Tab
 nnoremap <silent> <Leader>[c :tabclose<CR>
 
-" Buffer Navigation
-" Use vim's builtin :<count>bu to jump to specific buffers
-"
-" Switch to next buffer
-nnoremap <silent> <Leader>;' :bn<CR>
-" Switch to previous buffer
-nnoremap <silent> <Leader>;; :bp<CR>
-" Close buffer
-nnoremap <Leader>;c :bd<CR>
-" Previously edited buffer
-nnoremap <Leader>;, :b#<CR>
-
 "==============================================================================
 " Insert Mode Mappings ========================================================
 "==============================================================================
@@ -384,14 +373,20 @@ let g:unite_winwidth = 50
 " Opens Unite
 nnoremap <Tab><Tab> :Unite -start-insert file_rec/async<CR>
 " Open unity to grep
-nnoremap <Tab>/ :Unite -horizontal -direction=below -auto-preview grep:
+nnoremap <silent> <Tab>/ :Unite -horizontal -direction=below -auto-resize -auto-preview grep:
 " Quick buffer switching
-nnoremap <Tab>b :Unite -quick-match buffer<CR>
+nnoremap <silent> <Tab>b :Unite -horizontal -direction=below -start-insert -default-action=goto buffer<CR>
 " Open list of recently accessed directories
 " Selecting one changes working directory
-nnoremap <Tab>d :Unite -buffer-name=files -default-action=lcd directory_mru<CR>
+nnoremap <silent> <Tab>d :Unite -buffer-name=files -default-action=lcd directory_mru<CR>
 " Opens unity and searches for word under cursor
-nnoremap <Tab>. :UniteWithCursorWord file buffer file_rec<CR>
+nnoremap <silent> <Tab>. :UniteWithCursorWord file buffer file_rec<CR>
+" Open list of recently accessed files
+nnoremap <silent> <Tab>f :Unite -horizontal -direction=below file_mru<CR>
+" Open list of bookmarks
+nnoremap <silent> <Tab>h :Unite bookmark<CR>
+" Add current file to bookmarks list
+nnoremap <silent> <Tab>] :UniteBookmarkAdd<CR><CR>
 
 "==============================================================================
 " Syntastic Settings =========================================================
@@ -447,12 +442,37 @@ let g:used_javascript_libs = 'jquery,underscore,backbone'
 " Matchit macro (allows % to match html/xml tags as well) =====================
 runtime macros/matchit.vim
 "==============================================================================
+" Clever-f Settings ===========================================================
+"==============================================================================
+" 'f' always searches forward, 'F' always searches backward
+let g:clever_fix_key_direction = 1
+"==============================================================================
+" MiniBufExplorer Settings ====================================================
+"==============================================================================
+"let g:miniBufExplBuffersNeeded = 1
+" Allows buffer to cycle if it hits beginning or end of buffer list
+"let g:miniBufExplCycleArround = 1
+" Ommit buffer number
+"let g:miniBufExplShowBufNumbers = 0
+"nnoremap <silent> <Leader>b :MBEToggle<CR>
+
+" Buffer Navigation
+" Use vim's builtin :<count>bu to jump to specific buffers
+"
+" Switch to next buffer
+"nnoremap <silent> <Leader>;' :MBEbn<CR>
+" Switch to previous buffer
+"nnoremap <silent> <Leader>;; :MBEbp<CR>
+" Close buffer
+"nnoremap <silent> <Leader>;d :MBEbw<CR>
+" Previously edited buffer
+"nnoremap <silent> <Leader>;, :b#<CR>
 
 "==============================================================================
 " BufferLine settings =========================================================
 "==============================================================================
 " Echo bufferline in statusline
-let g:bufferline_echo = 1
+"let g:bufferline_echo = 0
 
 "============================Host Dependent Settings===========================
 let hostname = substitute(system('hostname'), '\n', '', '')
