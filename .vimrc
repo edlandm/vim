@@ -142,6 +142,9 @@ command! -range -nargs=+ Wrap <line1>,<line2>call TextWrap(<f-args>)
 " removes trailing white spaces... I think
 autocmd BufWritePre * :%s/\s\+$//e
 
+" wsgi files are python
+autocmd BufNewFile,BufRead *.wsgi set filetype=python
+
 " Turns autocompletion on for various filetypes
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -352,8 +355,8 @@ let g:SuperTabDefaultCompletionType = "<C-n>"
 " TagBar settings =============================================================
 "==============================================================================
 " Toggles TagBar
-nnoremap <silent><Leader>t :TagbarOpen fj<CR>
-nnoremap <silent><Leader>T :TagbarClose<CR>
+nnoremap <silent><Tab>t :TagbarOpen fj<CR>
+nnoremap <silent><Tab>T :TagbarClose<CR>
 
 "==============================================================================
 " Pangloss javascript syntax/indent settings ==================================
