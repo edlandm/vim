@@ -370,9 +370,6 @@ nnoremap k gk
 nnoremap <silent><C-i> mz:m+<CR>`z
 nnoremap <silent><C-o> mz:m-2<CR>`z
 
-" Tab Navigation
-" Use vim's builtin :<count>gt to jump to specific tabs
-"
 " Open new tab
 nnoremap <silent> <Leader>[n :tabnew<CR>
 " Switch to next tab
@@ -425,7 +422,7 @@ cnoremap <Space><Space> \<Space>
 " Visual Mode Mappings ========================================================
 "==============================================================================
 " Yank highlighted text and searches it
-vmap <C-n> y/<C-R>"<CR>
+vnoremap <C-n> y/<C-R>"<CR>
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
