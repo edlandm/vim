@@ -22,6 +22,9 @@ if &t_Co > 2 || has("gui_running")
   syntax enable
 endif
 
+" Disable mouse because I'm a stubborn asshole
+set mouse=
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -52,6 +55,9 @@ set scrolloff=3
 " Disable vim backups just save your stuff more often
 set nobackup
 set noswapfile
+
+" Save undo history when a file is written that persists between sessions
+set undofile
 
 " Shows line number and percentage through document in bottom-right
 set ruler
@@ -155,10 +161,10 @@ autocmd FileType aspnet set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType aspx set omnifunc=xmlcomplete#CompleteTags
 
 " Re-source .vimrc everytime it's modified
-augroup reload_vimrc " {
+augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+augroup END
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
