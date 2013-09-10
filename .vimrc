@@ -148,6 +148,9 @@ command! -range -nargs=+ Wrap <line1>,<line2>call TextWrap(<f-args>)
 " removes trailing white spaces... I think
 autocmd BufWritePre * :%s/\s\+$//e
 
+" wsgi files are python
+autocmd BufNewFile,BufRead *.wsgi set filetype=python
+
 " Turns autocompletion on for various filetypes
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
