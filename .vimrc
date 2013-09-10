@@ -219,19 +219,19 @@ augroup plugin_settings
         \ if exists("EasyMotion_keys") |
         \     let plugin_settings = plugin_settings_dir . "EasyMotion.settings.vim" |
         \     exec ":source " . plugin_settings |
-        \ endif
+        \ endif |
         \if exists("AirlineToggle") |
         \    let plugin_settings = plugin_settings_dir . "Airline.settings.vim" |
         \    exec ":source " . plugin_settings |
-        \endif
+        \endif |
         \if exists("g:seek_enable_jumps ") |
         \    let plugin_settings = plugin_settings_dir . "Seek.settings.vim" |
         \    exec ":source " . plugin_settings |
-        \endif
+        \endif |
         \if exists("g:clever_f_fix_key_direction") |
         \    let plugin_settings = plugin_settings_dir . "CleverF.settings.vim" |
         \    exec ":source " . plugin_settings |
-        \endif
+        \endif |
         \if exists("MBEToggle") |
         \    let plugin_settings = plugin_settings_dir . "MiniBufExplorer.settings.vim" |
         \    exec ":source " . plugin_settings |
