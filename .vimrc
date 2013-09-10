@@ -172,6 +172,93 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
+"============================== Plugin Settings ===============================
+" Load plugin settings files
+" I do this to compartmentalize my settings. This way my .vimrc seems smaller
+" It's also nice because if I stop using a plugin, I can still keep my
+" settings for if I ever want to use it again.
+" I used to have this after my mappings, but some of them were conflicting so
+" now I load plugins first so that I can apply my mappings unimpeded.
+let plugin_settings_dir=$HOME."/.vim/plugin_settings/"
+let plugin_settings = ''
+augroup plugin_settings
+    autocmd!
+    autocmd VimEnter *
+        \ if exists(":SuperTabHelp") |
+        \     let plugin_settings = plugin_settings_dir . "SuperTab.settings.vim" |
+        \     exec ":source " . plugin_settings |
+        \ endif |
+        \ if exists(":Tagbar") |
+        \     let plugin_settings = plugin_settings_dir . "Tagbar.settings.vim" |
+        \     exec ":source " . plugin_settings |
+        \ endif |
+        \ if exists(":SyntasticInfo") |
+        \     let plugin_settings = plugin_settings_dir . "Syntastic.settings.vim" |
+        \     exec ":source " . plugin_settings |
+        \ endif |
+        \ if exists(":Unite") |
+        \     let plugin_settings = plugin_settings_dir . "Unite.settings.vim" |
+        \     exec ":source " . plugin_settings |
+        \ endif |
+        \ if exists("g:multi_cursor_use_default_mapping") |
+        \     if has('gui') |
+        \         let plugin_settings = plugin_settings_dir . "MultiCursor.settings.vim" |
+        \         exec ":source " . plugin_settings |
+        \     else |
+        \         let g:multi_cursor_use_default_mapping=0 |
+        \         exec "unmap <C-n>" |
+        \     endif |
+        \ endif |
+        \ if exists("html_indent_inctags") |
+        \     let plugin_settings = plugin_settings_dir . "HtmlIndent.settings.vim" |
+        \     exec ":source " . plugin_settings |
+        \ endif |
+        \ if exists("EasyMotion_keys") |
+        \     let plugin_settings = plugin_settings_dir . "EasyMotion.settings.vim" |
+        \     exec ":source " . plugin_settings |
+        \ endif
+        \if exists("AirlineToggle") |
+        \    let plugin_settings = plugin_settings_dir . "Airline.settings.vim" |
+        \    exec ":source " . plugin_settings |
+        \endif
+        \if exists("g:seek_enable_jumps ") |
+        \    let plugin_settings = plugin_settings_dir . "Seek.settings.vim" |
+        \    exec ":source " . plugin_settings |
+        \endif
+        \if exists("g:clever_f_fix_key_direction") |
+        \    let plugin_settings = plugin_settings_dir . "CleverF.settings.vim" |
+        \    exec ":source " . plugin_settings |
+        \endif
+        \if exists("MBEToggle") |
+        \    let plugin_settings = plugin_settings_dir . "MiniBufExplorer.settings.vim" |
+        \    exec ":source " . plugin_settings |
+        \endif
+        "\if exists("") |
+        "\    let plugin_settings = plugin_settings_dir . ".settings.vim" |
+        "\    exec ":source " . plugin_settings |
+        "\endif
+augroup END
+
+"==============================================================================
+" Activate Pathogen ===========================================================
+"==============================================================================
+execute pathogen#infect()
+
+"==============================================================================
+" CSS Colors ==================================================================
+let g:cssColorVimDoNotMessMyUpdateTime = 1
+"==============================================================================
+" Javascript Libraries settings ===============================================
+let g:used_javascript_libs = 'jquery,underscore,backbone'
+"==============================================================================
+" Matchit macro (allows % to match html/xml tags as well) =====================
+runtime macros/matchit.vim
+"==============================================================================
+" BufferLine settings =========================================================
+"==============================================================================
+" Echo bufferline in statusline
+"let g:bufferline_echo = 0
+
 "=================================  Mappings  =================================
 " Leader Mappings =============================================================
 "==============================================================================
