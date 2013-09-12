@@ -52,7 +52,7 @@ set smartcase
 " Sets margin between cursor and top/bottom of window to three lines
 set scrolloff=3
 
-" Disable vim backups just save your stuff more often
+" Disable vim backups; Save your stuff more often noob!
 set nobackup
 set noswapfile
 
@@ -153,9 +153,8 @@ autocmd BufNewFile,BufRead *.wsgi set filetype=python
 
 " Turns autocompletion on for various filetypes
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType javascript set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
