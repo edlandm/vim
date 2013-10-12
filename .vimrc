@@ -177,9 +177,8 @@ autocmd BufReadPost *
 "============================== Plugin Settings ===============================
 " Load plugin settings files
 " I do this to compartmentalize my settings. This way my .vimrc seems smaller
-" It's also nice because if I stop using a plugin, I can still keep my
-" settings for if I ever want to use it again without having a giant mess of
-" commented  code in my .vimrc
+" It's also nice because if I stop using a plugin I can keep my settings in
+" case I ever want to use it again without having a giant mess of comments
 " Load these settings and plugins before my mappings so as to not override them
 let plugin_settings_dir=$HOME."/.vim/plugin_settings/"
 let plugin_file_suffix = ".settings.vim"
@@ -200,9 +199,14 @@ for plugin in plugins |
   exec ":source " . plugin_settings_dir . plugin . plugin_file_suffix |
 endfor
 
+" MultiCursor without gui vim is terribly laggy, you don't want it with
+" terminal vim
 if !has('gui') |
     let g:multi_cursor_use_default_mapping=0 |
 endif |
+
+" Emmet leader key (default is <C-Y>)
+let g:user_emmet_leader_key = '<c-s>'
 
 "==============================================================================
 " Activate Pathogen ===========================================================
@@ -210,19 +214,11 @@ endif |
 execute pathogen#infect()
 
 "==============================================================================
-" CSS Colors ==================================================================
-let g:cssColorVimDoNotMessMyUpdateTime = 1
-"==============================================================================
 " Javascript Libraries settings ===============================================
 let g:used_javascript_libs = 'jquery,underscore,backbone'
 "==============================================================================
 " Matchit macro (allows % to match html/xml tags as well) =====================
 runtime macros/matchit.vim
-"==============================================================================
-" BufferLine settings =========================================================
-"==============================================================================
-" Echo bufferline in statusline
-"let g:bufferline_echo = 0
 
 "=================================  Mappings  =================================
 " Leader Mappings =============================================================
@@ -405,7 +401,7 @@ unmap <Tab>
 
 "============================Host Dependent Settings===========================
 let hostname = substitute(system('hostname'), '\n', '', '')
-let current_dir = substitute(system('hostname'), '\n', '', '')
+let current_dir = getcwd()
 
 if hostname == "gravelpit"
     source ~/.vimrc.gravel
