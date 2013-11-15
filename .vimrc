@@ -189,7 +189,6 @@ let plugins = [
             \ "MiniBufExplorer",
             \ "MultiCursor",
             \ "PanglossJavascriptHtml",
-            \ "Seek",
             \ "SuperTab",
             \ "Syntastic",
             \ "Tagbar",
