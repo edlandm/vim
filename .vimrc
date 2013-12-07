@@ -123,6 +123,9 @@ set shiftwidth=4
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>
 set expandtab
 
+" These commands open folds
+set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
