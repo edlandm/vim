@@ -90,6 +90,9 @@ set wildmode=longest,list,full
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" Set timeout used while waiting for user input on multi-key macro
+set timeoutlen=500
+
 " Makes status bar always be 2 lines tall
 set laststatus=2
 
