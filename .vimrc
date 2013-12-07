@@ -62,6 +62,9 @@ set undofile
 " Shows line number and percentage through document in bottom-right
 set ruler
 
+" Sets maximum number of pages per tab
+set tabpagemax=5
+
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
 
