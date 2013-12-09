@@ -195,6 +195,8 @@ let plugins = [
             \ "Airline",
             \ "CleverF",
             \ "EasyMotion",
+            \ "Emmet",
+            \ "Fugitive",
             \ "MiniBufExplorer",
             \ "MultiCursor",
             \ "PanglossJavascriptHtml",
