@@ -5,8 +5,14 @@ let g:unite_enable_split_vertically = 1
 let g:unite_enable_use_short_source_names = 1
 let g:unite_winwidth = 50
 
+" Enable yank history
+let g:unite_source_history_yank_enable = 1
+
+" Set Bookmark directory
+let g:unite_source_bookmark_directory = '$HOME/.vim/bookmarks'
+
 " Opens Unite
-nnoremap <Tab><Tab> :Unite -start-insert file_rec/async:!<CR>
+nnoremap <Tab><Tab> :Unite -start-insert file_rec<CR>
 " Open Unite to grep
 nnoremap <silent> <Tab>/ :Unite -horizontal -direction=below -auto-resize -auto-preview grep:
 " Opens Unite to list of bookmarks and buffers
@@ -15,10 +21,14 @@ nnoremap <silent> <Tab>b :Unite -horizontal -direction=below -start-insert buffe
 " *Selecting one changes working directory*
 nnoremap <silent> <Tab>d :Unite -buffer-name=Directories -default-action=lcd -start-insert directory_mru<CR>
 " Opens Unite and searches for word under cursor
-nnoremap <silent> <Tab>. :UniteWithCursorWord file buffer file_rec<CR>
+"nnoremap <silent> <Tab>. :UniteWithCursorWord file buffer file_rec<CR>
 " Open list of recently accessed files
 nnoremap <silent> <Tab>f :Unite -horizontal -direction=below file_mru<CR>
 " Add current file to bookmarks list
 nnoremap <silent> <Tab>B :UniteBookmarkAdd<CR><CR>
 " Open yank history (default action is to yank)
-nnoremap <silent> <Tab>y :Unite -horizontal -buffer-name=yank -winheight=5 history/yank<CR>
+nnoremap <silent> <Tab>y :Unite -horizontal -buffer-name=yank -winheight=5
+                         \-default-action=yank history/yank<CR>
+" Open Outline (This currently does not open in a split window as I don't know
+" how to get it to do that...)
+nnoremap <silent> <Tab>t :Unite -vertical -direction=right -buffer-name=Outline outline<CR>
