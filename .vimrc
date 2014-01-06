@@ -170,6 +170,9 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType aspnet set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType aspx set omnifunc=xmlcomplete#CompleteTags
+autocmd Syntax * if &omnifunc == ""
+            \ | setl omnifunc=syntaxcomplete#Complete
+            \ | endif
 
 " Re-source .vimrc everytime it's modified
 augroup reload_vimrc
