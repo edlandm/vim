@@ -168,8 +168,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType aspnet set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType aspx set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType aspnet set omnifunc=ccomplete#Complete
 autocmd Syntax * if &omnifunc == ""
             \ | setl omnifunc=syntaxcomplete#Complete
             \ | endif
