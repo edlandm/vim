@@ -354,8 +354,8 @@ nnoremap <silent> <Leader>[c :tabclose<CR>
 "==============================================================================
 
 " A quicker alternative to pushing <ESC>
-inoremap jk <ESC>
-inoremap kj <ESC>
+inoremap jk <ESC> `^
+inoremap kj <ESC> `^
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
