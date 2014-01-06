@@ -11,6 +11,8 @@ let g:unite_source_history_yank_enable = 1
 " Set Bookmark directory
 let g:unite_source_bookmark_directory = '$HOME/.vim/bookmarks'
 
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
 " Opens Unite
 nnoremap <Tab><Tab> :Unite -start-insert file_rec<CR>
 " Open Unite to grep

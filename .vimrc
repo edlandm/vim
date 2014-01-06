@@ -185,6 +185,11 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
+"==============================================================================
+" Activate Pathogen ===========================================================
+"==============================================================================
+execute pathogen#infect()
+
 "============================== Plugin Settings ===============================
 " Load plugin settings files
 " I do this to compartmentalize my settings. This way my .vimrc seems smaller
@@ -204,7 +209,6 @@ let plugins = [
             \ "PanglossJavascriptHtml",
             \ "SuperTab",
             \ "Syntastic",
-            \ "Tagbar",
             \ "Unite"
             \ ]
 for plugin in plugins |
@@ -216,11 +220,6 @@ endfor
 if !has('gui') |
     let g:multi_cursor_use_default_mapping=0 |
 endif |
-
-"==============================================================================
-" Activate Pathogen ===========================================================
-"==============================================================================
-execute pathogen#infect()
 
 "==============================================================================
 " Javascript Libraries settings ===============================================
