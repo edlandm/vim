@@ -398,6 +398,10 @@ vnoremap > >gv
 vnoremap <C-i> <ESC> `<gv:m '>+1<CR>gv
 vnoremap <C-o> <ESC> `<gv:m '<-2<CR>gv
 
+" Make movement in visual mode more like how I have it in normal mode
+vnoremap H ^
+vnoremap L $
+
 "===============================================================================
 " Misc Settings ================================================================
 " Something is mapping <Tab> to swap the current line with the one below it
