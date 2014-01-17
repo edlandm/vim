@@ -9,14 +9,13 @@ let g:unite_winwidth = 50
 let g:unite_source_history_yank_enable = 1
 
 " Set Bookmark directory
-let g:unite_source_bookmark_directory = '$HOME/.vim/bookmarks'
-
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
+let g:unite_source_bookmark_directory = "$HOME/.vim/bookmarks"
+"call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " Opens Unite
-nnoremap <Tab><Tab> :Unite -start-insert file_rec<CR>
+nnoremap <Tab><Tab> :Unite -start-insert file_rec/async:<CR>
 " Open Unite to grep
-nnoremap <silent> <Tab>/ :Unite -horizontal -direction=below -auto-resize -auto-preview grep:
+nnoremap <silent> <Tab>/ :Unite -horizontal -direction=below -auto-resize -auto-preview grep:.<CR>
 " Opens Unite to list of bookmarks and buffers
 nnoremap <silent> <Tab>b :Unite -horizontal -direction=below -start-insert buffer bookmark<CR>
 " Open list of recently accessed directories
