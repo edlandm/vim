@@ -37,8 +37,11 @@ set showcmd
 " Underlines the line your cursor is on
 set cursorline
 
-" Set utf8 as standard encoding and en_US as standard language
-set encoding=utf8
+" Set utf-8 as standard encoding and en_US as standard language
+if has("milti_byte")
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+endif
 
 " Highlight trailing white spaces
 match ErrorMsg '\s\+$'
