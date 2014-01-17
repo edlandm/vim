@@ -199,30 +199,24 @@ execute pathogen#infect()
 " It's also nice because if I stop using a plugin I can keep my settings in
 " case I ever want to use it again without having a giant mess of comments
 " Load these settings and plugins before my mappings so as to not override them
-let plugin_settings_dir=$HOME."/.vim/plugin_settings/"
-let plugin_file_suffix = ".settings.vim"
-let plugins = [
-            \ "Airline",
-            \ "CleverF",
-            \ "EasyMotion",
-            \ "Emmet",
-            \ "Fugitive",
-            \ "MiniBufExplorer",
-            \ "MultiCursor",
-            \ "PanglossJavascriptHtml",
-            \ "SuperTab",
-            \ "Syntastic",
-            \ "Unite"
-            \ ]
-for plugin in plugins |
-  exec ":source " . plugin_settings_dir . plugin . plugin_file_suffix |
-endfor
-
-" MultiCursor without gui vim is terribly laggy, you don't want it with
-" terminal vim
-if !has('gui') |
-    let g:multi_cursor_use_default_mapping=0 |
-endif |
+"let plugin_settings_dir=$HOME."/.vim/plugin_settings/"
+"let plugin_file_suffix = ".settings.vim"
+"let plugins = [
+"            \ "Airline",
+"            \ "EasyMotion",
+"            \ "Emmet",
+"            \ "Fugitive",
+"            \ "Investigate",
+"            \ "MiniBufExplorer",
+"            \ "MultiCursor",
+"            \ "PanglossJavascriptHtml",
+"            \ "SuperTab",
+"            \ "Syntastic",
+"            \ "Unite"
+"            \ ]
+"for plugin in plugins |
+"  exec ":source " . plugin_settings_dir . plugin . plugin_file_suffix |
+"endfor
 
 "==============================================================================
 " Javascript Libraries settings ===============================================
