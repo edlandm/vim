@@ -22,7 +22,7 @@ if [ ! -d $MAGIC_DIR ];then
 fi
 
 for f in `ls -1 $VIM_SRC_DIR/plugin_magic`;do
-    if [ ! -e $VIM_SRC_DIR/plugin_magic/$f ];then
+    if [ ! -e $MAGIC_DIR/$f ];then
         echo "Linking: $f"
         ln -s $VIM_SRC_DIR/plugin_magic/$f $MAGIC_DIR
     fi
