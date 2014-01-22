@@ -30,6 +30,3 @@ nnoremap <silent> <Tab>B :UniteBookmarkAdd<CR><CR>
 " Open yank history (default action is to yank)
 nnoremap <silent> <Tab>y :Unite -horizontal -buffer-name=yank -winheight=5
                          \-default-action=yank history/yank<CR>
-" Open Outline (This currently does not open in a split window as I don't know
-" how to get it to do that...)
-nnoremap <silent> <Tab>t :Unite -vertical -direction=right -buffer-name=Outline outline<CR>
