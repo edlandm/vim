@@ -384,6 +384,10 @@ inoremap <silent><C-j> <ESC>mz:m+<CR>`zi
 "==============================================================================
 " Escape spaces in command-mode by pressing space twice
 cnoremap <Space><Space> \<Space>
+
+" Exit Insert-mode by pressing j+k together (order doesn't matter)
+cnoremap jk <ESC> `^
+cnoremap kj <ESC> `^
 "==============================================================================
 " Visual Mode Mappings ========================================================
 "==============================================================================
