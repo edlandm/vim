@@ -1,0 +1,10 @@
+#!/bin/bash
+
+bundle_path="$HOME/.vim/bundle"
+for f in `ls -1 $bundle_path`;do
+    cd "$bundle_path/$f"
+    pwd | awk -F '/' '{ print "Checking: " $NF; }'
+    #git pull 2>&1 | grep -vE "(^remote:|^Unpacking|^Updating|^Fast-forward|up-to-date|^fatal|-> origin/master|delete mode|create mode)"
+    git pull 2>&1 | grep -E "(^From|files changed)"
+    cd - > /dev/null
+done
