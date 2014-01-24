@@ -16,7 +16,7 @@ set guifont=Anonymous\ Pro\ for\ Powerline:h12,
  set guioptions=g
 
 augroup MacMeta
-    "While in normal mode, the alt-key can be used for unicode characters.
+    "While in insert mode, the alt-key can be used for unicode characters.
     "Otherwise, it is a meta-key and can be mapped with <M-char>
     autocmd!
     autocmd InsertEnter * set nomacmeta
