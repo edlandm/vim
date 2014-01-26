@@ -38,9 +38,10 @@ set showcmd
 set cursorline
 
 " Set utf-8 as standard encoding and en_US as standard language
-if has("milti_byte")
-    set encoding=utf-8
-    setglobal fileencoding=utf-8
+if has("multi_byte")
+    set encoding=utf8
+    set termencoding=utf-8
+    setglobal fileencoding=utf8
 endif
 
 " Highlight trailing white spaces
