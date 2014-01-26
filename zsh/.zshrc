@@ -118,8 +118,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Source Aliases
 if [ -L $ZHOME/.alias.zsh ];then
-    source `readlink $ZHOME/.alias.zsh`
+    source $HOME/`readlink $ZHOME/.alias.zsh`
 fi
 if [ -L $ZHOME/.alias.local.zsh ];then
-    source `readlink $ZHOME/.alias.local.zsh`
+    source $HOME/`readlink $ZHOME/.alias.local.zsh`
 fi
