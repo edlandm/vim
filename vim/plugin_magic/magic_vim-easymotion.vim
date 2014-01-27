@@ -2,6 +2,7 @@
 "==============================================================================
 " Set prefix to <Space> (default is <Leader><Leader>)
 map <Space> <Plug>(easymotion-prefix)
+let g:EasyMotion_do_mapping = 0
 
 " Use Smartcase
 let g:EasyMotion_smartcase = 1
