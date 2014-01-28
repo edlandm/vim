@@ -389,8 +389,10 @@ unmap <Tab>
 let hostname = substitute(system('hostname'), '\n', '', '')
 let current_dir = getcwd()
 
-if hostname == "gravelpit"
-    source ~/.vimrc.gravel
+if hostname == "nari"
+    source ~/.vimrc.nari
+elseif hostname == "gravelpit"
+    source ~/.vimrc.gravelpit
 else
     source ~/.vimrc.local
 endif
