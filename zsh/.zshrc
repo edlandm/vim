@@ -2,14 +2,14 @@
 ZSH=$HOME/.oh-my-zsh
 # Path for zsh files (mostly ones that get sourced
 ZHOME=$HOME/.zsh
-if [ ! -d "$HOME/.zsh" ];then
-    mkdir -p "$HOME/.zsh"
+if [ ! -d $ZHOME ];then
+    mkdir -p $ZHOME
 fi
 
 
 #Put bin at the front of the Path
 #set path for bin
-PATH="/Users/miles/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+PATH=$USER/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$PATH
 
 #Set terminal type
@@ -118,8 +118,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Source Aliases
 if [ -L $ZHOME/.alias.zsh ];then
-    source $HOME/`readlink $ZHOME/.alias.zsh`
+    source `readlink $ZHOME/.alias.zsh`
 fi
 if [ -L $ZHOME/.alias.local.zsh ];then
-    source $HOME/`readlink $ZHOME/.alias.local.zsh`
+    source `readlink $ZHOME/.alias.local.zsh`
 fi
