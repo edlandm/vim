@@ -5,7 +5,7 @@ VIZARDRY_DIR=$VIM_BUNDLE_DIR/vizardry
 MAGIC_DIR=$VIZARDRY_DIR/plugin/magic
 VIM_SRC_DIR=$HOME/dotfiles/vim
 
-if [ -d VIM_SRC_DIR ];then
+if [ ! -d VIM_SRC_DIR ];then
     echo "Sorry, $VIM_SRC_DIR doesn't seem to exist so your files can't be found"
     kill -SIGINT $$
 fi
