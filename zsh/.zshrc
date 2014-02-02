@@ -12,6 +12,9 @@ fi
 PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$PATH
 
+# Enable workon
+. /etc/bash_completion.d/virtualenvwrapper
+
 #Set terminal type
 export TERM="xterm-256color"
 

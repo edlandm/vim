@@ -392,6 +392,8 @@ let current_dir = getcwd()
 if filereadable($HOME."/.vimrc.local")
     source ~/.vimrc.local
 endif
+
+" If working directory contains a .vimrc.local file, source it
 if filereadable("./.vimrc.local")
     source ./.vimrc.local
 endif

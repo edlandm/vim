@@ -14,8 +14,10 @@ let g:unite_source_bookmark_directory = $HOME . "/.vim/bookmarks"
 
 " Opens Unite
 nnoremap <Tab><Tab> :Unite -start-insert file_rec/async:<CR>
-" Open Unite to grep
+" Open Unite to grep current directory
 nnoremap <silent> <Tab>/ :Unite -horizontal -direction=below -auto-resize -auto-preview grep:.<CR>
+" Open Unite to grep currenc buffer
+nnoremap <silent> <Tab>? :Unite -horizontal -direction=below -auto-resize -auto-preview grep:%<CR>
 " Opens Unite to list of bookmarks and buffers
 nnoremap <silent> <Tab>b :Unite -horizontal -direction=below -start-insert buffer bookmark<CR>
 " Open list of recently accessed directories
