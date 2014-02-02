@@ -29,7 +29,11 @@ export TERM="xterm-256color"
 #   michelebologna #   pmcgee #   re5et #   ys
 # af-magic -- Previous theme
 #ZSH_THEME="jonathan"
-ZSH_THEME="kphoen"
+if [ -e $HOME/.shell_prompt.sh ];then
+    source $HOME/.shell_prompt.sh ];
+else
+    ZSH_THEME="kphoen"
+fi
 
 APPEND_HISTORY="true"
 AUTO_MENU="true"
