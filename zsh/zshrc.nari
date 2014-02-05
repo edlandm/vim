@@ -1,0 +1,2 @@
+# Enable workon
+. /etc/bash_completion.d/virtualenvwrapper
