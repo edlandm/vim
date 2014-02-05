@@ -1,0 +1,16 @@
+[user]
+	email = edlandm@wwu.edu
+[core]
+	editor = vim
+[help]
+	autocorrect = 1
+[color]
+	ui = true
+[alias]
+    ds = diff --staged
+    st = status -sb
+    # pretty one-line log with tags, branches and authors
+    ls = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short
+    # a verbose ls, shows changed files too
+    lsv = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short --numstat
+    diff = diff --word-diff
