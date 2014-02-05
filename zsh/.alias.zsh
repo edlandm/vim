@@ -32,6 +32,8 @@ alias -g lsd='ls -dl *(N,/,@)'
 #List hidden,nonhidden directories and then same for files
 alias -g lss='{ ls -dl .*(N,/,@);ls -dl *(N,/,@);ls -l .*(N,.);ls -l *(N,.) }'
 #
+#Makes zsh so that it can be used as such: `mmv *.jpeg *.jpg
+alias mmv='noglob zmv -W'
 #Counts lines
 alias wcl='wc -l'
 #* ** Suffixes ** *#
