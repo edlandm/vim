@@ -7,7 +7,7 @@ let g:promptline_preset = {
     \'y' : [ '%*' ],
     \'z' : [ '%n@%m'],
     \'warn' : [ promptline#slices#last_exit_code() ]}
-"let g:promptline_powerline_symbols = 0
+let g:promptline_powerline_symbols = 0
 let g:promptline_symbols = {
     \ 'left'       : '',
     \ 'left_alt'   : '',
