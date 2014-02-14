@@ -14,7 +14,10 @@ alias zrc='vim ~/.zshrc'
 # Re-Source .zshrc
 alias zrcr='source ~/.zshrc'
 #
-# Restart Apache
+#Edit .vimrc
+alias vrc='vim ~/.vimrc'
+#
+#Restart Apache
 alias sag='sudo apachectl graceful'
 #
 # Executes python file (with python)
@@ -102,7 +105,10 @@ alias cgrep='grep --color=auto'
 alias :q='exit'
 alias :wq='exit'
 #
-# Makes zmv so that it can be used as such: `mmv *.jpeg *.jpg
+# List broken symlinks
+alias broken='find . -type l ! -exec test -e {} \; -print'
+
+#Makes zsh so that it can be used as such: `mmv *.jpeg *.jpg
 alias mmv='noglob zmv -W'
 # Counts lines
 alias wcl='wc -l'

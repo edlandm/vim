@@ -45,7 +45,7 @@ if has("multi_byte")
 endif
 
 " Highlight trailing white spaces
-match ErrorMsg '\s\+$'
+"match ErrorMsg '\s\+$'
 
 " Make search case-insensitive
 set ignorecase
@@ -158,9 +158,6 @@ endfunction
 command! -range -nargs=+ Wrap <line1>,<line2>call TextWrap(<f-args>)
 
 "=============================Autocommand Settings=============================
-" removes trailing white spaces... I think
-autocmd BufWritePre * :%s/\s\+$//e
-
 " wsgi files are python
 autocmd BufNewFile,BufRead *.wsgi set filetype=python
 
