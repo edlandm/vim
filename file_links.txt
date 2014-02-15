@@ -1,0 +1,31 @@
+# git files
+gitconfig.laptop,$HOME/.gitconfig,laptop
+gitconfig.nari,$HOME/.gitconfig,nari
+
+# slate files
+slate/slate,$HOME/.slate,laptop
+slate/slate.js,$HOME/.slate.js,laptop
+
+# tmux files
+tmux/tmux.conf,$HOME/.tmux.conf
+tmux/tmux.reset.conf,$HOME/.tmux.reset.conf
+
+bash_profile,$HOME/.bash_profile
+
+# vim files
+vim/vimrc,$HOME/.vimrc
+vim/vimrc.gravelpit,$HOME/.vimrc.local,gravelpit
+vim/vimrc.laptop,$HOME/.vimrc.local,laptop
+vim/vimrc.nari,$HOME/.vimrc.local,nari
+vim/shell_prompt.sh,$HOME/.shell_prompt.sh
+vim/tmuxline,$HOME/.tmuxline
+
+# zsh files
+zsh/zshrc,$HOME/.zshrc
+zsh/alias.zsh,$HOME/.zsh/.alias.zsh
+# laptop zsh files
+zsh/zshrc.laptop,$HOME/.zshrc.local,laptop
+zsh/alias.laptop.zsh,$HOME/.zsh/.alias.local.zsh,laptop
+# gravelpit and nari use the same 'local' rc and alias files
+zsh/zshrc.nari,$HOME/.zshrc.local,nari
+zsh/zshrc.nari,$HOME/.zshrc.local,gravelpit
