@@ -83,11 +83,11 @@ alias -g lslsl='ls -lhd *(N@)' # l for long format
 alias -g lsvsl='ls -1d *(N@)' # v for vertical
 # list hidden SymLinks
 alias -g lshsl='ls -d .*(N@)'
-alias -g lhslsl='ls -lhd .*(N@)' # l for long format
+alias -g lslhsl='ls -lhd .*(N@)' # l for long format
 alias -g lsvhsl='ls -1d .*(N@)' # v for vertical
 # list all SymLinks
 alias -g lsasl='ls -d *(ND@)'
-alias -g laslsl='ls -lhd *(ND@)' # l for long format
+alias -g lslasl='ls -lhd *(ND@)' # l for long format
 alias -g lsvasl='ls -1d *(ND@)' # v for vertical
 # ** du aliases **#
 # show sorted directory sizes for directories
