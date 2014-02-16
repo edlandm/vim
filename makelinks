@@ -13,8 +13,11 @@ def make_link(source, dest):
     """
     The part that actually links the files
     """
-    print "Linking {} -> {}".format(dest, source)
-    remove(dest)
+    print "Linking: {} -> {}".format(dest, source)
+    try:
+        remove(dest)
+    except OSError:
+        pass
     symlink(source, dest)
 
 def _readline(line):
