@@ -302,6 +302,9 @@ nnoremap <silent> N Nzz
 nnoremap j gj
 nnoremap k gk
 
+" Select last pasted text
+nnoremap gV `[v`]
+
 " Ctrl+o and Ctrl+i move line up/down
 nnoremap <silent><C-i> mz:m+<CR>`z
 nnoremap <silent><C-o> mz:m-2<CR>`z
