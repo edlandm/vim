@@ -305,6 +305,13 @@ nnoremap k gk
 " Select last pasted text
 nnoremap gV `[v`]
 
+" Yank text to clipboard (Works on OS X)
+noremap <Leader>y "+y
+noremap <Leader>yy "+yy
+
+" Paste from clipboard (and preserve indentation)
+noremap <Leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
+
 " Ctrl+o and Ctrl+i move line up/down
 nnoremap <silent><C-i> mz:m+<CR>`z
 nnoremap <silent><C-o> mz:m-2<CR>`z
@@ -340,12 +347,6 @@ inoremap <C-a> <ESC>I
 " Go to end of line in insert mode
 inoremap <C-e> <ESC>A
 
-" Start editing on new line above current line
-inoremap <C-p> <ESC>O
-
-" Start editing on new line below current line
-inoremap <C-u> <ESC>o
-
 " Move current line up one line (switches places with above line)
 inoremap <silent><C-k> <ESC>mz:m-2<CR>`zi
 
@@ -372,8 +373,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Move current visual selection up or down
-vnoremap <C-i> <ESC> `<gv:m '>+1<CR>gv
-vnoremap <C-o> <ESC> `<gv:m '<-2<CR>gv
+vnoremap <C-j> <ESC> `<gv:m '>+1<CR>gv
+vnoremap <C-k> <ESC> `<gv:m '<-2<CR>gv
 
 " Make movement in visual mode more like how I have it in normal mode
 vnoremap H ^
