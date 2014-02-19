@@ -13,7 +13,10 @@ set guifont=Anonymous\ Pro\ for\ Powerline:h12,
             \Courier:h12
 
 " guioptions
- set guioptions=g
+set guioptions=g
+
+" Use system clipboard
+set clipboard=unnamed
 
 augroup MacMeta
     "While in insert mode, the alt-key can be used for unicode characters.
