@@ -33,14 +33,26 @@ alias -g ....='cd ../../../'
 alias -g lsv='ls -1'
 # ls long format
 alias -g lsl='ls -lh'
-# list all files
+# list all
 alias -g lsa='ls -a'
 alias -g lsla='ls -lha' # l for long format
 alias -g lsva='ls -1a' # v for vertical
-# list hidden files
+# list hidden
 alias -g lsh='ls -d .*'
 alias -g lslh='ls -lhd .*' # l for long format
 alias -g lsvh='ls -1d .*' # v for vertical
+# list files # only files, not symlinks or anything else
+alias -g lsf='ls *(N.)'
+alias -g lslf='ls -lh *(N.)' # l for long format
+alias -g lsvf='ls -1 *(N.)' # v for vertical
+# list hidden files
+alias -g lshf='ls .*(N.)'
+alias -g lslhf='ls -lh .*(N.)' # l for long format
+alias -g lsvhf='ls -1 .*(N.)' # v for vertical
+# list all files
+alias -g lsaf='ls *(ND.)'
+alias -g lslaf='ls -lh *(ND.)' # l for long format
+alias -g lsvaf='ls -1 *(ND.)' # v for vertical
 # list directories
 alias -g lsd='ls -d *(N/)'
 alias -g lsld='ls -lhd *(N/)' # l for long format
