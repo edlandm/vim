@@ -24,8 +24,12 @@ augroup omnifuncs
                 \ | endif
 augroup END
 
+" Source file-specific vimrcs
+runtime @% . ".vimrc"
+
 " Re-source .vimrc everytime it's modified
 augroup reload_vimrc
     autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    autocmd BufWritePost *.vimrc source %
+    autocmd BufWritePost *.vimrc.local source %
 augroup END
