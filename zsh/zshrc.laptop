@@ -1,3 +1,5 @@
+# LOCAL ZSHRC: shutupmiles -- Miles Edland =====================================
+#===============================================================================
 export PATH=/usr/texbin:$PATH
 export HOST=shutupmiles
 

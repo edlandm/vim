@@ -1,3 +1,6 @@
+# ZSHRC -- Miles Edland ========================================================
+#===============================================================================
+# Configure Path ==============================================================={{{
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 # Path for zsh files (mostly ones that get sourced
@@ -5,19 +8,36 @@ ZHOME=$HOME/.zsh
 if [ ! -d $ZHOME ];then
     mkdir -p $ZHOME
 fi
-
-
-#Put bin at the front of the Path
-#set path for bin
+# Export PATH
 PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$PATH
-
+#===============================================================================}}}
+# Settings ====================================================================={{{
+#===============================================================================
+APPEND_HISTORY="true"
+AUTO_MENU="true"
+AUTO_REMOVE_SLASH="true"
+DVORAK="false"
+EXTENDED_GLOB="true"
+GLOB_DOTS="true"
+HISTORY_IGNORE_DUPS="true"
+HISTORY_IGNORE_SPACE="true"
+NULL_GLOBS="true"
 #Set terminal type
 export TERM="xterm-256color"
-
-#Virtualenv Completion (workon)
-#. /etc/bash_completion.d/virtualenvwrapper
-
+# Lets you cd into a directory by just typing its name (without cd)
+setopt autocd
+#Fuzzy matching of completions for when you mistype them:
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+# History Expansion on <space>
+bindkey " " magic-space
+#Loads zmv (zmv is for some massive file moving magic)
+autoload -U zmv
+#===============================================================================}}}
+# Theme ========================================================================{{{
+#===============================================================================
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -34,63 +54,16 @@ if [ -e $HOME/.shell_prompt.sh ];then
 else
     ZSH_THEME="kphoen"
 fi
-
-APPEND_HISTORY="true"
-AUTO_MENU="true"
-AUTO_REMOVE_SLASH="true"
-DVORAK="false"
-EXTENDED_GLOB="true"
-GLOB_DOTS="true"
-HISTORY_IGNORE_DUPS="true"
-HISTORY_IGNORE_SPACE="true"
-NULL_GLOBS="true"
-
-setopt autocd
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
+#===============================================================================}}}
+# Plugins ======================================================================{{{
+#===============================================================================
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git pip zsh-syntax-highlighting)
-
-#Fuzzy matching of completions for when you mistype them:
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
-# History Expansion on <space>
-bindkey " " magic-space
-
-#Loads zmv (zmv is for some massive file moving magic)
-autoload -U zmv
-
-source $ZSH/oh-my-zsh.sh
-
-# vi-mode
+#===============================================================================}}}
+# vi-mode ======================================================================{{{
+#===============================================================================
 #bindkey -v
 # The default delay between mode-switches is .4seconds. Let's change that to .1seconds
 # export KEYTIMEOUT=1
@@ -111,7 +84,11 @@ source $ZSH/oh-my-zsh.sh
 #}
 #zle -N zle-line-init
 #zle -N zle-keymap-select
-
+#===============================================================================}}}
+# Source ======================================================================={{{
+#===============================================================================
+# Source oh my zsh
+source $ZSH/oh-my-zsh.sh
 # opp.zsh enables text objects for zsh
 #if [ ! -d "$HOME/.zsh/opp.zsh" ];then
     #cd "$HOME/.zsh"
@@ -119,7 +96,6 @@ source $ZSH/oh-my-zsh.sh
     #cd -
 #fi
 #source "$HOME/.zsh/opp.zsh/opp.zsh"
-
 # Local zrc file
 if [ -e $HOME/.zshrc.local ];then
     source $HOME/.zshrc.local
@@ -132,3 +108,4 @@ fi
 if [ -L $ZHOME/.alias.local.zsh ];then
     source `readlink $ZHOME/.alias.local.zsh`
 fi
+#===============================================================================}}}

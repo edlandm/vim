@@ -1,34 +1,46 @@
-#** ** ** * ** ** **#
-#* ** *Aliases* ** *#
-#** ** ** * ** ** **#
-#
-#***ResTek ssh aliases***
+# ZSH Aliases -- Miles Edland ======================================================
+#===============================================================================
+# SSH Aliases =================================================================={{{
+#===============================================================================
 alias sdev='ssh edlandm@dev.housing.wwu.edu'
 alias sgravel='ssh edlandm@gravelpit.housing.wwu.edu'
 alias snari='ssh edlandm@nari.housing.wwu.edu'
 alias sjuice='ssh edlandm@juicebox.restek.wwu.edu'
-#
+#===============================================================================}}}
+# General Aliases =============================================================={{{
+#===============================================================================
 # Edit .zshrc
 alias zrc='vim ~/.zshrc'
-#
 # Re-Source .zshrc
 alias zrcr='source ~/.zshrc'
-#
 #Edit .vimrc
 alias vrc='vim ~/.vimrc'
-#
 #Restart Apache
 alias sag='sudo apachectl graceful'
-#
 # Executes python file (with python)
 alias p]='python'
-#
 # More dots
 alias -g ..='cd ../'
 alias -g ...='cd ../../'
 alias -g ....='cd ../../../'
-#
-#* ** ls aliases ** *#
+# slightly more readable df
+alias df='df -h'
+# grep and keep colors
+alias cgrep='grep --color=auto'
+# quit and write quite
+alias :q='exit'
+alias :wq='exit'
+# List broken symlinks
+alias broken='find . -type l ! -exec test -e {} \; -print'
+# Makes zsh so that it can be used as such: `mmv *.jpeg *.jpg
+alias mmv='noglob zmv -W'
+# Counts lines
+alias wcl='wc -l'
+# Return status code of an http request
+alias httpstat='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
+#===============================================================================}}}
+# ls Aliases ==================================================================={{{
+#===============================================================================
 # ls vertically
 alias -g lsv='ls -1'
 # ls long format
@@ -101,31 +113,39 @@ alias -g lsvhsl='ls -1d .*(N@)' # v for vertical
 alias -g lsasl='ls -d *(ND@)'
 alias -g lslasl='ls -lhd *(ND@)' # l for long format
 alias -g lsvasl='ls -1d *(ND@)' # v for vertical
-# ** du aliases **#
+#===============================================================================}}}
+# du Aliases ==================================================================={{{
+#===============================================================================
 # show sorted directory sizes for directories
 alias dus='du -s *(/) | sort -nr | cut -f 2- | while read a; do du -sh "$a"; done' # s for 'sort'
 # show sorted directory sizes for hidden directories
 alias dush='du -s .*(/) | sort -nr | cut -f 2- | while read a; do du -sh "$a"; done' # s for 'sort'
 # show sorted directory sizes for all directories
 alias dusa='du -s *(D/) | sort -nr | cut -f 2- | while read a; do du -sh "$a"; done' # s for 'sort'
-#
-# slightly more readable df
-alias df='df -h'
-# grep and keep colors
-alias cgrep='grep --color=auto'
-# quit and write quite
-alias :q='exit'
-alias :wq='exit'
-#
-# List broken symlinks
-alias broken='find . -type l ! -exec test -e {} \; -print'
-
-#Makes zsh so that it can be used as such: `mmv *.jpeg *.jpg
-alias mmv='noglob zmv -W'
-# Counts lines
-alias wcl='wc -l'
-#* ** Suffixes ** *#
-#
+#===============================================================================}}}
+# Dictionary functions ========================================================={{{
+#===============================================================================
+# Dictionnary of computing (foldoc)
+doc() { local url="dict://dict.org/d:"$1":foldoc";curl $url; }
+# English
+dicte() { local url="dict://dict.org/d:"$1":english";curl $url; }
+# English to French
+dictef() { local url="dict://dict.org/d:"$1":eng-fra";curl $url; }
+# English to Latin
+dictel() { local url="dict://dict.org/d:"$1":eng-lat";curl $url; }
+# French to English
+dictfe() { local url="dict://dict.org/d:"$1":fra-eng";curl $url; }
+# Latin to English
+dictle() { local url="dict://dict.org/d:"$1":lat-eng";curl $url; }
+# Zip codes
+dictzip() { local url="dict://dict.org/d:"$1":gaz2k-zips";curl $url; }
+# Places
+dictplace() { local url="dict://dict.org/d:"$1":gaz2k-places";curl $url; }
+# Counties
+dictcounty() { local url="dict://dict.org/d:"$1":gaz2k-counties";curl $url; }
+#===============================================================================}}}
+# Suffixes ====================================================================={{{
+#===============================================================================
 alias -s py="python"
 alias -s txt="vim"
 alias -s css="vim"
@@ -133,3 +153,4 @@ alias -s aspx="vim"
 alias -s asmx="vim"
 alias -s convig="vim"
 alias -s master="vim"
+#===============================================================================}}}

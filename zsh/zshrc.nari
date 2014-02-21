@@ -1,2 +1,4 @@
+# LOCAL ZSHRC: nari -- Miles Edland ============================================
+#===============================================================================
 # Enable workon
 . /etc/bash_completion.d/virtualenvwrapper
