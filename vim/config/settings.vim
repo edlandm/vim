@@ -26,8 +26,6 @@
     set is
 " magic   change the way backslashes are used in search patterns
     set magic
-" regexpengine  select the default regexp engine used
-    set re=0
 " ignorecase    ignore case when using a search pattern
     set ic
 " smartcase   override 'ignorecase' when pattern has upper case characters
@@ -388,8 +386,6 @@
    set wim=longest,list,full
 " suffixes  list of file name extensions that have a lower priority
    set su=.bak,~,.o,.h,.info,.swp,.obj,.pyc
-" fileignorecase  ignore case when using file names
-   set fic
 " wildignorecase  ignore case when completing file names
    set wic
 " wildmenu  command-line completion shows a list of matches
