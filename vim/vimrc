@@ -2,13 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-if &term =~ '256color'
-    " Disable Background Color Erase (BCE) so that color schemes
-    " work properly when Vim is used inside tmux and GNU screen.
-    " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
-    set t_ut=
-endif
-
 " Switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || has("gui_running")
   syntax on
@@ -37,6 +30,14 @@ runtime! config/*
 
 " Load any .vimrc.local files in current directory
 runtime ./.vimrc.local
+
+" if &term =~ 'xterm-256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    " set t_ut=
+" endif
+set t_ut=
 
 " Run pathogen to load plugins
 execute pathogen#infect()
