@@ -88,8 +88,8 @@ nnoremap L $
 " Makes 'Enter' insert a <CR> it's like the opposite of J
 nnoremap <C-m> i<C-m><Esc>
 
-" Execute Macros with Q
-nnoremap Q @q
+" Execute most recently executed macro
+nnoremap Q @@
 
 " Maps ' to ` so that it jumps to line AND column of mark. It's just easier to
 " than hitting ` (it also eliminates the need to excape it from tmux)
