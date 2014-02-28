@@ -312,7 +312,7 @@
    set fdo=block,insert,percent,quickfix,search,tag,undo
 " foldmethod  folding type: "manual", "indent", "expr", "marker" or "syntax"
 "(local to window)
-   set fdm=marker
+   set fdm=manual
 " foldignore  used to ignore lines when 'foldmethod' is "indent"
 "(local to window)
    set fdi=
