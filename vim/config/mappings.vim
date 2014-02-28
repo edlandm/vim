@@ -106,10 +106,13 @@ nnoremap k gk
 nnoremap gV `[v`]
 
 " Yank text to clipboard (Works on OS X)
-noremap <Leader>y "+y
-noremap <Leader>yy "+yy
+nnoremap <Leader>y "+y
+nnoremap <Leader>yy "+yy
 
 " Paste from clipboard (and preserve indentation)
+nnoremap <Leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
+
+" Toggle foldenable (un/folds all folds)
 noremap <Leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
 
 " Unimpaired mappings (Strongly inspired by tpope, some of this is borrowed) {{{
@@ -267,6 +270,6 @@ vnoremap L $
 "==============================================================================}}}
 " Misc ========================================================================{{{
 "==============================================================================
-unmap <Tab>
+" unmap <Tab>
 
 "==============================================================================}}}
