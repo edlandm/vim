@@ -22,6 +22,10 @@ vim/config/settings.vim,$HOME/.vim/config/settings.vim
 vim/config/mappings.vim,$HOME/.vim/config/mappings.vim
 vim/shell_prompt.sh,$HOME/.shell_prompt.sh
 vim/tmuxline,$HOME/.tmuxline
+vim/ftdetect,$HOME/.vim/ftdetect
+vim/ftplugin,$HOME/.vim/ftplugin
+vim/plugin,$HOME/.vim/plugin
+vim/syntax,$HOME/.vim/syntax
 
 # zsh files
 zsh/zshrc,$HOME/.zshrc
