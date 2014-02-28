@@ -1,4 +1,3 @@
-set fdm=marker
 "=================================  Mappings  =================================
 " Leader Mappings ============================================================= {{{
 "==============================================================================
@@ -57,6 +56,13 @@ function! VisualSelection(direction) range
     let @" = l:saved_reg
 endfunction
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+
+" Set fold method
+nnoremap <leader>ff :set fdm=manual<CR>
+nnoremap <leader>fi :set fdm=indent<CR>
+nnoremap <leader>fm :set fdm=marker<CR>
+nnoremap <leader>fs :set fdm=syntax<CR>
+nnoremap <leader>fd :set fdm=diff<CR>
 
 "==============================================================================}}}
 " Normal Mode Mappings ========================================================{{{
