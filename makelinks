@@ -13,6 +13,7 @@ def make_link(source, dest):
     """
     The part that actually links the files
     """
+    source = expandvars(source)
     print "Linking: {} -> {}".format(dest, source)
     try:
         remove(dest)
