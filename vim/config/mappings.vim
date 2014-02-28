@@ -113,7 +113,7 @@ nnoremap <Leader>yy "+yy
 nnoremap <Leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
 
 " Toggle foldenable (un/folds all folds)
-noremap <Leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
+nnoremap <silent> zft :<C-U>set fen!
 
 " Unimpaired mappings (Strongly inspired by tpope, some of this is borrowed) {{{
 " Navigate files {{{
