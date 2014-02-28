@@ -1,6 +1,11 @@
 " The default mappings throw off my groove
 let g:goldenview__enable_default_mapping = 0
 
+" I can't tell if the above command actually works, it's still messing with
+" one of my mappings.
+unmap <C-L>
+nnoremap <C-L> <C-W>l
+
 " Split to tiled windows
 nmap <silent> <leader><space> <Plug>GoldenViewSplit
 
