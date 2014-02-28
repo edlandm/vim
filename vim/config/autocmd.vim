@@ -32,6 +32,6 @@ endif
 " Re-source .vimrc everytime it's modified
 augroup reload_vimrc
     autocmd!
-    autocmd BufWritePost *.vimrc source @%
-    autocmd BufWritePost *.vimrc.local source @%
+    autocmd BufWritePost *.vimrc source expand("%")
+    autocmd BufWritePost *.vimrc.local source expand("%")
 augroup END
