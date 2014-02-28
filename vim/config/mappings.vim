@@ -27,10 +27,6 @@ function! LineNumberToggle()
 endfunc
 "nmap <silent> <Leader>2 :call RelNumberToggle()<CR>
 
-" Insert blank lines without going into insert mode
-nnoremap <Leader>o o<ESC>k
-nnoremap <Leader>O O<ESC>j
-
 " Toggle search highlighting
 nnoremap <silent> <Leader>h :set hlsearch!<CR>
 
@@ -116,19 +112,107 @@ noremap <Leader>yy "+yy
 " Paste from clipboard (and preserve indentation)
 noremap <Leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
 
-" Ctrl+o and Ctrl+i move line up/down
-nnoremap <silent><C-i> mz:m+<CR>`z
-nnoremap <silent><C-o> mz:m-2<CR>`z
+" Unimpaired mappings (Strongly inspired by tpope, some of this is borrowed) {{{
+" Navigate files {{{
+" Move through arglist
+nnoremap [a :previous<CR>
+nnoremap ]a :next<CR>
+nnoremap [A :first<CR>
+nnoremap ]A :last<CR>
+" Move through buffers
+nnoremap [b :bprevious<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [B :bfirst<CR>
+nnoremap ]B :blast<CR>
+" Move through tabs
+nnoremap [t :tabN<CR>
+nnoremap ]t :tabn<CR>
+nnoremap [T :tabfirst<CR>
+nnoremap ]T :tablast<CR>
+" Move (reorder) tabs; [m = left; ]m = right
+nnoremap [m :tabm -<CR>
+nnoremap ]m :tabm +<CR>
+" Zoom window; To unzoom simply close the window/tab
+nnoremap [z :tabedit %<CR>
+"}}}
+" Line Operations {{{
+" Add [count] lines above cursor
+nnoremap ]<space> o<ESC>'[k
+" Add [count] lines below cursor
+nnoremap [<space> O<ESC>j
+" Move Functions (Used for the next four mappings) {{{
+function! Move(cmd, count, map) abort
+  normal! m`
+  exe 'move'.a:cmd.a:count
+  norm! ``
+  silent! call repeat#set("Move".a:map, a:count)
+endfunction
 
-" Open new tab
-nnoremap <silent> <Leader>[n :tabnew<CR>
-" Switch to next tab
-nnoremap <silent> <Leader>[] :tabnext<CR>
-" Switch to previous tab
-nnoremap <silent> <Leader>[[ :tabprevious<CR>
-" Close Tab
-nnoremap <silent> <Leader>[c :tabclose<CR>
+function! MoveSelectionUp(count) abort
+  normal! m`
+  exe "'<,'>move'<--".a:count
+  norm! ``
+  silent! call repeat#set("MoveSelectionUp", a:count)
+endfunction
 
+function! MoveSelectionDown(count) abort
+  normal! m`
+  exe "'<,'>move'>+".a:count
+  norm! ``
+  silent! call repeat#set("MoveSelectionDown", a:count)
+endfunction
+" }}}
+" Exchange current line with [count] lines above it
+nnoremap <silent> [e :<C-U>call Move('--',v:count1,'Up')<CR>
+" Exchange current line with [count] lines below it
+nnoremap <silent> ]e :<C-U>call Move('+',v:count1,'Down')<CR>
+" Exchange current selection with [count] lines above it
+vnoremap <silent> [e :<C-U>call MoveSelectionUp(v:count1)<CR>gv
+" Exchange current selection with [count] lines below it
+vnoremap <silent> ]e :<C-U>call MoveSelectionDown(v:count1)<CR>gv
+" }}}
+" Editing Operations ==========================================================={{{
+"===============================================================================
+" Go to previous text state
+nnoremap [u g-
+" Go to next text state
+nnoremap ]u g+
+"===============================================================================}}}
+" Toggle settings {{{
+" [o = on; ]o = off; co = toggle
+let settings = {
+            \ 'c': 'cursorline',
+            \ 'h': 'hlsearch',
+            \ 'l': 'list',
+            \ 'n': 'number',
+            \ 'r': 'relativenumber',
+            \ 's': 'spell',
+            \ 'u': 'cursorcolumn',
+            \ 'w': 'wrap',
+            \ }
+
+for [key, val] in items(settings)
+    exec printf("nnoremap <silent> [o%s :<C-U>set %s<CR>", key, val)
+    exec printf("nnoremap <silent> ]o%s :<C-U>set no%s<CR>", key, val)
+    exec printf("nnoremap <silent> co%s :<C-U>set %s!<CR>", key, val)
+endfor
+" }}}
+" Windows {{{
+" Decrease window height (by 5)
+nnoremap [w :<C-U>resize -5<CR>
+" Increase window height (by 5)
+nnoremap ]w :<C-U>resize +5<CR>
+" Decrease window width (by 5)
+nnoremap [W :<C-U>vertical resize -5<CR>
+" Increase window width (by 5)
+nnoremap ]W :<C-U>vertical resize +5<CR>
+" Split window horizontally
+nnoremap [s :<C-U>sp<CR>
+" Split window vertically
+nnoremap ]s :<C-U>vsp<CR>
+" }}}
+" }}}
+"==============================================================================}}}
 "==============================================================================}}}
 " Insert Mode Mappings ========================================================{{{
 "==============================================================================
@@ -175,10 +259,6 @@ vnoremap <C-n> y/<C-R>"<CR>
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
-
-" Move current visual selection up or down
-vnoremap <C-j> <ESC> `<gv:m '>+1<CR>gv
-vnoremap <C-k> <ESC> `<gv:m '<-2<CR>gv
 
 " Make movement in visual mode more like how I have it in normal mode
 vnoremap H ^
