@@ -127,6 +127,9 @@ nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
 nnoremap [B :bfirst<CR>
 nnoremap ]B :blast<CR>
+" Move to begining/end of fold region
+nnoremap [f [z
+nnoremap ]f ]z
 " Move through tabs
 nnoremap [t :tabN<CR>
 nnoremap ]t :tabn<CR>
@@ -215,7 +218,6 @@ nnoremap [s :<C-U>sp<CR>
 nnoremap ]s :<C-U>vsp<CR>
 " }}}
 " }}}
-"==============================================================================}}}
 "==============================================================================}}}
 " Insert Mode Mappings ========================================================{{{
 "==============================================================================
