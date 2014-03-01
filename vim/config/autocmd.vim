@@ -25,9 +25,9 @@ augroup omnifuncs
 augroup END
 
 " Source file-specific vimrcs
-if @% != ""
-    runtime @% . ".vimrc"
-endif
+autocmd BufReadPost * if @% != ""
+            \ | runtime @% . ".vimrc"
+            \ | endif
 
 " Re-source .vimrc everytime it's modified
 augroup reload_vimrc
