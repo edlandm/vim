@@ -350,7 +350,7 @@
 " fileformats  list of file formats to look for when editing a file
    set ffs=unix,dos
 " backup  keep a backup after overwriting a file
-   set nobk  bk
+   set nobk
 " backupdir  list of directories to put backup files in
    " set bdir=.,/Users/miles/tmp,/Users/miles/
 " autowrite  automatically write a file when leaving a modified buffer
