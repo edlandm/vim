@@ -1,9 +1,3 @@
-[user]
-	name = Miles Edland
-	email = miles.edlandm@gmail.com
-    username = edlandm
-[push]
-	default = simple
 [grep]
     extendRegexp = true
     lineNumber = true
@@ -20,6 +14,8 @@
     gr = grep --break --heading --line-number
     ls = log --oneline --graph -n 25
     st = status -sb
+[include]
+    path = ~/gitconfig.local
 
 # Idea commands that are neat
 #

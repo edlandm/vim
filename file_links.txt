@@ -1,6 +1,7 @@
 # git files
-gitconfig.laptop,$HOME/.gitconfig,laptop
-gitconfig.nari,$HOME/.gitconfig,nari
+git/gitconfig,$HOME/.gitconfig
+git/laptop.gitconfig,$HOME/.local.gitconfig,laptop
+git/nari.gitconfig,$HOME/.local.gitconfig,nari
 
 # slate files
 slate/slate,$HOME/.slate,laptop
@@ -10,7 +11,8 @@ slate/slate.js,$HOME/.slate.js,laptop
 tmux/tmux.conf,$HOME/.tmux.conf
 tmux/tmux.reset.conf,$HOME/.tmux.reset.conf
 
-bash_profile,$HOME/.bash_profile
+# bash files
+bash/bash_profile,$HOME/.bash_profile
 
 # vim files
 vim/vimrc,$HOME/.vimrc
