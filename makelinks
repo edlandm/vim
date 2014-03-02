@@ -84,7 +84,8 @@ def main():
             # Check that the file your trying to link actually exists
             if not exists(source):
                 print ("{} does not exist\n"
-                       "You need to update file_links.txt with its current location.")
+                       "You need to update file_links.txt with its current"
+                       "location.").format(source)
                 continue
 
             if args:
