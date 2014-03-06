@@ -141,11 +141,15 @@ nnoremap [t :tabN<CR>
 nnoremap ]t :tabn<CR>
 nnoremap [T :tabfirst<CR>
 nnoremap ]T :tablast<CR>
-" Move (reorder) tabs; [m = left; ]m = right
-nnoremap [m :tabm -<CR>
-nnoremap ]m :tabm +<CR>
+" Reorder tabs; [m = left; ]m = right
+nnoremap [r :tabm -<CR>
+nnoremap ]r :tabm +<CR>
 " Zoom window; To unzoom simply close the window/tab
 nnoremap [z :tabedit %<CR>
+" Minimize window
+nnoremap [m :res1<CR>
+" Maximize window
+nnoremap ]m <C-W>_
 "}}}
 " Line Operations {{{
 " Add [count] lines above cursor
