@@ -38,6 +38,8 @@ alias mmv='noglob zmv -W'
 alias wcl='wc -l'
 # Return status code of an http request
 alias httpstat='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
+# Clear screen
+alias c='clear'
 #===============================================================================}}}
 # ls Aliases ==================================================================={{{
 #===============================================================================
@@ -130,6 +132,19 @@ alias gs='git st'
 alias gg='git gr'
 alias grm='git rm'
 #===============================================================================}}}
+# todo.txt aliases ============================================================={{{
+#===============================================================================
+alias ta='todo.sh add'
+alias tam='todo.sh addm'
+alias td='todo.sh do'
+alias tdl='todo.sh -f del'
+alias tg='todo.sh ls @Groceries'
+alias tp='todo.sh pri'
+alias tls='todo.sh ls'
+alias tlc='todo.sh listcon'
+alias tlp='todo.sh listpri'
+#===============================================================================}}}
+tga() { todo.sh add "@Groceries $*" }
 # Dictionary functions ========================================================={{{
 #===============================================================================
 # Dictionnary of computing (foldoc)
