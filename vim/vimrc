@@ -29,7 +29,9 @@ endif
 runtime! config/*
 
 " Load any .vimrc.local files in current directory
-runtime ./.local.vimrc
+if filereadable('.local.vimrc')
+    source .local.vimrc
+endif
 
 " if &term =~ 'xterm-256color'
     " Disable Background Color Erase (BCE) so that color schemes
