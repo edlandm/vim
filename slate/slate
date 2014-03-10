@@ -48,7 +48,7 @@ bind d:${hyper} focus 'MacVim' # This doesn't have a mneumonic yet, deal with it
 bind e:${hyper} focus 'TextEdit'
 bind f:${hyper} focus 'Finder'
 bind g:${hyper} focus 'Google Chrome'
-bind i:${hyper} focus 'iTunes'
+# bind i:${hyper} focus 'iTunes'
 bind m:${hyper} focus 'Mail'
 bind n:${hyper} focus 'Evernote'
 bind p:${hyper} focus 'Preview'
@@ -57,6 +57,10 @@ bind s:${hyper} focus 'Safari'
 bind t:${hyper} focus 'Terminal'
 bind v:${hyper} focus 'VLC'
 bind x:${hyper} focus 'TextEdit'
+
+bind [:${hyper} shell '/usr/local/bin/cmus-remote -r'
+bind ]:${hyper} shell '/usr/local/bin/cmus-remote -n'
+bind =:${hyper} shell '/usr/local/bin/cmus-remote -u'
 
 #
 # The following 'bind' lines allow you to hold "CTRL" and "COMMAND"
