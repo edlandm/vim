@@ -26,10 +26,7 @@ endif
 " let current_dir = getcwd()
 
 " Split up config settings into multiple files (modularization ftw!)
-runtime! config/*
-
-" Load any .vimrc.local files in current directory
-runtime ./.local.vimrc
+runtime! config/*.vim
 
 " if &term =~ 'xterm-256color'
     " Disable Background Color Erase (BCE) so that color schemes
