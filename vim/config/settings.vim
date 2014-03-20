@@ -112,7 +112,7 @@
     set nocuc
 " cursorline   highlight the screen line of the cursor
 " (local to window)
-     set cul
+    set cul
 " colorcolumn   columns to highlight
 " (local to window)
     " execute "set colorcolumn=".join(range(81,200), ",")
@@ -351,6 +351,7 @@
    set ffs=unix,dos
 " backup  keep a backup after overwriting a file
    set nobk
+   set nowb
 " backupdir  list of directories to put backup files in
    " set bdir=.,/Users/miles/tmp,/Users/miles/
 " autowrite  automatically write a file when leaving a modified buffer
