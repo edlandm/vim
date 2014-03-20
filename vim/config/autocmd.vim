@@ -30,8 +30,8 @@ autocmd VimEnter * if filereadable("./.local.vimrc") == 1
             \ | endif
 
 " Source file-specific vimrcs
-autocmd BufReadPost * if @% != ""
-            \ | runtime @% . ".vimrc"
+autocmd BufReadPost * if filereadable(expand("%") . ".vimrc") == 1
+            \ | execute "source " . expand("%") . ".vimrc"
             \ | endif
 
 " Re-source .vimrc everytime it's modified
