@@ -24,6 +24,11 @@ augroup omnifuncs
                 \ | endif
 augroup END
 
+" Source directory-local vimrc
+autocmd VimEnter * if filereadable("./.local.vimrc") == 1
+            \ | source ./.local.vimrc
+            \ | endif
+
 " Source file-specific vimrcs
 autocmd BufReadPost * if @% != ""
             \ | runtime @% . ".vimrc"
