@@ -37,6 +37,6 @@ autocmd BufReadPost * if filereadable(expand("%") . ".vimrc") == 1
 " Re-source .vimrc everytime it's modified
 augroup reload_vimrc
     autocmd!
-    autocmd BufWritePost *.vimrc source call expand("%")
-    autocmd BufWritePost *.vimrc.local source call expand("%")
+    autocmd BufWritePost *.vimrc execute 'source ' . expand("%")
+                \ | redraw!
 augroup END
