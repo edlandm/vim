@@ -212,6 +212,26 @@ for [key, val] in items(settings)
     exec printf("nnoremap <silent> ]o%s :<C-U>set no%s<CR>", key, val)
     exec printf("nnoremap <silent> co%s :<C-U>set %s!<CR>", key, val)
 endfor
+
+function! ToggleDvorak(val)
+    " 1 means 'enable dvorak'
+    if a:val == 1
+        " runtime keyboard/qwerty2dvorak
+        set keymap=dvorak
+        silent! unmap! jk
+        silent! unmap! kj
+        map! jj <ESC> '^
+    else
+        " runtime keyboard/dvorak2qwerty
+        set keymap=
+        map! jk <ESC> '^
+        map! kj <ESC> '^
+        silent! unmap! jj
+    endif
+endfunc
+
+nnoremap <silent> [od :call ToggleDvorak(0)<CR>
+nnoremap <silent> ]od :call ToggleDvorak(1)<CR>
 " }}}
 " Windows {{{
 " Decrease window height (by 5)
