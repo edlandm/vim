@@ -142,15 +142,9 @@ nnoremap [t :tabN<CR>
 nnoremap ]t :tabn<CR>
 nnoremap [T :tabfirst<CR>
 nnoremap ]T :tablast<CR>
-" Reorder tabs; [m = left; ]m = right
+" Reorder tabs; [r = left; ]r = right
 nnoremap [r :tabm -<CR>
 nnoremap ]r :tabm +<CR>
-" Zoom window; To unzoom simply close the window/tab
-nnoremap [z :tabedit %<CR>
-" Minimize window
-nnoremap [m :res1<CR>
-" Maximize window
-nnoremap ]m <C-W>_
 "}}}
 " Line Operations {{{
 " Add [count] lines above cursor
@@ -200,7 +194,6 @@ nnoremap ]u g+
 let settings = {
             \ 'c': 'cursorline',
             \ 'h': 'hlsearch',
-            \ 'l': 'list',
             \ 'n': 'number',
             \ 'r': 'relativenumber',
             \ 's': 'spell',
@@ -243,10 +236,20 @@ nnoremap ]w :<C-U>resize +5<CR>
 nnoremap [W :<C-U>vertical resize -5<CR>
 " Increase window width (by 5)
 nnoremap ]W :<C-U>vertical resize +5<CR>
+" Minimize window vertically
+nnoremap [m :<C-U>res1<CR>
+" Maximize window vertically
+nnoremap ]m <C-W>_
+" Minimize window horizontally
+nnoremap [M :<C-U>vertical resize1<CR>
+" Maximize window horizontally
+nnoremap ]M :<C-U>vertical resize1000<CR>
 " Split window horizontally
 nnoremap [s :<C-U>sp<CR>
 " Split window vertically
 nnoremap ]s :<C-U>vsp<CR>
+" Zoom window; To unzoom simply close the window/tab
+nnoremap [z :tabedit %<CR>
 " }}}
 " }}}
 "==============================================================================}}}
