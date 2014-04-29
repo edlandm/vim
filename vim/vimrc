@@ -37,7 +37,7 @@ runtime! config/*.vim
 set t_ut=
 
 " Set dvorak for insert and command mode
-call ToggleDvorak(1)
+" call ToggleDvorak(1)
 
 " Run pathogen to load plugins
 execute pathogen#infect()
