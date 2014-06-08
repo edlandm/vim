@@ -5,31 +5,6 @@
 " Set leader key
 let mapleader = "\<space>"
 
-" Toggle relative/absolute line-numbers
-function! RelNumberToggle()
-    if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-"nmap <silent> <Leader>1 :call LineNumberToggle()<CR>
-
-" Toggle line-numbers
-function! LineNumberToggle()
-    if(&relativenumber == 1)
-        set invrelativenumber
-    elseif(&number == 1)
-        set invnumber
-    else
-        set number
-    endif
-endfunc
-"nmap <silent> <Leader>2 :call RelNumberToggle()<CR>
-
-" Toggle search highlighting
-nnoremap <silent> <Leader>h :set hlsearch!<CR>
-
 " Search and replace selected text
 function! CmdLine(str) "{{{
     exe "menu Foo.Bar :" . a:str
