@@ -1,4 +1,14 @@
 "=============================Autocommand Settings=============================
+" Source directory-local vimrc
+autocmd VimEnter * if filereadable("./.local.vimrc") == 1
+            \ | source ./.local.vimrc
+            \ | endif
+
+" Source file-specific vimrcs
+autocmd BufReadPost * if filereadable(expand("%") . ".vimrc") == 1
+            \ | execute "source " . expand("%") . ".vimrc"
+            \ | endif
+
 " wsgi files are python
 autocmd BufNewFile,BufRead *.wsgi set filetype=python
 
