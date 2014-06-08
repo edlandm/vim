@@ -65,6 +65,68 @@ nnoremap <leader>fm :set fdm=marker<CR>
 nnoremap <leader>fs :set fdm=syntax<CR>
 nnoremap <leader>fd :set fdm=diff<CR>
 
+" Save the file
+nnoremap <leader>w :w<CR>
+
+
+" Tab stuff {{{
+" Move through tabs
+nnoremap <leader>tt :tabnew<CR>
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>tn :tabn<CR>
+nnoremap <leader>tN :tabN<CR>
+nnoremap <leader>tf :tabfirst<CR>
+nnoremap <leader>tl :tablast<CR>
+
+" Move tabs (tm moves current tab to the right, tM to the left)
+nnoremap <leader>tm :tabm +<CR>
+nnoremap <leader>tM :tabm -<CR>
+" }}}
+
+" Window stuff "{{{
+" Minimize window height
+nnoremap <leader>wm :res1<CR>
+" Maximize window height
+nnoremap <leader>wM :res200<CR>
+" Minimize  window width
+nnoremap <leader>wvm :vertical res2<CR>
+" Maximize window width
+nnoremap <leader>wvM :vertical res200<CR>
+
+" Decrease window height by 5
+nnoremap <leader>wr :res -5<CR>
+" Increase window height by 5
+nnoremap <leader>wR :res +5<CR>
+" Decrease window width by 5
+nnoremap <leader>wvr :vertical res -5<CR>
+" Increase window width by 5
+nnoremap <leader>wvR :vertical res +5<CR>
+
+" Split window horizontally
+nnoremap <leader>- :sp<CR>
+" Split window vertically
+nnoremap <leader>\| :vsp<CR>
+
+" toggles whether or not the current window is automatically zoomed
+function! ToggleMaxWins() "{{{
+  if exists('g:windowMax')
+    au! maxCurrWin
+    wincmd =
+    unlet g:windowMax
+  else
+    augroup maxCurrWin
+        " au BufEnter * wincmd _ | wincmd |
+        "
+        " only max it vertically
+        au! WinEnter * wincmd _
+    augroup END
+    do maxCurrWin WinEnter
+    let g:windowMax=1
+  endif
+endfunction "}}}
+nnoremap <leader>z :call ToggleMaxWins()<CR>
+"}}}
+
 "==============================================================================}}}
 " Normal Mode Mappings ========================================================{{{
 "==============================================================================
