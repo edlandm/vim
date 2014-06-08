@@ -25,6 +25,15 @@ endif
 " let hostname = substitute(system('hostname'), '\n', '', '')
 " let current_dir = getcwd()
 
+" Set colorscheme (the first one that exists will be used)
+if has#colorscheme('lucius')
+    set background=dark
+    colo lucius
+elseif has#colorscheme('gruvbox')
+    colo gruvbox
+else
+    colo ron
+endif
 " Split up config settings into multiple files (modularization ftw!)
 runtime! config/*.vim
 
