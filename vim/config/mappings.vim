@@ -2,8 +2,8 @@
 "=================================  Mappings  =================================
 " Leader Mappings ============================================================= {{{
 "==============================================================================
-" Maps leader key to ,
-let mapleader = ","
+" Set leader key
+let mapleader = "\<space>"
 
 " Toggle relative/absolute line-numbers
 function! RelNumberToggle()
