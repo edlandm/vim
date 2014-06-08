@@ -25,4 +25,4 @@ nnoremap <leader>S "sP
 
 " Surround selection with "**"
 "
-vnoremap <leader>h <ESC>`<i**<ESC>`>a**<ESC>gv
+vnoremap <leader>h <ESC>`<i**<ESC>`>lla**<ESC>gv
