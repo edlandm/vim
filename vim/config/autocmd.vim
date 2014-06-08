@@ -34,10 +34,8 @@ augroup omnifuncs
                 \ | endif
 augroup END
 
-" Source directory-local vimrc
-autocmd VimEnter * if filereadable("./.local.vimrc") == 1
-            \ | source ./.local.vimrc
-            \ | endif
+" Remove trailing white spaces when file is saved
+autocmd BufWritePre :%s/\s\+$//
 
 " Source file-specific vimrcs
 autocmd BufReadPost * if filereadable(expand("%") . ".vimrc") == 1
