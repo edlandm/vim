@@ -282,8 +282,7 @@ inoremap <silent><C-j> <ESC>mz:m+<CR>`zi
 cnoremap <Space><Space> \<Space>
 
 " Exit Insert-mode by pressing j+k together (order doesn't matter)
-cnoremap jk <ESC> `^
-cnoremap kj <ESC> `^
+cnoremap hh <ESC> `^
 "==============================================================================}}}
 " Visual Mode Mappings ========================================================{{{
 "==============================================================================
