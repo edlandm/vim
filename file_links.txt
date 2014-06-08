@@ -16,6 +16,7 @@ bash/bash_profile,$HOME/.bash_profile
 
 # vim files
 vim/vimrc,$HOME/.vimrc
+vim/autoload/has.vim,$HOME/.vim/autoload/has.vim
 vim/config/gravelpit.vim,$HOME/.vim/config/local.vim,gravelpit
 vim/config/laptop.vim,$HOME/.vim/config/local.vim,laptop
 vim/config/nari.vim,$HOME/.vim/config/local.vim,nari
