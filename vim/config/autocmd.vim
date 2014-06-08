@@ -1,3 +1,4 @@
+" vim:fdm=marker
 "=============================Autocommand Settings=============================
 " Source directory-local vimrc
 autocmd VimEnter * if filereadable("./.local.vimrc") == 1
