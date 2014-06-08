@@ -40,3 +40,6 @@ augroup reload_vimrc
     autocmd BufWritePost *.vimrc execute 'source ' . expand("%")
                 \ | redraw!
 augroup END
+
+" Remove trailing white spaces on write
+autocmd BufWritePre * :%s/\s\+$//e
