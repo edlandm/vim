@@ -31,12 +31,12 @@ endfunc
 nnoremap <silent> <Leader>h :set hlsearch!<CR>
 
 " Search and replace selected text
-function! CmdLine(str)
+function! CmdLine(str) "{{{
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
-endfunction
-function! VisualSelection(direction) range
+endfunction "}}}
+function! VisualSelection(direction) range "{{{
     let l:saved_reg = @"
     execute "normal! vgvy"
 
@@ -55,7 +55,7 @@ function! VisualSelection(direction) range
 
     let @/ = l:pattern
     let @" = l:saved_reg
-endfunction
+endfunction "}}}
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 " Set fold method
