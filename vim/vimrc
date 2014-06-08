@@ -50,3 +50,4 @@ set t_ut=
 
 " Run pathogen to load plugins
 execute pathogen#infect()
+execute pathogen#helptags()
