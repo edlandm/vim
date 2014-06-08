@@ -174,39 +174,14 @@ nnoremap k gk
 " Select last pasted text
 nnoremap gV `[v`]
 
-" Yank text to clipboard (Works on OS X)
-nnoremap <Leader>y "+y
-nnoremap <Leader>yy "+yy
-
-" Paste from clipboard (and preserve indentation)
-nnoremap <Leader>p :set paste<CR>:put +<CR>:set nopaste<CR>
-
 " Toggle foldenable (un/folds all folds)
 nnoremap <silent> zft :<C-U>set fen!
 
 " Unimpaired mappings (Strongly inspired by tpope, some of this is borrowed) {{{
 " Navigate files {{{
-" Move through arglist
-nnoremap [a :previous<CR>
-nnoremap ]a :next<CR>
-nnoremap [A :first<CR>
-nnoremap ]A :last<CR>
-" Move through buffers
-nnoremap [b :bprevious<CR>
-nnoremap ]b :bnext<CR>
-nnoremap [B :bfirst<CR>
-nnoremap ]B :blast<CR>
 " Move to begining/end of fold region
 nnoremap [f [z
 nnoremap ]f ]z
-" Move through tabs
-nnoremap [t :tabN<CR>
-nnoremap ]t :tabn<CR>
-nnoremap [T :tabfirst<CR>
-nnoremap ]T :tablast<CR>
-" Reorder tabs; [r = left; ]r = right
-nnoremap [r :tabm -<CR>
-nnoremap ]r :tabm +<CR>
 "}}}
 " Line Operations {{{
 " Add [count] lines above cursor
@@ -268,50 +243,6 @@ for [key, val] in items(settings)
     exec printf("nnoremap <silent> ]o%s :<C-U>set no%s<CR>", key, val)
     exec printf("nnoremap <silent> co%s :<C-U>set %s!<CR>", key, val)
 endfor
-
-function! ToggleDvorak(val)
-    " 1 means 'enable dvorak'
-    if a:val == 1
-        " runtime keyboard/qwerty2dvorak
-        set keymap=dvorak
-        silent! unmap! jk
-        silent! unmap! kj
-        map! jj <ESC> '^
-    else
-        " runtime keyboard/dvorak2qwerty
-        set keymap=
-        map! jk <ESC> '^
-        map! kj <ESC> '^
-        silent! unmap! jj
-    endif
-endfunc
-
-nnoremap <silent> [od :call ToggleDvorak(0)<CR>
-nnoremap <silent> ]od :call ToggleDvorak(1)<CR>
-" }}}
-" Windows {{{
-" Decrease window height (by 5)
-nnoremap [w :<C-U>resize -5<CR>
-" Increase window height (by 5)
-nnoremap ]w :<C-U>resize +5<CR>
-" Decrease window width (by 5)
-nnoremap [W :<C-U>vertical resize -5<CR>
-" Increase window width (by 5)
-nnoremap ]W :<C-U>vertical resize +5<CR>
-" Minimize window vertically
-nnoremap [m :<C-U>res1<CR>
-" Maximize window vertically
-nnoremap ]m <C-W>_
-" Minimize window horizontally
-nnoremap [M :<C-U>vertical resize1<CR>
-" Maximize window horizontally
-nnoremap ]M :<C-U>vertical resize1000<CR>
-" Split window horizontally
-nnoremap [s :<C-U>sp<CR>
-" Split window vertically
-nnoremap ]s :<C-U>vsp<CR>
-" Zoom window; To unzoom simply close the window/tab
-nnoremap [z :tabedit %<CR>
 " }}}
 " }}}
 "==============================================================================}}}
