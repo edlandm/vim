@@ -175,7 +175,7 @@ nnoremap k gk
 nnoremap gV `[v`]
 
 " Toggle foldenable (un/folds all folds)
-nnoremap <silent> zft :<C-U>set fen!
+nnoremap <silent> zft :<C-U>set fen!<CR>
 
 " Unimpaired mappings (Strongly inspired by tpope, some of this is borrowed) {{{
 " Navigate files {{{
