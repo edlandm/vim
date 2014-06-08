@@ -1,3 +1,4 @@
+" vim:fdm=marker
 "===================================== Settings ================================
 " Important ===================================================================={{{
 " compatible   behave very Vi compatible (not advisable)
