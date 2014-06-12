@@ -1,5 +1,14 @@
-" Enable Emmet in all modes
-let g:user_emmet_mode='a'
+" Only emable emmet in insert mode to avoid mapping conflicts
+let g:user_emmet_mode='i'
 
-" Set Emmet Leader Key -- default is: <C-y>
-let g:user_emmet_leader_key='<c-e>'
+" Expand emmet expressions with tab or go to next element
+function! s:emmet_html_tab()
+    let line = getline('.')
+    " If line is already html, jump to the next element
+    if match(line, '<.*>') >= 0
+        return "\<c-y>n"
+    endif
+    " Otherwise expand the emmet expression
+    return "\<c-y>,"
+endfunction
+au FileType html imap <buffer><expr><tab> <sid>emmet_html_tab()
