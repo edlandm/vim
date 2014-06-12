@@ -83,6 +83,9 @@ nnoremap <leader>fm :set fdm=marker<CR>
 nnoremap <leader>fs :set fdm=syntax<CR>
 nnoremap <leader>fd :set fdm=diff<CR>
 "}}}
+" Git stuff | <leader>g "{{{
+" No mappings for it here because they're all with the fugitive plugin
+"}}}
 " Mark stuff | <leader>m "{{{
 nnoremap <leader>m `
 nnoremap <leader>M :marks<CR>
