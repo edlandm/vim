@@ -60,6 +60,12 @@ function! ToggleMaxWins() "{{{
 endfunction "}}}
 nnoremap <leader>z :call ToggleMaxWins()<CR>
 
+" Jump to next/previous change in diff mode
+au BufEnter * if &diff
+            \ | nnoremap <leader>c ]c
+            \ | nnoremap <leader>C [c
+            \ | endif
+
 " Buffer stuff | <leader>b "{{{
 nnoremap <leader>b, :bufdo
 nnoremap <leader>bN :bNext<CR>
