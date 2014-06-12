@@ -1,6 +1,6 @@
 " vim:fdm=marker
 "=================================  Mappings  =================================
-" Leader Mappings ============================================================= {{{
+" Leader Mappings ============================================================= "{{{
 "==============================================================================
 " Set leader key
 let mapleader = "\<space>"
@@ -33,49 +33,8 @@ function! VisualSelection(direction) range "{{{
 endfunction "}}}
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
-" Set fold method
-nnoremap <leader>ff :set fdm=manual<CR>
-nnoremap <leader>fi :set fdm=indent<CR>
-nnoremap <leader>fm :set fdm=marker<CR>
-nnoremap <leader>fs :set fdm=syntax<CR>
-nnoremap <leader>fd :set fdm=diff<CR>
-
 " Save the file
 nnoremap <leader>w :w<CR>
-
-
-" Tab stuff {{{
-" Move through tabs
-nnoremap <leader>tt :tabnew<CR>
-nnoremap <leader>tc :tabclose<CR>
-nnoremap <leader>tn :tabn<CR>
-nnoremap <leader>tN :tabN<CR>
-nnoremap <leader>tf :tabfirst<CR>
-nnoremap <leader>tl :tablast<CR>
-
-" Move tabs (tm moves current tab to the right, tM to the left)
-nnoremap <leader>tm :tabm +<CR>
-nnoremap <leader>tM :tabm -<CR>
-" }}}
-
-" Window stuff "{{{
-" Minimize window height
-nnoremap <leader>wm :res1<CR>
-" Maximize window height
-nnoremap <leader>wM :res200<CR>
-" Minimize  window width
-nnoremap <leader>wvm :vertical res2<CR>
-" Maximize window width
-nnoremap <leader>wvM :vertical res200<CR>
-
-" Decrease window height by 5
-nnoremap <leader>wr :res -5<CR>
-" Increase window height by 5
-nnoremap <leader>wR :res +5<CR>
-" Decrease window width by 5
-nnoremap <leader>wvr :vertical res -5<CR>
-" Increase window width by 5
-nnoremap <leader>wvR :vertical res +5<CR>
 
 " Split window horizontally
 nnoremap <leader>- :sp<CR>
@@ -100,9 +59,79 @@ function! ToggleMaxWins() "{{{
   endif
 endfunction "}}}
 nnoremap <leader>z :call ToggleMaxWins()<CR>
-"}}}
 
-"==============================================================================}}}
+" Buffer stuff | <leader>b "{{{
+nnoremap <leader>b, :bufdo
+nnoremap <leader>bN :bNext<CR>
+nnoremap <leader>bd :bdelete<CR>
+nnoremap <leader>bf :bfirst<CR>
+nnoremap <leader>bl :blast<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bu :bunload<CR>
+"}}}
+" Fold stuff | <leader>f "{{{
+nnoremap <leader>ff :set fdm=manual<CR>
+nnoremap <leader>fi :set fdm=indent<CR>
+nnoremap <leader>fm :set fdm=marker<CR>
+nnoremap <leader>fs :set fdm=syntax<CR>
+nnoremap <leader>fd :set fdm=diff<CR>
+"}}}
+" Mark stuff | <leader>m "{{{
+nnoremap <leader>m `
+nnoremap <leader>M :marks<CR>
+"}}}
+" Toggle settings | <leader>o "{{{
+let settings = {
+            \ 'c': 'cursorline',
+            \ 'h': 'hlsearch',
+            \ 'n': 'number',
+            \ 'r': 'relativenumber',
+            \ 's': 'spell',
+            \ 'u': 'cursorcolumn',
+            \ 'w': 'wrap',
+            \ }
+
+for [key, val] in items(settings)
+    exec printf("nnoremap <silent> <leader>o%s :<C-U>set inv%s<CR>", key, val)
+endfor
+" }}}
+" Tab stuff | <leader>t {{{
+" Move through tabs
+nnoremap <leader>t, :tabdo
+nnoremap <leader>tN :tabN<CR>
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>tf :tabfirst<CR>
+nnoremap <leader>tl :tablast<CR>
+" Move tabs (tm moves current tab to the right, tM to the left)
+nnoremap <leader>tm :tabm +<CR>
+nnoremap <leader>tM :tabm -<CR>
+nnoremap <leader>tn :tabn<CR>
+nnoremap <leader>to :tabonly<CR>
+nnoremap <leader>tt :tabnew<CR>
+" }}}
+" Window stuff | <leader>w "{{{
+nnoremap <leader>w, :windo
+
+" Minimize window height
+nnoremap <leader>wm :res1<CR>
+" Maximize window height
+nnoremap <leader>wM :res200<CR>
+" Minimize  window width
+nnoremap <leader>wvm :vertical res2<CR>
+" Maximize window width
+nnoremap <leader>wvM :vertical res200<CR>
+
+" Decrease window height by 5
+nnoremap <leader>wr :res -5<CR>
+" Increase window height by 5
+nnoremap <leader>wR :res +5<CR>
+" Decrease window width by 5
+nnoremap <leader>wvr :vertical res -5<CR>
+" Increase window width by 5
+nnoremap <leader>wvR :vertical res +5<CR>
+"}}}
+"=============================================================================="}}}
 " Normal Mode Mappings ========================================================{{{
 "==============================================================================
 " Re-sources .vimrc
@@ -148,9 +177,6 @@ nnoremap k gk
 
 " Select last pasted text
 nnoremap gV `[v`]
-
-" Toggle foldenable (un/folds all folds)
-nnoremap <silent> zft :<C-U>set fen!<CR>
 
 " Unimpaired mappings (Strongly inspired by tpope, some of this is borrowed) {{{
 " Navigate files {{{
@@ -201,24 +227,6 @@ nnoremap [u g-
 " Go to next text state
 nnoremap ]u g+
 "===============================================================================}}}
-" Toggle settings {{{
-" [o = on; ]o = off; co = toggle
-let settings = {
-            \ 'c': 'cursorline',
-            \ 'h': 'hlsearch',
-            \ 'n': 'number',
-            \ 'r': 'relativenumber',
-            \ 's': 'spell',
-            \ 'u': 'cursorcolumn',
-            \ 'w': 'wrap',
-            \ }
-
-for [key, val] in items(settings)
-    exec printf("nnoremap <silent> [o%s :<C-U>set %s<CR>", key, val)
-    exec printf("nnoremap <silent> ]o%s :<C-U>set no%s<CR>", key, val)
-    exec printf("nnoremap <silent> co%s :<C-U>set %s!<CR>", key, val)
-endfor
-" }}}
 " }}}
 "==============================================================================}}}
 " Insert Mode Mappings ========================================================{{{
