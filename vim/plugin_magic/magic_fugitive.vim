@@ -1,8 +1,11 @@
 " Commit
-nmap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gc :Gcommit<CR>
 
 " Open Git DiffMode
-nmap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gd :Gdiff<CR>
 
 " Git Status
-nmap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+
+" Git Blame
+nnoremap <Leader>gb :Gblame<CR>
