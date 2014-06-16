@@ -55,3 +55,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Leave paste mode when leaving insert mode
 autocmd InsertLeave * set nopaste
+
+" Spellcheck Commit messages
+autocmd BufRead COMMIT_EDITMSG setlocal spell!
