@@ -117,6 +117,7 @@
 " colorcolumn   columns to highlight
 " (local to window)
     " execute "set colorcolumn=".join(range(81,200), ",")
+    set colorcolumn=80
 " spellsuggest   methods used to suggest corrections
     set sps=best
 " mkspellmem   amount of memory used by :mkspell before compressing
