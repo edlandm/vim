@@ -47,6 +47,7 @@ function! ToggleMaxWins() "{{{
     au! maxCurrWin
     wincmd =
     unlet g:windowMax
+    echo "Unzoom"
   else
     augroup maxCurrWin
         " au BufEnter * wincmd _ | wincmd |
@@ -56,6 +57,7 @@ function! ToggleMaxWins() "{{{
     augroup END
     do maxCurrWin WinEnter
     let g:windowMax=1
+    echo "Zoom"
   endif
 endfunction "}}}
 nnoremap <leader>z :call ToggleMaxWins()<CR>
