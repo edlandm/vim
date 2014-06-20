@@ -15,7 +15,7 @@ def make_link(source, dest):
     The part that actually links the files
     """
     source = expv(source)
-    print "Linking: {} -> {}".format(dest, source)
+    print "Linking: {} -> {}".format(source, dest)
     try:
         if isdir(dest):
             rmtree(dest)
