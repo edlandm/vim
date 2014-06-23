@@ -1,7 +1,11 @@
 " vim:fdm=marker
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
-set nocompatible
+if has('vim_starting')
+    set nocompatible
+
+    set runtimepath +=~/.vim/bundle/neobundle.vim/
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 if &t_Co > 2 || has("gui_running")
@@ -46,9 +50,42 @@ runtime! config/*.vim
 " endif
 set t_ut=
 
-" Set dvorak for insert and command mode
-" call ToggleDvorak(1)
+" Use git protocol
+let g:neobundle#types#git#default_protocol = 'git'
 
-" Run pathogen to load plugins
-execute pathogen#infect()
+" Start NeoBundle
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+let overridden = [
+            \ 'tpope/vim-fugitive.git',
+            \ 'shougo/vimproc.vim'
+            \ ]
+
+NeoBundle 'tpope/vim-fugitive.git', { 'augroup' : 'fugitive' }
+NeoBundle 'Shougo/vimproc.vim', { 'build': {'unix': 'make'}}
+
+" Load all plugins that don't require special settings
+let bundle_list=expand('$HOME/.vim/bundle_list.txt')
+if filereadable(bundle_list)
+for bundle in readfile(bundle_list)
+    if index(overridden, tolower(bundle)) == -1
+        execute "NeoBundle '" . bundle . "'"
+    endif
+endfor
+endif
+
+call neobundle#end()
+
+" Call on_source hook when reloading .vimrc.
+if !has('vim_starting')
+    call neobundle#call_hook('on_source')
+endif
+
+" Generate help pages
 execute pathogen#helptags()
+
+" If there are uninstalled bundles found on startup, this will prompt to install
+NeoBundleCheck
