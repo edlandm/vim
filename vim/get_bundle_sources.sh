@@ -7,11 +7,16 @@ BUNDLEPATH=$HOME/.vim/bundle
 BUNDLES=$(ls $BUNDLEPATH | grep -v '.*~')
 TMPFILE=$HOME/tmp_vim_source_list
 
+if [ -z "$1" ];then
+    echo "Please specify a destination for the list."
+    exit
+fi
+
 echo "Getting sources, this may take a few seconds..."
 # Generate list with $TMPFILE
 for f in $BUNDLES;do
     SOURCE=$(cd $BUNDLEPATH/$f; git remote show origin | head -n2 | tail -n1)
-    echo $SOURCE | sed 's/.*\.com\/\(.*\)/\1/' >> $TMPFILE
+    echo $SOURCE | sed 's/.*\.com\/\(.*\)/\1/' | sed 's/\.git//'>> $TMPFILE
 done
 # Move $TMPFILE to given location
 mv $TMPFILE $1
