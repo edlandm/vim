@@ -22,7 +22,7 @@ nnoremap <silent> <Tab>? :Unite -horizontal -direction=below -auto-resize -auto-
 nnoremap <silent> <Tab>b :Unite -horizontal -direction=below -start-insert buffer bookmark<CR>
 " Open list of recently accessed directories
 " *Selecting one changes working directory*
-nnoremap <silent> <Tab>d :Unite -buffer-name=Directories -default-action=lcd -start-insert directory<CR>
+" nnoremap <silent> <Tab>d :Unite -buffer-name=Directories -default-action=lcd -start-insert directory<CR>
 " Opens Unite and searches for word under cursor
 "nnoremap <silent> <Tab>. :UniteWithCursorWord file buffer file_rec<CR>
 " Open list of recently accessed files
@@ -32,3 +32,5 @@ nnoremap <silent> <Tab>B :UniteBookmarkAdd<CR><CR>
 " Open yank history (default action is to yank)
 nnoremap <silent> <Tab>y :Unite -horizontal -buffer-name=yank -winheight=5
                          \-default-action=yank history/yank<CR>
+" Search plugins (neobundle required)
+nnoremap <silent> <Tab>n :Unite neobundle/search<CR>
