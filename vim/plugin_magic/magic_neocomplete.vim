@@ -23,25 +23,26 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " <CR> -- close popup and save indent
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
   " For no inserting <CR> key.
   "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
+
 " <TAB>: completion.
 " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent> <expr><Tab>  neocomplete#start_manual_complete()
+" inoremap <silent> <expr><Tab>  neocomplete#start_manual_complete()
 " <C-h>, <BS>: close popup and delete backword char.
 " **Modified to work with delimitMate.
 " inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <silent> <expr><C-h> neocomplete#smart_close_popup().delimitMate#BS()
+" inoremap <silent> <expr><C-h> neocomplete#smart_close_popup().delimitMate#BS()
 " inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <silent> <expr><BS> neocomplete#smart_close_popup().delimitMate#BS()
-inoremap <silent> <expr><C-y>  neocomplete#close_popup()
-inoremap <silent> <expr><C-e>  neocomplete#cancel_popup()
+" inoremap <silent> <expr><BS> neocomplete#smart_close_popup().delimitMate#BS()
+" inoremap <silent> <expr><C-y>  neocomplete#close_popup()
+" inoremap <silent> <expr><C-e>  neocomplete#cancel_popup()
 " Close popup by <Space>.
-inoremap <silent> <expr><Space> pumvisible() ? neocomplete#close_popup()."<Space>" : "\<Space>"
+" inoremap <silent> <expr><Space> pumvisible() ? neocomplete#close_popup()."<Space>" : "\<Space>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
