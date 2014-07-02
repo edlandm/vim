@@ -8,7 +8,7 @@ let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
-au VimEnter * NeoCompleteEnable
+" au VimEnter * NeoCompleteEnable
 
 " Define dictionary.
 " let g:neocomplete#sources#dictionary#dictionaries = {
