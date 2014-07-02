@@ -4,6 +4,7 @@
 "==============================================================================
 " Set leader key
 let mapleader = "\<space>"
+let maplocalleader = ","
 
 " Search and replace selected text
 function! CmdLine(str) "{{{
