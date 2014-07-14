@@ -49,10 +49,11 @@ autoload -U zmv
 #   michelebologna #   pmcgee #   re5et #   ys
 # af-magic -- Previous theme
 #ZSH_THEME="jonathan"
-if [ -e $HOME/.shell_prompt.sh ];then
+if [ -e $HOME/.__shell_prompt.sh ];then
     source $HOME/.shell_prompt.sh ];
 else
-    ZSH_THEME="kphoen"
+    # ZSH_THEME="kphoen"
+    ZSH_THEME="pure"
 fi
 #===============================================================================}}}
 # Plugins ======================================================================{{{
