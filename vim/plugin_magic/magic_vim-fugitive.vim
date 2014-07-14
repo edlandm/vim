@@ -16,5 +16,5 @@ nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gb :Gblame<cr>
 vnoremap <leader>gb :'<,'>Gblame<cr>
 " Gwrite (git add current file)
-nnoremap <leader>gw :Gw<cr>
+nnoremap <leader>gw :Gw<cr>:w<cr>
 nnoremap <leader>ga :Gw<cr>
