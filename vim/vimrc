@@ -56,14 +56,6 @@ if !exists(":DiffOrig")
       \ | wincmd p | diffthis
 endif
 
-" if &term =~ 'xterm-256color'
-    " Disable Background Color Erase (BCE) so that color schemes
-    " work properly when Vim is used inside tmux and GNU screen.
-    " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
-    " set t_ut=
-" endif
-" set t_ut=
-
 " Generate help pages
 execute pathogen#helptags()
 
@@ -72,3 +64,10 @@ NeoBundleCheck
 
 " Split up config settings into multiple files (modularization ftw!)
 runtime! config/*.vim
+
+" Disable Background Color Erase (BCE) so that color schemes
+" work properly when Vim is used inside tmux and GNU screen.
+" See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+if &term =~ 'xterm-256color'
+    set t_ut=
+endif
