@@ -13,6 +13,7 @@ kovisoft/slimv
 vim-scripts/speeddating.vim
 scrooloose/syntastic
 majutsushi/tagbar
+wellle/targets.vim
 c9s/tinyurl.vim
 tomtom/tlib_vim
 edkolev/tmuxline.vim
