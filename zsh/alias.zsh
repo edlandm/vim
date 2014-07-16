@@ -43,8 +43,10 @@ alias httpstat='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
 alias c=' clear'
 
 alias cd=' cd'
-#===============================================================================}}}
-# ls Aliases ==================================================================={{{
+# Use to look up zsh documentation
+zman() {
+  PAGER="less -g -s '+/^       "$1"'" man zshall
+}
 #===============================================================================
 # Because I'm really THAT lazy
 alias l=' ls -l'
