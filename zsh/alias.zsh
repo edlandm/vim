@@ -138,6 +138,10 @@ alias gg='git gr'
 alias grm='git rm'
 alias gch='git checkout'
 alias gurl='git url | head -n2 | tail -n1'
+
+# used like: `gcm my fancy commit message`
+# NOTE: certain characters (like parenthesis) must be escaped
+gcm() { git commit -m "\"$@\""; }
 #===============================================================================}}}
 # todo.txt aliases ============================================================={{{
 #===============================================================================
