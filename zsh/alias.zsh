@@ -141,7 +141,7 @@ alias gurl='git url | head -n2 | tail -n1'
 
 # used like: `gcm my fancy commit message`
 # NOTE: certain characters (like parenthesis) must be escaped
-gcm() { git commit -m "\"$@\""; }
+gcm() { echo "\"$@\"" | xargs git commit -m ; }
 
 # Undo last commit
 gu() { git reset --soft HEAD~1; }
