@@ -130,12 +130,17 @@ alias dusa='du -s *(D/) | sort -nr | cut -f 2- | while read a; do du -sh "$a"; d
 #===============================================================================}}}
 # git Aliases =================================================================={{{
 #===============================================================================
+alias gl='git pull'
+alias gp='git push'
 alias gls='git ls'
-alias gs='git st'
+alias gd=' git diff'
+alias gs=' git st'
+alias ga='git add'
 alias gst='git stash'
 alias gsp='git stash pop'
 alias gg='git gr'
 alias grm='git rm'
+alias gc='git commit'
 alias gch='git checkout'
 alias gurl='git url | head -n2 | tail -n1'
 
