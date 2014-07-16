@@ -21,9 +21,9 @@ alias sag='sudo apachectl graceful'
 # Executes python file (with python)
 alias p]='python'
 # More dots
-alias -g ..='cd ../'
-alias -g ...='cd ../../'
-alias -g ....='cd ../../../'
+alias -g ..=' cd ../'
+alias -g ...=' cd ../../'
+alias -g ....=' cd ../../../'
 # slightly more readable df
 alias df='df -h'
 # grep and keep colors
@@ -40,84 +40,86 @@ alias wcl='wc -l'
 # Return status code of an http request
 alias httpstat='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
 # Clear screen
-alias c='clear'
+alias c=' clear'
+
+alias cd=' cd'
 #===============================================================================}}}
 # ls Aliases ==================================================================={{{
 #===============================================================================
 # Because I'm really THAT lazy
-alias l='ls -l'
+alias l=' ls -l'
 # ls vertically
-alias -g lsv='ls -1'
+alias -g lsv=' ls -1'
 # ls long format
-alias -g lsl='ls -lh'
+alias -g lsl=' ls -lh'
 # list all
-alias -g lsa='ls -a'
-alias -g lsla='ls -lha' # l for long format
-alias -g lsva='ls -1a' # v for vertical
+alias -g lsa=' ls -a'
+alias -g lsla=' ls -lha' # l for long format
+alias -g lsva=' ls -1a' # v for vertical
 # list hidden
-alias -g lsh='ls -d .*'
-alias -g lslh='ls -lhd .*' # l for long format
-alias -g lsvh='ls -1d .*' # v for vertical
+alias -g lsh=' ls -d .*'
+alias -g lslh=' ls -lhd .*' # l for long format
+alias -g lsvh=' ls -1d .*' # v for vertical
 # list files # only files, not symlinks or anything else
-alias -g lsf='ls *(N.)'
-alias -g lslf='ls -lh *(N.)' # l for long format
-alias -g lsvf='ls -1 *(N.)' # v for vertical
+alias -g lsf=' ls *(N.)'
+alias -g lslf=' ls -lh *(N.)' # l for long format
+alias -g lsvf=' ls -1 *(N.)' # v for vertical
 # list hidden files
-alias -g lshf='ls .*(N.)'
-alias -g lslhf='ls -lh .*(N.)' # l for long format
-alias -g lsvhf='ls -1 .*(N.)' # v for vertical
+alias -g lshf=' ls .*(N.)'
+alias -g lslhf=' ls -lh .*(N.)' # l for long format
+alias -g lsvhf=' ls -1 .*(N.)' # v for vertical
 # list all files
-alias -g lsaf='ls *(ND.)'
-alias -g lslaf='ls -lh *(ND.)' # l for long format
-alias -g lsvaf='ls -1 *(ND.)' # v for vertical
+alias -g lsaf=' ls *(ND.)'
+alias -g lslaf=' ls -lh *(ND.)' # l for long format
+alias -g lsvaf=' ls -1 *(ND.)' # v for vertical
 # list directories
-alias -g lsd='ls -d *(N/)'
-alias -g lsld='ls -lhd *(N/)' # l for long format
-alias -g lsvd='ls -1d *(N/)' # v for vertical
+alias -g lsd=' ls -d *(N/)'
+alias -g lsld=' ls -lhd *(N/)' # l for long format
+alias -g lsvd=' ls -1d *(N/)' # v for vertical
 # list hidden directories
-alias -g lshd='ls -d .*(N/)'
-alias -g lslhd='ls -lhd .*(N/)' # l for long format
-alias -g lsvhd='ls -1d .*(N/)' # v for vertical
+alias -g lshd=' ls -d .*(N/)'
+alias -g lslhd=' ls -lhd .*(N/)' # l for long format
+alias -g lsvhd=' ls -1d .*(N/)' # v for vertical
 # list all directories
-alias -g lsad='ls -d *(ND/)'
-alias -g lslad='ls -lhd *(ND/)' # l for long format
-alias -g lsvad='ls -1d *(ND/)' # v for vertical
+alias -g lsad=' ls -d *(ND/)'
+alias -g lslad=' ls -lhd *(ND/)' # l for long format
+alias -g lsvad=' ls -1d *(ND/)' # v for vertical
 # list empty directories
-alias -g lsed='ls -d *(N/^F)'
-alias -g lsled='ls -d *(N/^F)' # l for long format
-alias -g lsved='ls -d *(N/^F)' # v for vertical
+alias -g lsed='  ls -d *(N/^F)'
+alias -g lsled=' ls -d *(N/^F)' # l for long format
+alias -g lsved=' ls -d *(N/^F)' # v for vertical
 # list hidden empty directories
-alias -g lshed='ls -d .*(N/^F)'
-alias -g lslhed='ls -d .*(N/^F)' # l for long format
-alias -g lsvhed='ls -d .*(N/^F)' # v for vertical
+alias -g lshed=' ls -d .*(N/^F)'
+alias -g lslhed=' ls -d .*(N/^F)' # l for long format
+alias -g lsvhed=' ls -d .*(N/^F)' # v for vertical
 # list all empty directories
-alias -g lsaed='ls -d *(ND/^F)'
-alias -g lslaed='ls -d *(ND/^F)' # l for long format
-alias -g lsvaed='ls -d *(ND/^F)' # v for vertical
+alias -g lsaed=' ls -d *(ND/^F)'
+alias -g lslaed=' ls -d *(ND/^F)' # l for long format
+alias -g lsvaed=' ls -d *(ND/^F)' # v for vertical
 # list recursively empty directories
-alias -g lsred='ls -d **/*(N/^F)'
-alias -g lslred='ls -d **/*(N/^F)' # l for long format
-alias -g lsvred='ls -d **/*(N/^F)' # v for vertical
+alias -g lsred=' ls -d **/*(N/^F)'
+alias -g lslred=' ls -d **/*(N/^F)' # l for long format
+alias -g lsvred=' ls -d **/*(N/^F)' # v for vertical
 # list recursively hidden empty directories
-alias -g lshred='ls -d .**/*(N/^F)'
-alias -g lslhred='ls -d .**/*(N/^F)' # l for long format
-alias -g lsvhred='ls -d .**/*(N/^F)' # v for vertical
+alias -g lshred=' ls -d .**/*(N/^F)'
+alias -g lslhred=' ls -d .**/*(N/^F)' # l for long format
+alias -g lsvhred=' ls -d .**/*(N/^F)' # v for vertical
 # list recursively all empty directories
-alias -g lsared='ls -d **/*(ND/^F)'
-alias -g lslared='ls -d **/*(ND/^F)' # l for long format
-alias -g lsvared='ls -d **/*(ND/^F)' # v for vertical
+alias -g lsared=' ls -d **/*(ND/^F)'
+alias -g lslared=' ls -d **/*(ND/^F)' # l for long format
+alias -g lsvared=' ls -d **/*(ND/^F)' # v for vertical
 # list SymLinks
-alias -g lssl='ls -d *(N@)'
-alias -g lslsl='ls -lhd *(N@)' # l for long format
-alias -g lsvsl='ls -1d *(N@)' # v for vertical
+alias -g lssl=' ls -d *(N@)'
+alias -g lslsl=' ls -lhd *(N@)' # l for long format
+alias -g lsvsl=' ls -1d *(N@)' # v for vertical
 # list hidden SymLinks
-alias -g lshsl='ls -d .*(N@)'
-alias -g lslhsl='ls -lhd .*(N@)' # l for long format
-alias -g lsvhsl='ls -1d .*(N@)' # v for vertical
+alias -g lshsl=' ls -d .*(N@)'
+alias -g lslhsl=' ls -lhd .*(N@)' # l for long format
+alias -g lsvhsl=' ls -1d .*(N@)' # v for vertical
 # list all SymLinks
-alias -g lsasl='ls -d *(ND@)'
-alias -g lslasl='ls -lhd *(ND@)' # l for long format
-alias -g lsvasl='ls -1d *(ND@)' # v for vertical
+alias -g lsasl=' ls -d *(ND@)'
+alias -g lslasl=' ls -lhd *(ND@)' # l for long format
+alias -g lsvasl=' ls -1d *(ND@)' # v for vertical
 #===============================================================================}}}
 # du Aliases ==================================================================={{{
 #===============================================================================
