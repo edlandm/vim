@@ -73,6 +73,9 @@ au BufEnter * if &diff
             \ | nnoremap <leader>C [c
             \ | endif
 
+" Re-execute last :command
+nnoremap <leader>: @:
+
 " Buffer stuff | <leader>b "{{{
 nnoremap <leader>b, :bufdo
 nnoremap <leader>bN :bNext<CR>
@@ -174,7 +177,7 @@ nnoremap L $
 nnoremap <C-m> i<C-m><Esc>
 
 " Execute most recently executed macro
-nnoremap Q @@
+nnoremap Q @q
 
 " Maps ' to ` so that it jumps to line AND column of mark. It's just easier to
 " than hitting ` (it also eliminates the need to excape it from tmux)
