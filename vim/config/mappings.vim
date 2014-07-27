@@ -36,6 +36,8 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 " Save the file
 nnoremap <leader>w :w<CR>
+" Quit the file
+nnoremap <leader>q :q<CR>
 
 " Split window horizontally
 nnoremap <leader>- :sp<CR>
