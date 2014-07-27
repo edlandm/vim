@@ -41,6 +41,9 @@ alias wcl='wc -l'
 alias httpstat='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
 # Clear screen
 alias c='clear'
+# Join array
+# join / var local tmp ## var/local/tmp
+join() { local IFS="$1"; shift; echo "$*"; }
 #===============================================================================}}}
 # ls Aliases ==================================================================={{{
 #===============================================================================
