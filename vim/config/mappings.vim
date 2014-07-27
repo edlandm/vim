@@ -39,6 +39,8 @@ nnoremap <leader>w :w<CR>
 " Quit the file
 nnoremap <leader>q :q<CR>
 
+" Make all windows equal size
+nnoremap <leader>= <C-w>=
 " Split window horizontally
 nnoremap <leader>- :sp<CR>
 " Split window vertically
