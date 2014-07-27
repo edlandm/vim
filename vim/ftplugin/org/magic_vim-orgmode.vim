@@ -1,6 +1,9 @@
 au BufEnter *.org setlocal shiftwidth=2
             \ | setlocal tabstop=2
-let g:org_todo_keywords=['TODO', 'FEEDBACK', 'VERIFY', '|', 'DONE', 'DELEGATED']
+" todo options
+let g:org_todo_keywords=[['OPEN', 'FEEDBACK', '|', 'RESOLVED', 'CLOSED'],
+            \ ['TODO', '|', 'DONE']
+            \ ]
 
 " For some reasons the default mappings aren't being set, so I'm setting them
 " here
