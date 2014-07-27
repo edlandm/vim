@@ -10,8 +10,10 @@ nnoremap <leader>,c Iconsole.log(<esc>A);<esc>
 nmap <leader>,C Hy$i':', ");console.log(hh
 " Add semicolon to the end of the line
 nnoremap <leader>; A;<esc>
+inoremap ;; <esc>A;
 " Add comma to the end of the line
 nnoremap <leader>,, A,<esc>
-
-inoremap ;; <esc>A;
 inoremap ,, <esc>A,
+
+" Add period to the end of the line
+inoremap .. <esc>A.
