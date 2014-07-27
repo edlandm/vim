@@ -31,3 +31,4 @@ jceb/vim-orgmode
 vim-scripts/speeddating.vim
 chrisbra/NrrwRgn
 benmills/vimux
+vim-scripts/utl.vim
