@@ -13,6 +13,11 @@ nnoremap <localleader>c# :OrgCheckBoxUpdate<cr>
 nnoremap <localleader>cn :OrgCheckBoxNewBelow<cr>
 nnoremap <localleader>cN :OrgCheckBoxNewAbove<cr>
 
+" Export mappings
+nnoremap <localleader>ep :OrgExportToPDF<cr>
+nnoremap <localleader>eh :OrgExportToHTML<cr>
+nnoremap <localleader>el :OrgExportToLaTeX<cr>
+
 " Narrow buffer to turrent
 nmap <localleader>nr vOr:NarrowRegion<cr>
 
@@ -20,4 +25,4 @@ nmap <localleader>nr vOr:NarrowRegion<cr>
 nnoremap <localleader>ct
 
 " Set tags
-nnoremap <localleader>st :OrgSetTags<cr>
+nnoremap <localleader>t :OrgSetTags<cr>
