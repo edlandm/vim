@@ -36,6 +36,7 @@ vim/syntax,$HOME/.vim/syntax
 # zsh files
 zsh/zshrc,$HOME/.zshrc
 zsh/alias.zsh,$HOME/.zsh/.alias.zsh
+zsh/zprezto,$HOME/.zprezto
 # laptop zsh files
 zsh/zshrc.laptop,$HOME/.zshrc.local,laptop
 zsh/alias.laptop.zsh,$HOME/.zsh/.alias.local.zsh,laptop
