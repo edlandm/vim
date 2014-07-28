@@ -17,6 +17,7 @@ wellle/targets.vim
 c9s/tinyurl.vim
 tomtom/tlib_vim
 edkolev/tmuxline.vim
+SirVer/ultisnips
 Shougo/unite.vim
 vim-scripts/utl.vim
 tpope/vim-abolish

@@ -1,5 +1,4 @@
 " Load .vimrc first and then override anything that conflicts
-exec ":source " . $HOME . "/.vimrc"
 
 " My cursor, don't you ever touch it
 set guicursor=a:block-Cursor
@@ -13,10 +12,15 @@ set guifont=Anonymous\ Pro\ for\ Powerline:h12,
             \Courier:h12
 
 " guioptions
-set guioptions=g
+set guioptions+=a
+set guioptions+=f
+set guioptions+=c
+set guioptions-=e
+set guioptions-=T
+set guioptions-=r
 
 " Use system clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
 
 augroup MacMeta
     "While in insert mode, the alt-key can be used for unicode characters.

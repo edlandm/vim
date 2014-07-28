@@ -35,7 +35,7 @@ alias hyper shift;ctrl;alt;cmd
 #
 # Hyper Key Bindings
 #
-# bind r:${hyper} relaunch
+bind r:${hyper} relaunch
 bind h:${hyper} focus left
 bind j:${hyper} focus down
 bind k:${hyper} focus up
@@ -47,20 +47,20 @@ bind c:${hyper} focus 'Calendar'
 bind d:${hyper} focus 'MacVim' # This doesn't have a mneumonic yet, deal with it
 bind e:${hyper} focus 'TextEdit'
 bind f:${hyper} focus 'Finder'
+bind x:${hyper} focus 'Firefox'
 bind g:${hyper} focus 'Google Chrome'
-# bind i:${hyper} focus 'iTunes'
-bind m:${hyper} focus 'Mail'
-bind n:${hyper} focus 'Evernote'
+bind i:${hyper} focus 'iTunes'
+bind m:${hyper} focus 'Thunderbird'
+bind n:${hyper} focus 'Notes'
 bind p:${hyper} focus 'Preview'
-bind r:${hyper} focus 'Rdio'
 bind s:${hyper} focus 'Safari'
 bind t:${hyper} focus 'Terminal'
 bind v:${hyper} focus 'VLC'
-bind x:${hyper} focus 'TextEdit'
 
-bind [:${hyper} shell '/usr/local/bin/cmus-remote -r'
-bind ]:${hyper} shell '/usr/local/bin/cmus-remote -n'
-bind =:${hyper} shell '/usr/local/bin/cmus-remote -u'
+# cmus bindings
+# bind [:${hyper} shell '/usr/local/bin/cmus-remote -r'
+# bind ]:${hyper} shell '/usr/local/bin/cmus-remote -n'
+# bind =:${hyper} shell '/usr/local/bin/cmus-remote -u'
 
 #
 # The following 'bind' lines allow you to hold "CTRL" and "COMMAND"
@@ -85,19 +85,10 @@ bind space:ctrl;cmd ${full}
 #
 # Nudge Bindings
 #
-bind l:alt;cmd  nudge +10% +0
-bind h:alt;cmd  nudge -10% +0
-bind k:alt;cmd  nudge +0   -10%
-bind j:alt;cmd  nudge +0   +10%
-
-#
-# Focus Bindings
-#
-bind l:ctrl;alt focus right
-bind h:ctrl;alt focus left
-bind k:ctrl;alt focus up
-bind j:ctrl;alt focus down
-bind i:ctrl;alt focus behind
+# bind l:alt;cmd  nudge +10% +0
+# bind h:alt;cmd  nudge -10% +0
+# bind k:alt;cmd  nudge +0   -10%
+# bind j:alt;cmd  nudge +0   +10%
 
 #
 # You can normally switch between windows on MacOS by pressing

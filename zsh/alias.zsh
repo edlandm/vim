@@ -47,7 +47,6 @@ alias cd=' cd'
 zman() {
   PAGER="less -g -s '+/^       "$1"'" man zshall
 }
-
 # Join array
 # join / var local tmp ## var/local/tmp
 join() { local IFS="$1"; shift; echo "$*"; }
@@ -59,9 +58,7 @@ function fname() { find . -iname "*$@*"; }
 function mcd() { mkdir $1 && cd $1; }
 # removes lines from $1 if they appear in $2
 function remove_lines_from() { grep -F -x -v -f $2 $1; }
-#===============================================================================}}}
-# ls Aliases ==================================================================={{{
-#===============================================================================
+
 alias c=' clear'
 
 alias cd=' cd'
@@ -69,6 +66,9 @@ alias cd=' cd'
 zman() {
   PAGER="less -g -s '+/^       "$1"'" man zshall
 }
+
+#===============================================================================}}}
+# ls Aliases ==================================================================={{{
 #===============================================================================
 # Because I'm really THAT lazy
 alias l=' ls -l'
