@@ -1,0 +1,16 @@
+snippet if "if"
+if [[ ${1:condition...} ]]; then
+	${2:code...}
+fi
+endsnippet
+
+snippet el "else"
+else
+	${1:code...}
+endsnippet
+
+snippet for "for"
+for ${1:n} in ${2:collection}; do
+	${3:code...}
+done
+endsnippet
