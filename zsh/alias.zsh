@@ -166,6 +166,7 @@ alias gsp='git stash pop'
 alias gg='git gr'
 alias grm='git rm'
 alias gc='git commit'
+alias gca='git commit --amend'
 alias gch='git checkout'
 alias gurl='git url | head -n2 | tail -n1'
 
@@ -173,7 +174,6 @@ alias gurl='git url | head -n2 | tail -n1'
 # NOTE: certain characters (like parenthesis) must be escaped
 unalias gcm
 gcm() { git commit -m "`join   $@`"; }
-
 # Undo last commit
 gu() { git reset --soft HEAD~1; }
 #===============================================================================}}}
