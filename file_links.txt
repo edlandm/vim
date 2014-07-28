@@ -34,12 +34,5 @@ vim/plugin_magic,$HOME/.vim/bundle/vizardry/plugin/magic
 vim/syntax,$HOME/.vim/syntax
 
 # zsh files
-zsh/zprezto/runcoms/zshrc,$HOME/.zshrc
-zsh/alias.zsh,$HOME/.zsh/.alias.zsh
-zsh/zprezto,$HOME/.zprezto
-# laptop zsh files
-zsh/zprezto/runcoms/zshrc.laptop,$HOME/.zshrc.local,laptop
-zsh/zprezto/runcoms/alias.laptop.zsh,$HOME/.zsh/.alias.local.zsh,laptop
-# gravelpit and nari use the same 'local' rc and alias files
-zsh/zprezto/runcoms/zshrc.nari,$HOME/.zshrc.local,nari
-zsh/zprezto/runcoms/zshrc.nari,$HOME/.zshrc.local,gravelpit
+zsh/zshrc,$HOME/.zshrc
+zsh/zprezto,$HOME/.zsh
