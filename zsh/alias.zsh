@@ -51,6 +51,14 @@ zman() {
 # Join array
 # join / var local tmp ## var/local/tmp
 join() { local IFS="$1"; shift; echo "$*"; }
+# grep processes; I like this better than pgrep
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+# find by filename
+function fname() { find . -iname "*$@*"; }
+# make a directory and cd into it
+function mcd() { mkdir $1 && cd $1; }
+# removes lines from $1 if they appear in $2
+function remove_lines_from() { grep -F -x -v -f $2 $1; }
 #===============================================================================}}}
 # ls Aliases ==================================================================={{{
 #===============================================================================
