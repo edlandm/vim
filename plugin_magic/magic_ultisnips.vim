@@ -1,5 +1,5 @@
 " Snippets directory
-let g:UltiSnipsSnippetDirectories=["snippets"]
+let g:UltiSnipsSnippetDirectories=["usnippets"]
 
 " Press
 let g:UltiSnipsExpandTrigger="<tab>"
