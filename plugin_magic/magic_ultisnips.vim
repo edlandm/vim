@@ -4,6 +4,10 @@ let g:UltiSnipsSnippetsDir="~/.vim/usnippets"
 let g:UltiSnipsSnippetDirectories=["usnippets"]
 
 " Press
-let g:UltiSnipsExpandTrigger="<tab>"
+
+unmap <c-n>
+let g:UltiSnipsExpandTrigger="<c-n>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 let g:UltiSnipsEditSplit="horizontal"
