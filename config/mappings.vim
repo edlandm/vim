@@ -76,6 +76,9 @@ au BufEnter * if &diff
 " Re-execute last :command
 nnoremap <leader>: @:
 
+" Help
+nnoremap <leader>h :h<space>
+
 " Buffer stuff | <leader>b "{{{
 nnoremap <leader>b, :bufdo
 nnoremap <leader>bN :bNext<CR>
