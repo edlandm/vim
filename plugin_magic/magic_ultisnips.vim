@@ -1,4 +1,6 @@
 " Snippets directory
+" one of these lines does the trick
+let g:UltiSnipsSnippetsDir="~/.vim/usnippets"
 let g:UltiSnipsSnippetDirectories=["usnippets"]
 
 " Press
