@@ -38,6 +38,8 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 nnoremap <leader>w :w<CR>
 " Quit the file
 nnoremap <leader>q :q<CR>
+" Help! 'I need somebody...'
+nnoremap <leader>h :h<space>
 
 " Make all windows equal size
 nnoremap <leader>= <C-w>=
@@ -75,9 +77,6 @@ au BufEnter * if &diff
 
 " Re-execute last :command
 nnoremap <leader>: @:
-
-" Help
-nnoremap <leader>h :h<space>
 
 " Buffer stuff | <leader>b "{{{
 nnoremap <leader>b, :bufdo
@@ -153,7 +152,7 @@ nnoremap <leader>wvr :vertical res -5<CR>
 " Increase window width by 5
 nnoremap <leader>wvR :vertical res +5<CR>
 "}}}
-"=============================================================================="}}}
+"==============================================================================}}}
 " Normal Mode Mappings ========================================================{{{
 "==============================================================================
 " Re-sources .vimrc
