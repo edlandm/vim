@@ -14,13 +14,17 @@ autocmd BufReadPost * if filereadable(expand("%") . ".vimrc") == 1
 autocmd BufNewFile,BufRead *.wsgi set filetype=python
 
 " Return to last edit position when opening files
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+            \ | exe "normal! g`\""
+            \ | endif
+
+" if cursor is in a closed fold, open it (even if multiple levels deep)
+autocmd BufWinEnter * while foldclosed(line('.')) != -1
+            \ | exe "foldopen"
+            \ | endwhile
 
 " Turns autocompletion on for various filetypes
-augroup omnifuncs
+augroup omnifuncs "{{{
     autocmd!
     autocmd FileType python set omnifunc=pythoncomplete#Complete
     autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -33,7 +37,7 @@ augroup omnifuncs
     autocmd Syntax * if &omnifunc == ""
                 \ | setl omnifunc=syntaxcomplete#Complete
                 \ | endif
-augroup END
+augroup END "}}}
 
 " Remove trailing white spaces when file is saved
 autocmd BufWritePre :%s/\s\+$//
