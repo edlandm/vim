@@ -6,8 +6,8 @@ function ${1:MyFunc}($2) {
 $0
 endsnippet
 
-snippet fn "Anonymous function definition"
-function($1) {
+snippet "(\W)fn" "Anonymous function definition" ir
+`!p snip.rv = match.group(1)`function($1) {
     ${2:code...}
 }${3:;}
 $0
@@ -48,7 +48,7 @@ endsnippet
 
 snippet switch "switch"
 switch(${1:expression}) {
-    case ${3} :
+    case ${3}:
         ${4}
         break;
     ${0}
@@ -58,44 +58,49 @@ switch(${1:expression}) {
 endsnippet
 
 snippet case "case"
-case ${1} :
+case ${1}:
     ${2}
     break;
 ${0}
 endsnippet
 
-snippet geti "document.getElementByID"
-document.getElement.ByID('$1')${2:;}
+snippet "v(\w+)" "var {} = value" r
+`!p snip.rv = "var {} = ".format(match.group(1))` ${2:this}
 endsnippet
 
-snippet getq "document.getQuerySelector"
-document.getQuerySelector('$1')${2:;}
+snippet geti "document.getElementByID" i
+document.getElementById('$1')$2
 endsnippet
 
-snippet getqa "document.getQuerySelectorAll"
-document.getQuerySelectorAll('$1')${2:;}
+snippet getq "document.getQuerySelector" i
+document.getQuerySelector('$1')$2
 endsnippet
 
-snippet jsons "JSON.stringify"
-JSON.stringify(${1:object})${2:;}
+snippet getqa "document.getQuerySelectorAll" i
+document.getQuerySelectorAll('$1')$2
 endsnippet
 
-snippet d "document"
-document.
+snippet jsons "JSON.stringify" i
+JSON.stringify(${1:object})$2
 endsnippet
 
-snippet w "window"
-window.
+snippet "(\W)d" "document" ir
+`!p snip.rv = match.group(1) + "document."`
 endsnippet
 
-snippet $ "jQuery collection"
+snippet "(\W)w" "window" ir
+`!p snip.rv = match.group(1) + "window."`
+endsnippet
+
+snippet $ "jQuery collection" i
 $('$1')${2}
 endsnippet
-snippet $# "jQuery id"
+
+snippet $# "jQuery id" i
 $('#$1')$2
 endsnippet
 
-snippet $. "jQuery class"
+snippet $. "jQuery class" i
 $('.$1')$2
 endsnippet
 
