@@ -3,7 +3,7 @@
 let g:UltiSnipsSnippetsDir="~/.vim/usnippets"
 let g:UltiSnipsSnippetDirectories=["usnippets"]
 
-" Press
+nnoremap <leader>ue :UltiSnipsEdit<cr>
 
 unmap <c-n>
 let g:UltiSnipsExpandTrigger="<c-n>"
