@@ -30,12 +30,19 @@ snippet class "Class definition"
 class ${1:ClassName}(${2:object}):
 	""" ${3:Docstring} """
 	def __init__(self$4):
-		`!p if t[2] != 'object':
-			snip.rv = 'super({}, self).__init__()'.format(t[1])`
-		`!p if t[4]:
-			snip >> 3
-			for arg in t[4].strip(',').split(','):
-				snip += 'self.{a} = {a}'.format(a=arg.strip())`
+		`!p
+if t[2] != 'object':
+	snip.rv = 'super({}, self).__init__()'.format(t[1])
+if t[4]:
+	indented = False
+	for arg in t[4].strip(',').split(','):
+		if not snip.rv:
+			snip.rv = 'self.{a} = {a}'.format(a=arg.strip())
+		else:
+			if not indented:
+				snip >> 2
+				indented = True
+			snip += 'self.{a} = {a}'.format(a=arg.strip())`
 	$0
 endsnippet
 
@@ -66,7 +73,7 @@ endsnippet
 
 snippet ifmain "if __name__ == '__main__'"
 if __name__ == '__main__':
-	#{1:main()}
+	${1:main()}
 endsnippet
 
 snippet _ "__magic__" b
