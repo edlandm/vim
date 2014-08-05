@@ -1,5 +1,6 @@
 vim-scripts/CSApprox
 chrisbra/NrrwRgn
+rizzatti/dash.vim
 Raimondi/delimitMate
 mattn/emmet-vim
 Yggdroot/indentLine
@@ -35,8 +36,10 @@ tpope/vim-repeat
 mhinz/vim-signify
 t9md/vim-smalls
 tpope/vim-surround
+toyamarinyon/vim-swift
 christoomey/vim-tmux-navigator
 Shougo/vimproc.vim
 benmills/vimux
 vimwiki/vimwiki
 ardagnir/vizardry
+yuratomo/w3m.vim
