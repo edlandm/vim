@@ -14,11 +14,11 @@ $0
 endsnippet
 
 snippet cl
-console.log('$1:', ${2:$1});$0
+console.log('$1:'${2:`!p snip.rv = ', {}'.format(t[1])`});$0
 endsnippet
 
 snippet ce
-console.error("$1:", ${2:1});$0
+console.error("$1:", ${2:$1});$0
 endsnippet
 
 snippet if
