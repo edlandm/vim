@@ -5,8 +5,8 @@ let g:UltiSnipsSnippetDirectories=["usnippets"]
 
 nnoremap <leader>ue :UltiSnipsEdit<cr>
 
-unmap <c-n>
-unmap <c-p>
+silent! unmap <c-n>
+silent! unmap <c-p>
 let g:UltiSnipsExpandTrigger="<c-n>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
