@@ -33,3 +33,4 @@ chrisbra/NrrwRgn
 benmills/vimux
 vim-scripts/utl.vim
 SirVer/ultisnips
+yuratomo/w3m.vim
