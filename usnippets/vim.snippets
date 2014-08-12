@@ -35,6 +35,10 @@ for ${1:item} in ${2:$1s}
 endfor$0
 endsnippet
 
+snippet iab "iabbrev"
+iabbrev ${1:abbreviation} ${2:long version}$0
+endsnippet
+
 snippet "sec(tion)?" "fold section" r
 " ${1:Section Title} `!p snip.rv = "{0:=<{width}}".format('', width=76 - len(t[1]))`{{{
 "==============================================================================
