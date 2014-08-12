@@ -78,6 +78,13 @@ au BufEnter * if &diff
 " Re-execute last :command
 nnoremap <leader>: @:
 
+" Open search results in quickfix window
+nnoremap <leader>n :execute 'vimgrep /'.@/.'/g %'<cr>:copen<cr>
+
+" Indent/dedent what you just pasted
+nnoremap <leader>< V`]<
+nnoremap <leader>> V`]>
+
 " Buffer stuff | <leader>b "{{{
 nnoremap <leader>b, :bufdo
 nnoremap <leader>bN :bNext<CR>
@@ -170,6 +177,10 @@ nnoremap <C-l> <C-w>l
 " Next two enable faster scrolling with <C-e> and <C-y>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+" Use very magic for searching
+nnoremap / /\v
+vnoremap / /\v
 
 " Jump to start and end of line using homerow keys
 nnoremap H ^
@@ -278,6 +289,9 @@ inoremap <silent><C-k> <ESC>mz:m-2<CR>`zi
 
 " Move current line down one line (switches places with below line)
 inoremap <silent><C-j> <ESC>mz:m+<CR>`zi
+
+" Uppercase current word
+inoremap <c-u> <esc>mzgUiw`za
 
 "==============================================================================}}}
 " Command Mode Mappings ======================================================={{{
