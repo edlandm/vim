@@ -1,0 +1,5 @@
+snippet "h([1-6])" "Headers" r
+`!p level = match.group(1)
+border = ''.join(['=' for x in xrange(int(level))])
+snip.rv = border` $1 `!p snip.rv = border`
+endsnippet
