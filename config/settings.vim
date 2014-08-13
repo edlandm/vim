@@ -344,7 +344,7 @@ set list
 " ttimeout  allow timing out halfway into a key code
    set nottimeout
 " timeoutlen  time in msec for 'timeout'
-   set tm=500
+   set tm=450
 " ttimeoutlen  time in msec for 'ttimeout'
    set ttm=-1
 "===============================================================================}}}
