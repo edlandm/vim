@@ -1,0 +1,9 @@
+# Handlebars snippets
+snippet "{(\w+)(\s\w+)?" "\{\{#(\w+)" r
+`!p snip.rv = '{{#' + match.group(1)
+if match.group(2):
+	snip.rv += match.group(2)
+snip.rv += '}}'`
+	$1
+`!p snip.rv = '{{/' + match.group(1) + '}'`
+endsnippet
