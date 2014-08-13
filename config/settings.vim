@@ -100,6 +100,10 @@
 " concealcursor   modes in which text in the cursor line can be concealed
 " (local to window)
     set cocu=inc
+" Show trailing whitespace as dots
+exec "set listchars=tab:>~,trail:\uB7"
+set list
+
 "===============================================================================}}}
 " Syntax, highlighting and spelling ============================================{{{
 "===============================================================================
