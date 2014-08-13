@@ -100,6 +100,10 @@
 " concealcursor   modes in which text in the cursor line can be concealed
 " (local to window)
     set cocu=inc
+" Show trailing whitespace as dots
+exec "set listchars=tab:>~,trail:\uB7"
+set list
+
 "===============================================================================}}}
 " Syntax, highlighting and spelling ============================================{{{
 "===============================================================================
@@ -117,7 +121,9 @@
 " colorcolumn   columns to highlight
 " (local to window)
     " execute "set colorcolumn=".join(range(81,200), ",")
-    set colorcolumn=80
+    " set colorcolumn=80
+    " Only show the colorcolumn where text is overflowing
+    call matchadd('ColorColumn', '\%80v', 100)
 " spellsuggest   methods used to suggest corrections
     set sps=best
 " mkspellmem   amount of memory used by :mkspell before compressing
@@ -338,7 +344,7 @@
 " ttimeout  allow timing out halfway into a key code
    set nottimeout
 " timeoutlen  time in msec for 'timeout'
-   set tm=500
+   set tm=450
 " ttimeoutlen  time in msec for 'ttimeout'
    set ttm=-1
 "===============================================================================}}}
