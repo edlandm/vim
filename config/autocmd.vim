@@ -57,6 +57,10 @@ augroup END
 " Remove trailing white spaces on write
 autocmd BufWritePre * :%s/\s\+$//e
 
+" show listchars when not in insert mode
+autocmd InsertEnter * set nolist
+autocmd InsertLeave * set list
+
 " Leave paste mode when leaving insert mode
 autocmd InsertLeave * set nopaste
 
