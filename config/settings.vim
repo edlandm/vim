@@ -121,7 +121,9 @@ set list
 " colorcolumn   columns to highlight
 " (local to window)
     " execute "set colorcolumn=".join(range(81,200), ",")
-    set colorcolumn=80
+    " set colorcolumn=80
+    " Only show the colorcolumn where text is overflowing
+    call matchadd('ColorColumn', '\%80v', 100)
 " spellsuggest   methods used to suggest corrections
     set sps=best
 " mkspellmem   amount of memory used by :mkspell before compressing
