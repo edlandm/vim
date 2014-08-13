@@ -293,6 +293,9 @@ inoremap <silent><C-j> <ESC>mz:m+<CR>`zi
 " Uppercase current word
 inoremap <c-u> <esc>mzgUiw`za
 
+" Insert line above cursor and move cursor to that line at correct indent
+inoremap <silent><C-o> <esc>O
+
 "==============================================================================}}}
 " Command Mode Mappings ======================================================={{{
 "==============================================================================
