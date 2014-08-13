@@ -140,3 +140,28 @@ fetch({
     }
 });$0
 endsnippet
+
+snippet BBM "BackBone Model"
+Backbone.Model.extend({
+	$1
+});$0
+endsnippet
+
+snippet BBC "BackBone Collection"
+Backbone.Collection.extend({
+	model: $1,
+	url: ${2:baseUrl + 'json/${1/(\w*\.)*(.*)/\L$2s\E/g}'},
+});$0
+endsnippet
+
+snippet BBV "BackBone View"
+Backbone.View.extend({
+	$1
+});$0
+endsnippet
+
+snippet BBR "BackBone Router"
+Backbone.Router.extend({
+	$1
+});$0
+endsnippet
