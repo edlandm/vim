@@ -8,6 +8,16 @@ else
     call neobundle#call_hook('on_source')
 endif
 
+" Use zsh AND keep aliases and such
+if filereadable(expand('~/.zshrc'))
+    let $BASH_ENV = '~/.zshrc'
+    set shell=/usr/bin/zsh
+else
+    let $BASH_ENV = '~/.bash_profile'
+    set shell=/bin/zsh
+endif
+
+" NeoBundle ==================================================================={{{
 " Start NeoBundle
 call neobundle#begin(expand('~/.vim/bundle'))
 
