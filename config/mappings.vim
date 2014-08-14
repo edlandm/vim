@@ -318,6 +318,16 @@ vnoremap > >gv
 vnoremap H ^
 vnoremap L $
 
+" Make vp not replace paste buffer
+function! RestoreRegister()
+    let @" = s:restore_reg
+    return ''
+endfunction
+function! name()
+    let s:restore_reg =@"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
 "==============================================================================}}}
 " Misc ========================================================================{{{
 "==============================================================================
