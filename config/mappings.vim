@@ -323,11 +323,12 @@ function! RestoreRegister()
     let @" = s:restore_reg
     return ''
 endfunction
-function! name()
-    let s:restore_reg =@"
+function! s:Repl()
+    let s:restore_reg = @"
     return "p@=RestoreRegister()\<cr>"
 endfunction
-vmap <silent> <expr> p <sid>Repl()
+vnoremap <silent> <expr> p <sid>Repl()
+vnoremap <silent> <expr> P <sid>Repl()
 "==============================================================================}}}
 " Misc ========================================================================{{{
 "==============================================================================
