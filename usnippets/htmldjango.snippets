@@ -1,0 +1,5 @@
+snippet "bl(.+)" " Generic block snippet" r
+{% `!p snip.rv = match.group(1)` %}
+$0
+{% `!p snip.rv = "end{}".format(match.group(1).split(' ')[0])` %}
+endsnippet
