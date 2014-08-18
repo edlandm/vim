@@ -46,6 +46,10 @@ if t[4]:
 	$0
 endsnippet
 
+snippet "s(l|elf)\.?(\w+)" "self.something = something" r
+`!p snip.rv = "self.{} =".format(match.group(2))` ${2:`!p snip.rv = match.group(2)`}
+endsnippet
+
 snippet if "if"
 if ${1:condition}:
 	${2:code...}
