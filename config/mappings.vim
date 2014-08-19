@@ -165,8 +165,8 @@ nnoremap <leader>wvR :vertical res +5<CR>
 " Re-sources .vimrc
 nnoremap <silent><F5> <ESC>:source $MYVIMRC<CR>
 
-" Re-set syntax highlighting
-nnoremap <silent><F6> <ESC>:syntax sync fromstart<CR>
+" Redraw and reset syntax highlighting (if things look weird, press this)
+nnoremap <silent><F6> <ESC>:execute 'colo' colors_name<cr>:syntax sync fromstart<cr>
 
 " Easier Split Window Navigation
 nnoremap <C-h> <C-w>h
