@@ -13,8 +13,10 @@ nnoremap <leader>gd :Gdiff<cr>
 " Git Status
 nnoremap <leader>gs :Gstatus<cr>
 " Git stash, stash pop
-nnoremap <leader>gst :Git stash<cr>
-nnoremap <leader>gsp :Git stash pop<cr>
+" This tends to make the screen go all wonky, if you re-apply your colorscheme
+" it should fix it. (I have a mapping for this)
+noremap <leader>gst :Git stash<cr><cr>
+noremap <leader>gsp :Git stash pop<cr><cr>
 " Git Blame
 nnoremap <leader>gb :Gblame<cr>
 vnoremap <leader>gb :Gblame<cr>
