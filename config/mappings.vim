@@ -32,6 +32,7 @@ function! VisualSelection(direction) range "{{{
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction "}}}
+nnoremap <leader>r :%s/\<<C-r>=expand('<cword>')<cr>\>/
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 " Save the file
