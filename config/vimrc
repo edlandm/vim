@@ -50,6 +50,7 @@ let bundle_list=expand('$HOME/.vim/bundle_list.txt')
 if filereadable(bundle_list)
 for bundle in readfile(bundle_list)
     if index(overridden, tolower(bundle)) == -1
+        " if it's not in the overridden list
         execute "NeoBundle '" . bundle . "'"
     endif
 endfor
