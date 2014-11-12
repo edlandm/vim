@@ -9,8 +9,8 @@ endsnippet
 snippet "(\W)fn" "Anonymous function definition" ir
 `!p snip.rv = match.group(1)`function($1) {
     ${2:code...}
-}${3:;}
-$0
+}`!p if match.group(1)[-1] != '(':
+	 snip.rv = ';'`$0
 endsnippet
 
 snippet cl
@@ -64,8 +64,8 @@ case ${1}:
 ${0}
 endsnippet
 
-snippet "v(\w+)" "var {} = value" r
-`!p snip.rv = "var {} = ".format(match.group(1))` ${2:this}
+snippet "\sv(\w+)" "var {} = value" r
+`!p snip.rv = " var {} = ".format(match.group(1))` ${2:this}
 endsnippet
 
 snippet geti "document.getElementByID" i
@@ -114,6 +114,7 @@ $1.open(
 );
 
 $1.onload = function() {
+	var response = request.responseText;
     if($1.status >= 200 && $1.status <= 400) {
         // Success
         ${5:code...}
@@ -122,7 +123,6 @@ $1.onload = function() {
         ${6:code...}
     }
 }
-
 $1.send();$0
 endsnippet
 
