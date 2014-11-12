@@ -49,6 +49,9 @@ nnoremap <leader>- :sp<CR>
 " Split window vertically
 nnoremap <leader>\| :vsp<CR>
 
+" Pulse current line
+nnoremap <leader><leader> :Pulse<cr>
+
 " toggles whether or not the current window is automatically zoomed
 function! ToggleMaxWins() "{{{
   if exists('g:windowMax')
