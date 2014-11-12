@@ -1,7 +1,7 @@
 " Colorscheme
 
 " Solarized Theme
-"set background=dark
+" set background=dark
 "let g:solarized_termtrans = 1
 "let g:solarized_termcolors = 256
 "let g:solarized_contrast = "high"
@@ -10,13 +10,13 @@
 colorscheme lucius
 
 "highlight ColorColumn term=bold ctermbg=25
-highlight ColorColumn term=bold ctermbg=0
+" highlight ColorColumn term=bold ctermbg=0
 
 " ex command for toggling hex mode
-command -bar Hexmode call ToggleHex()
+command! -bar Hexmode call ToggleHex()
 
 " Helper function to toggle hex mode
-function ToggleHex()
+function! ToggleHex()
   " hex mode should be considered a read-only operation
   " save values for modified and read-only for restoration later,
   " and clear the read-only flag for now
