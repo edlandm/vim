@@ -392,11 +392,19 @@ set list
 " wildcharm  like 'wildchar' but can also be used in a mapping
    set wcm=0
 " wildmode  specifies how command line completion works
-   set wim=longest,list,full
+set wim=list:longest
 " suffixes  list of file name extensions that have a lower priority
    set su=.bak,~,.o,.h,.info,.swp,.obj,.pyc
 " wildignorecase  ignore case when completing file names
-   set wic
+set wic
+set wildignore+=.hg,.git,.svn                       " Version control
+set wildignore+=*.aux,*.out,*.toc                   " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg      " Binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest    " Compiled object files
+set wildignore+=#.spl                               " Compiled spelling word lists
+set wildignore+=#.sw?                               " Vim swap files
+set wildignore+=#.DS_Store                          " Stupid os x stuff
+set wildignore+=#.pyc                               " Python byte code
 " wildmenu  command-line completion shows a list of matches
    set wmnu
 " cedit  key used to open the command-line window
