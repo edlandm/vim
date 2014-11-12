@@ -208,9 +208,9 @@ onoremap ' `
 " Y yanks to end of line, making it consistant with D and C
 nnoremap Y y$
 
-" Keep search pattern at the center of the screen
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
+" Pulse current line after jumping to a new search result
+nnoremap <silent> n n:Pulse<cr>
+nnoremap <silent> N N:Pulse<cr>
 
 " Remap j and k to scroll by visual lines
 nnoremap j gj
