@@ -13,8 +13,3 @@ function! MakeSpacelessBufferIabbrev(from, to)
 endfunction
 
 call MakeSpacelessIabbrev('gh/', 'https://github.com/')
-
-iabbrev ipa IPAdmin
-iabbrev ans Answerline
-iabbrev myr MyResTek
-iabbrev askr AskResTek
