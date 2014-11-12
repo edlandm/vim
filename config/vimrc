@@ -78,9 +78,6 @@ if !exists(":DiffOrig")
       \ | wincmd p | diffthis
 endif
 
-" Generate help pages
-execute pathogen#helptags()
-
 " If there are uninstalled bundles found on startup, this will prompt to install
 NeoBundleCheck
 
