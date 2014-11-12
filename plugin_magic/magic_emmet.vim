@@ -11,5 +11,4 @@ function! s:emmet_html_tab()
     " Otherwise expand the emmet expression
     return "\<c-y>,"
 endfunction
-au FileType html imap <buffer><expr><tab> <sid>emmet_html_tab()
-au FileType htmldjango imap <buffer><expr><tab> <sid>emmet_html_tab()
+au FileType html* imap <buffer><expr><tab> <sid>emmet_html_tab()
