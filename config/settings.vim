@@ -254,9 +254,9 @@ set list
    set bs=indent,eol,start
 " complete  specifies how Insert mode completion works for CTRL-N and CTRL-P
 "(local to buffer)
-   set cpt=.,w,b,u,t,i
+set cpt=.,w,b,u,t
 " completeopt  whether to use a popup menu for Insert mode completion
-   set cot=menu,preview
+set cot=longest,menuone,preview
 " pumheight  maximum height of the popup menu
    set ph=15
 " infercase  adjust case of a keyword completion match
