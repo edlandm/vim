@@ -75,9 +75,9 @@ nnoremap <leader>z :call ToggleMaxWins()<CR>
 
 " Jump to next/previous change in diff mode
 au BufEnter * if &diff
-            \ | nnoremap <leader>c ]c
-            \ | nnoremap <leader>C [c
-            \ | endif
+        \ | nnoremap <leader>c ]c
+        \ | nnoremap <leader>C [c
+        \ | endif
 
 " Re-execute last :command
 nnoremap <leader>: @:
@@ -115,14 +115,14 @@ nnoremap <leader>M :marks<CR>
 "}}}
 " Toggle settings | <leader>o "{{{
 let settings = {
-            \ 'c': 'cursorline',
-            \ 'h': 'hlsearch',
-            \ 'n': 'number',
-            \ 'r': 'relativenumber',
-            \ 's': 'spell',
-            \ 'u': 'cursorcolumn',
-            \ 'w': 'wrap',
-            \ }
+        \ 'c': 'cursorline',
+        \ 'h': 'hlsearch',
+        \ 'n': 'number',
+        \ 'r': 'relativenumber',
+        \ 's': 'spell',
+        \ 'u': 'cursorcolumn',
+        \ 'w': 'wrap',
+        \ }
 
 for [key, val] in items(settings)
     exec printf("nnoremap <silent> <leader>o%s :<C-U>set inv%s<CR>", key, val)
@@ -269,10 +269,10 @@ nnoremap ]u g+
 "==============================================================================
 
 " A quicker alternative to pushing <ESC>
-inoremap jk <ESC> `^
-inoremap kj <ESC> `^
+inoremap jk <esc> `^
+inoremap kj <esc> `^
 " My dvorak equivilent
-inoremap hh <ESC> `^
+inoremap hh <esc> `^
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -283,16 +283,16 @@ inoremap << <C-d>
 inoremap >> <C-t>
 
 " Go to beginning of line in insert mode
-inoremap <C-a> <ESC>I
+inoremap <C-a> <esc>I
 
 " Go to end of line in insert mode
-inoremap <C-e> <ESC>A
+inoremap <C-e> <esc>A
 
 " Move current line up one line (switches places with above line)
-inoremap <silent><C-k> <ESC>mz:m-2<CR>`zi
+inoremap <silent><C-k> <esc>mz:m-2<cr>`zi
 
 " Move current line down one line (switches places with below line)
-inoremap <silent><C-j> <ESC>mz:m+<CR>`zi
+inoremap <silent><C-j> <esc>mz:m+<cr>`zi
 
 " Uppercase current word
 inoremap <c-u> <esc>mzgUiw`za
