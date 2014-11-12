@@ -312,7 +312,13 @@ inoremap <silent><C-k> <esc>mz:m-2<cr>`zi
 inoremap <silent><C-j> <esc>mz:m+<cr>`zi
 
 " Uppercase current word
-inoremap <c-u> <esc>mzgUiw`za
+inoremap ,cU <esc>mzgUiw`za
+" Lowercase current word
+inoremap ,cu <esc>mzguiw`za
+" Uppercase current line
+inoremap ,CU <esc>mzgUU`za
+" Lowercase current line
+inoremap ,Cu <esc>mzguu`za
 
 " Insert line above cursor and move cursor to that line at correct indent
 inoremap <silent><C-o> <esc>O
