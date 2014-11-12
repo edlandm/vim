@@ -127,6 +127,9 @@ let settings = {
 for [key, val] in items(settings)
     exec printf("nnoremap <silent> <leader>o%s :<C-U>set inv%s<CR>", key, val)
 endfor
+
+nnoremap <leader>lf :set spelllang=fr
+nnoremap <leader>lu :set spelllang=us
 " }}}
 " Tab stuff | <leader>t {{{
 " Move through tabs
