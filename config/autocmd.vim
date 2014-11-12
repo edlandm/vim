@@ -27,7 +27,7 @@ autocmd BufWinEnter * while foldclosed(line('.')) != -1
 augroup omnifuncs "{{{
     autocmd!
     autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType javascript set omnifunc=xmlcomplete#CompleteTags
     autocmd FileType html set omnifunc=xmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
     autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
