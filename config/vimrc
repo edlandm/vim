@@ -82,7 +82,13 @@ endif
 NeoBundleCheck
 
 " Split up config settings into multiple files (modularization ftw!)
-runtime! config/*.vim
+runtime! config/settings.vim
+runtime! config/autocmd.vim
+runtime! config/commands.vim
+runtime! config/mappings.vim
+runtime! config/abreviations.vim
+runtime! config/local.vim
+runtime! psettings/*.vim
 
 " Disable Background Color Erase (BCE) so that color schemes
 " work properly when Vim is used inside tmux and GNU screen.
