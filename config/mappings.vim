@@ -249,6 +249,39 @@ nnoremap ssit vit:s/
 nnoremap ssat vat:s/
 vnoremap S :s/
 " }}}
+
+" File explorer mappings {{{
+" I have good ideas for this. I'd like a single-key-to-select mode in the
+" netrw window. I just don't know how to impliment that...
+function! ToggleExplorer(pattern) "{{{
+    if &ft == "netrw"
+        Rexplore
+    else
+        if a:pattern != ''
+            Explore a:pattern
+        endif
+    endif
+endfunction "}}}
+nnoremap <tab><tab> :call ToggleExplorer('')<cr>
+" This can only really be used when you're not in a netrw window
+nnoremap <tab><leader><tab> :call ToggleExplorer('')<cr>
+
+nnoremap <tab>s :Hexplore<cr>
+nnoremap <tab><leader>s :Hexplore<space>
+nnoremap <tab>- :Hexplore<cr>
+nnoremap <tab><leader>- :Hexplore<space>
+
+nnoremap <tab>S :Vexplore<cr>
+nnoremap <tab><leader>S :Vexplore<space>
+
+nnoremap <tab>t :Texplore<cr>
+nnoremap <tab><leader>t :Texplore<space>
+
+nnoremap <tab>n :Nexplore<cr>
+nnoremap <tab>N :Nexplore!<cr>
+nnoremap <tab>p :Pexplore<cr>
+nnoremap <tab>P :Pexplore!<cr>
+" }}}
 " Move to begining/end of fold region
 nnoremap [f [z
 nnoremap ]f ]z
