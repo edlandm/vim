@@ -282,9 +282,25 @@ nnoremap <tab>N :Nexplore!<cr>
 nnoremap <tab>p :Pexplore<cr>
 nnoremap <tab>P :Pexplore!<cr>
 " }}}
+
+" Unimpaired mappings (Strongly inspired by tpope or just flat up stolen) {{{
+" Navigate between files {{{
+" Navigate buffers
+nnoremap [b :bprev
+nnoremap ]b :bnext
+" Navigate through argument list
+nnoremap [a :next
+nnoremap ]a :prev
+" }}}
+" Navigate within a file {{{
 " Move to begining/end of fold region
 nnoremap [f [z
 nnoremap ]f ]z
+" Navigate quickfix/location lists
+nnoremap [q :cprev<cr>
+nnoremap ]q :cnext<cr>
+nnoremap [l :lprev<cr>
+nnoremap ]l :lnext<cr>
 "}}}
 " Line Operations {{{
 " Add [count] lines above cursor
