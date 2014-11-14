@@ -33,21 +33,24 @@ function! VisualSelection(direction) range "{{{
     let @" = l:saved_reg
 endfunction "}}}
 nnoremap <leader>r :%s/\<<C-r>=expand('<cword>')<cr>\>/
-vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
 
 " Save the file
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :w<cr>
 " Quit the file
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :q<cr>
 " Help! 'I need somebody...'
 nnoremap <leader>h :h<space>
 
 " Make all windows equal size
 nnoremap <leader>= <C-w>=
 " Split window horizontally
-nnoremap <leader>- :sp<CR>
+nnoremap <leader>- :sp<cr>
 " Split window vertically
-nnoremap <leader>\| :vsp<CR>
+nnoremap <leader>\| :vsp<cr>
+
+" Toggle paste mode
+nnoremap <leader>p :set paste!<cr>
 
 " Pulse current line
 nnoremap <leader><leader> :Pulse<cr>
@@ -71,7 +74,7 @@ function! ToggleMaxWins() "{{{
     echo "Zoom"
   endif
 endfunction "}}}
-nnoremap <leader>z :call ToggleMaxWins()<CR>
+nnoremap <leader>z :call ToggleMaxWins()<cr>
 
 " Jump to next/previous change in diff mode
 au BufEnter * if &diff
@@ -91,27 +94,27 @@ nnoremap <leader>> V`]>
 
 " Buffer stuff | <leader>b "{{{
 nnoremap <leader>b, :bufdo
-nnoremap <leader>bN :bNext<CR>
-nnoremap <leader>bd :bdelete<CR>
-nnoremap <leader>bf :bfirst<CR>
-nnoremap <leader>bl :blast<CR>
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
-nnoremap <leader>bu :bunload<CR>
+nnoremap <leader>bN :bNext<cr>
+nnoremap <leader>bd :bdelete<cr>
+nnoremap <leader>bf :bfirst<cr>
+nnoremap <leader>bl :blast<cr>
+nnoremap <leader>bn :bnext<cr>
+nnoremap <leader>bp :bprevious<cr>
+nnoremap <leader>bu :bunload<cr>
 "}}}
 " Fold stuff | <leader>f "{{{
-nnoremap <leader>ff :set fdm=manual<CR>
-nnoremap <leader>fi :set fdm=indent<CR>
-nnoremap <leader>fm :set fdm=marker<CR>
-nnoremap <leader>fs :set fdm=syntax<CR>
-nnoremap <leader>fd :set fdm=diff<CR>
+nnoremap <leader>ff :set fdm=manual<cr>
+nnoremap <leader>fi :set fdm=indent<cr>
+nnoremap <leader>fm :set fdm=marker<cr>
+nnoremap <leader>fs :set fdm=syntax<cr>
+nnoremap <leader>fd :set fdm=diff<cr>
 "}}}
 " Git stuff | <leader>g "{{{
 " No mappings for it here because they're all with the fugitive plugin
 "}}}
 " Mark stuff | <leader>m "{{{
 nnoremap <leader>m `
-nnoremap <leader>M :marks<CR>
+nnoremap <leader>M :marks<cr>
 "}}}
 " Toggle settings | <leader>o "{{{
 let settings = {
@@ -125,7 +128,7 @@ let settings = {
         \ }
 
 for [key, val] in items(settings)
-    exec printf("nnoremap <silent> <leader>o%s :<C-U>set inv%s<CR>", key, val)
+    exec printf("nnoremap <silent> <leader>o%s :<C-U>set inv%s<cr>", key, val)
 endfor
 
 nnoremap <leader>lf :set spelllang=fr
@@ -134,43 +137,43 @@ nnoremap <leader>lu :set spelllang=us
 " Tab stuff | <leader>t {{{
 " Move through tabs
 nnoremap <leader>t, :tabdo
-nnoremap <leader>tN :tabN<CR>
-nnoremap <leader>tc :tabclose<CR>
-nnoremap <leader>tf :tabfirst<CR>
-nnoremap <leader>tl :tablast<CR>
+nnoremap <leader>tN :tabN<cr>
+nnoremap <leader>tc :tabclose<cr>
+nnoremap <leader>tf :tabfirst<cr>
+nnoremap <leader>tl :tablast<cr>
 " Move tabs (tm moves current tab to the right, tM to the left)
-nnoremap <leader>tm :tabm +<CR>
-nnoremap <leader>tM :tabm -<CR>
-nnoremap <leader>tn :tabn<CR>
-nnoremap <leader>to :tabonly<CR>
-nnoremap <leader>tt :tabnew<CR>
+nnoremap <leader>tm :tabm +<cr>
+nnoremap <leader>tM :tabm -<cr>
+nnoremap <leader>tn :tabn<cr>
+nnoremap <leader>to :tabonly<cr>
+nnoremap <leader>tt :tabnew<cr>
 " }}}
 " Window stuff | <leader>w "{{{
 nnoremap <leader>w, :windo
 
 " Minimize window height
-nnoremap <leader>wm :res1<CR>
+nnoremap <leader>wm :res1<cr>
 " Maximize window height
-nnoremap <leader>wM :res200<CR>
+nnoremap <leader>wM :res200<cr>
 " Minimize  window width
-nnoremap <leader>wvm :vertical res2<CR>
+nnoremap <leader>wvm :vertical res2<cr>
 " Maximize window width
-nnoremap <leader>wvM :vertical res200<CR>
+nnoremap <leader>wvM :vertical res200<cr>
 
 " Decrease window height by 5
-nnoremap <leader>wr :res -5<CR>
+nnoremap <leader>wr :res -5<cr>
 " Increase window height by 5
-nnoremap <leader>wR :res +5<CR>
+nnoremap <leader>wR :res +5<cr>
 " Decrease window width by 5
-nnoremap <leader>wvr :vertical res -5<CR>
+nnoremap <leader>wvr :vertical res -5<cr>
 " Increase window width by 5
-nnoremap <leader>wvR :vertical res +5<CR>
+nnoremap <leader>wvR :vertical res +5<cr>
 "}}}
 "==============================================================================}}}
 " Normal Mode Mappings ========================================================{{{
 "==============================================================================
 " Re-sources .vimrc
-nnoremap <silent><F5> <ESC>:source $MYVIMRC<CR>
+nnoremap <silent><F5> <ESC>:source $MYVIMRC<cr>
 
 " Redraw and reset syntax highlighting (if things look weird, press this)
 nnoremap <silent><F6> <ESC>:execute 'colo' colors_name<cr>:syntax sync fromstart<cr>
@@ -193,7 +196,7 @@ vnoremap / /\v
 nnoremap H ^
 nnoremap L $
 
-" Makes 'Enter' insert a <CR> it's like the opposite of J
+" Makes 'Enter' insert a <cr> it's like the opposite of J
 nnoremap <C-m> i<C-m><Esc>
 
 " Execute most recently executed macro
@@ -265,13 +268,13 @@ function! MoveSelectionDown(count) abort
 endfunction
 " }}}
 " Exchange current line with [count] lines above it
-nnoremap <silent> [e :<C-U>call Move('--',v:count1,'Up')<CR>
+nnoremap <silent> [e :<C-U>call Move('--',v:count1,'Up')<cr>
 " Exchange current line with [count] lines below it
-nnoremap <silent> ]e :<C-U>call Move('+',v:count1,'Down')<CR>
+nnoremap <silent> ]e :<C-U>call Move('+',v:count1,'Down')<cr>
 " Exchange current selection with [count] lines above it
-vnoremap <silent> [e :<C-U>call MoveSelectionUp(v:count1)<CR>gv
+vnoremap <silent> [e :<C-U>call MoveSelectionUp(v:count1)<cr>gv
 " Exchange current selection with [count] lines below it
-vnoremap <silent> ]e :<C-U>call MoveSelectionDown(v:count1)<CR>gv
+vnoremap <silent> ]e :<C-U>call MoveSelectionDown(v:count1)<cr>gv
 " }}}
 " Editing Operations ==========================================================={{{
 "===============================================================================
@@ -335,7 +338,8 @@ cnoremap hh <ESC> `^
 " Visual Mode Mappings ========================================================{{{
 "==============================================================================
 " Yank highlighted text and searches it
-vnoremap <C-n> y/<C-R>"<CR>
+
+vnoremap <C-n> y/<C-R>"<cr>
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
