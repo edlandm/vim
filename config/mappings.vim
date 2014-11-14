@@ -232,21 +232,23 @@ nnoremap gV `[v`]
 nnoremap z<leader> mzzMzvzz15<c-e>`z:Pulse<cr>
 
 " Search mappings {{{
-nnoremap sib vib:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
-nnoremap sab vab:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
-nnoremap siB viB:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
-nnoremap saB vaB:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
-nnoremap sit vit:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
-nnoremap sat vat:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
+" Motion commands AND search? No way!
+" For example: sib
+" will select inside the surrounding parentheses and open up the search
+" prompt. Just type your search and press <cr> and it will only search in that
+" range
+" And: ssib
+" will do the same except for search and replace
+for k in ['b', 'B', 't', '[', ']', '<', '>']
+    " Holy string concatination Batman!
+    execute 'nnoremap si'  . k . ' vi' . k . ':<c-u>execute "/\\%>" . (line("' . "'" . '<") - 1) . "l\\%<" . (line("' . "'" .'>") + 1) . "l"<left>'
+    execute 'nnoremap sa'  . k . ' va' . k . ':<c-u>execute "/\\%>" . (line("' . "'" . '<") - 1) . "l\\%<" . (line("' . "'" .'>") + 1) . "l"<left>'
+    execute 'nnoremap ssi' . k . ' vi' . k . ':s/'
+    execute 'nnoremap ssa' . k . ' va' . k . ':s/'
+endfor
+" Search within visually-selected range
 vnoremap s :<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
-" }}}
-" Search and Replace mappings {{{
-nnoremap ssib vib:s/
-nnoremap ssab vab:s/
-nnoremap ssiB viB:s/
-nnoremap ssaB vaB:s/
-nnoremap ssit vit:s/
-nnoremap ssat vat:s/
+" Search and replace within visually-selected range
 vnoremap S :s/
 " }}}
 
