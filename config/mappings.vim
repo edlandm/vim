@@ -226,7 +226,7 @@ nnoremap gV `[v`]
 " 1. Close all folds.
 " 2. Open just the folds containing the current line.
 " 3. Move the line to a little bit (15 lines) above the center of the screen.
-" 4. Pulse the cursor line.  My eyes are bad.
+" 4. Pulse the cursor line.
 "
 " This mapping wipes out the z mark, which I never use.
 nnoremap z<leader> mzzMzvzz15<c-e>`z:Pulse<cr>
@@ -241,8 +241,10 @@ nnoremap z<leader> mzzMzvzz15<c-e>`z:Pulse<cr>
 " will do the same except for search and replace
 for k in ['b', 'B', 't', '[', ']', '<', '>']
     " Holy string concatination Batman!
-    execute 'nnoremap si'  . k . ' vi' . k . ':<c-u>execute "/\\%>" . (line("' . "'" . '<") - 1) . "l\\%<" . (line("' . "'" .'>") + 1) . "l"<left>'
-    execute 'nnoremap sa'  . k . ' va' . k . ':<c-u>execute "/\\%>" . (line("' . "'" . '<") - 1) . "l\\%<" . (line("' . "'" .'>") + 1) . "l"<left>'
+    execute 'nnoremap si'  . k . ' vi' . k .
+                \ ':<c-u>execute "/\\%>" . (line("' . "'" . '<") - 1) . "l\\%<" . (line("' . "'" .'>") + 1) . "l"<left>'
+    execute 'nnoremap sa'  . k . ' va' . k .
+                \ ':<c-u>execute "/\\%>" . (line("' . "'" . '<") - 1) . "l\\%<" . (line("' . "'" .'>") + 1) . "l"<left>'
     execute 'nnoremap ssi' . k . ' vi' . k . ':s/'
     execute 'nnoremap ssa' . k . ' va' . k . ':s/'
 endfor
