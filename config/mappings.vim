@@ -231,8 +231,24 @@ nnoremap gV `[v`]
 " This mapping wipes out the z mark, which I never use.
 nnoremap z<leader> mzzMzvzz15<c-e>`z:Pulse<cr>
 
-" Unimpaired mappings (Strongly inspired by tpope, some of this is borrowed) {{{
-" Navigate files {{{
+" Search mappings {{{
+nnoremap sib vib:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
+nnoremap sab vab:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
+nnoremap siB viB:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
+nnoremap saB vaB:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
+nnoremap sit vit:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
+nnoremap sat vat:<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
+vnoremap s :<c-u>execute "/\\%>" . (line("'<") - 1) . "l\\%<" . (line("'>") + 1) . "l"<left>
+" }}}
+" Search and Replace mappings {{{
+nnoremap ssib vib:s/
+nnoremap ssab vab:s/
+nnoremap ssiB viB:s/
+nnoremap ssaB vaB:s/
+nnoremap ssit vit:s/
+nnoremap ssat vat:s/
+vnoremap S :s/
+" }}}
 " Move to begining/end of fold region
 nnoremap [f [z
 nnoremap ]f ]z
