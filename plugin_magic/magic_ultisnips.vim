@@ -7,7 +7,8 @@ nnoremap <leader>ue :UltiSnipsEdit<cr>
 
 silent! unmap <c-n>
 silent! unmap <c-p>
-let g:UltiSnipsExpandTrigger="<c-n>"
+" s for Snippet
+let g:UltiSnipsExpandTrigger="<c-s>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
