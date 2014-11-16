@@ -23,6 +23,13 @@ autocmd BufWinEnter * while foldclosed(line('.')) != -1
             \ | exe "foldopen"
             \ | endwhile
 
+augroup cursor_line
+    autocmd!
+    autocmd WinEnter * set cursorline
+    autocmd WinLeave * set nocursorline
+    autocmd WinLeave * set nocursorcolumn
+augroup END
+
 " Turns autocompletion on for various filetypes
 augroup omnifuncs "{{{
     autocmd!
