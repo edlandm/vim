@@ -118,12 +118,12 @@ nnoremap <leader>M :marks<cr>
 "}}}
 " Toggle settings | <leader>o "{{{
 let settings = {
-        \ 'c': 'cursorline',
+        \ 'cc': 'cursorcolumn',
+        \ 'cl': 'cursorline',
         \ 'h': 'hlsearch',
         \ 'n': 'number',
         \ 'r': 'relativenumber',
         \ 's': 'spell',
-        \ 'u': 'cursorcolumn',
         \ 'w': 'wrap',
         \ }
 
