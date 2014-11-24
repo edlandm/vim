@@ -269,7 +269,7 @@ nnoremap gV `[v`]
 " 4. Pulse the cursor line.
 "
 " This mapping wipes out the z mark, which I never use.
-nnoremap z<leader> mzzMzvzz15<c-e>`z:Pulse<cr>
+nnoremap z<leader> mzzMzvzazAzz15<c-e>`z:Pulse<cr>
 
 " Search mappings {{{
 " Motion commands AND search? No way!
