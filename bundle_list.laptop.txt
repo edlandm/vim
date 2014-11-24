@@ -1,3 +1,4 @@
+godlygeek/csapprox
 Raimondi/delimitMate
 mattn/emmet-vim
 Shougo/neobundle.vim
@@ -8,3 +9,4 @@ tpope/vim-fugitive
 tpope/vim-repeat
 mhinz/vim-signify
 tpope/vim-surround
+Shougo/vimproc.vim
