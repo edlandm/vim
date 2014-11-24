@@ -10,3 +10,6 @@ tpope/vim-repeat
 mhinz/vim-signify
 tpope/vim-surround
 Shougo/vimproc.vim
+vim-scripts/matchit.zip
+Yggdroot/indentLine
+idanarye/vim-merginal
