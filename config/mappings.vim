@@ -56,23 +56,64 @@ nnoremap <leader>p :set paste!<cr>
 nnoremap <leader><leader> :Pulse<cr>
 
 " toggles whether or not the current window is automatically zoomed
-function! ToggleMaxWins() "{{{
-  if exists('g:windowMax')
-    au! maxCurrWin
-    wincmd =
-    unlet g:windowMax
-    echo "Unzoom"
-  else
-    augroup maxCurrWin
-        " au BufEnter * wincmd _ | wincmd |
-        "
-        " only max it vertically
-        au! WinEnter * wincmd _
-    augroup END
-    do maxCurrWin WinEnter
+function! ToggleMaxWins(direction) "{{{
+    if exists('g:windowMax')
+        try
+            au! maxCurrWinHor
+        catch
+        endtry
+        try
+            au! maxCurrWinVer
+        catch
+        endtry
+        try
+            au! maxCurrWinAll
+        catch
+        endtry
+        if exists('g:zoomDirection')
+            if a:direction == g:zoomDirection
+                unlet g:windowMax
+                unlet g:zoomDirection
+                wincmd =
+                echo "Unzoom"
+                return
+            endif
+        endif
+    endif
+    if a:direction == 'vertical'
+        wincmd =
+        augroup maxCurrWinVer
+            au!
+            au! WinEnter * wincmd _
+        augroup END
+        do maxCurrWinVer WinEnter
+        let g:zoomDirection = 'vertical'
+        echo 'Zoom Vertical'
+    elseif a:direction == 'horizontal'
+        augroup maxCurrWinHor
+            au!
+            au! WinEnter * wincmd |
+        augroup END
+        do maxCurrWinHor WinEnter
+        let g:zoomDirection = 'horizontal'
+        echo 'Zoom Horizontal'
+    elseif a:direction == 'all'
+        augroup maxCurrWinAll
+            au!
+            au! WinEnter * wincmd _ | wincmd |
+        augroup END
+        do maxCurrWinAll WinEnter
+        let g:zoomDirection = 'all'
+        echo "Zoom"
+    else
+        wincmd =
+        try
+            unlet g:zoomDirection
+        catch
+        endtry
+        echo "Unzoom"
+    endif
     let g:windowMax=1
-    echo "Zoom"
-  endif
 endfunction "}}}
 nnoremap <leader>z :call ToggleMaxWins()<cr>
 
