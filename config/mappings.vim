@@ -432,7 +432,10 @@ inoremap ,CU <esc>mzgUU`za
 inoremap ,Cu <esc>mzguu`za
 
 " Insert line above cursor and move cursor to that line at correct indent
-inoremap <silent><C-o> <esc>O
+inoremap <silent><c-o> <esc>O
+
+" Move to the end of the next line
+inoremap <silent><c-l> <esc>jA
 
 "==============================================================================}}}
 " Command Mode Mappings ======================================================={{{
