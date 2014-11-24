@@ -211,10 +211,6 @@ onoremap ' `
 " Y yanks to end of line, making it consistant with D and C
 nnoremap Y y$
 
-" Pulse current line after jumping to a new search result
-nnoremap <silent> n n:Pulse<cr>
-nnoremap <silent> N N:Pulse<cr>
-
 " Remap j and k to scroll by visual lines
 nnoremap j gj
 nnoremap k gk
