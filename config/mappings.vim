@@ -259,6 +259,8 @@ function! ToggleExplorer(pattern) "{{{
     else
         if a:pattern != ''
             Explore a:pattern
+        else
+            Explore
         endif
     endif
 endfunction "}}}
