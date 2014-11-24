@@ -115,7 +115,10 @@ function! ToggleMaxWins(direction) "{{{
     endif
     let g:windowMax=1
 endfunction "}}}
-nnoremap <leader>z :call ToggleMaxWins()<cr>
+nnoremap <leader>zz :call ToggleMaxWins('vertical')<cr>
+nnoremap <leader>zZ :call ToggleMaxWins('horizontal')<cr>
+nnoremap <leader>z<space> :call ToggleMaxWins('all')<cr>
+nnoremap <leader>Z :call ToggleMaxWins('none')<cr>
 
 " Jump to next/previous change in diff mode
 au BufEnter * if &diff
