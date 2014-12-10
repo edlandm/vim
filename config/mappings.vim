@@ -39,6 +39,7 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
 nnoremap <leader>w :w<cr>
 " Quit the file
 nnoremap <leader>q :q<cr>
+nnoremap <leader>Q :q!<cr>
 " Help! 'I need somebody...'
 nnoremap <leader>h :h<space>
 
