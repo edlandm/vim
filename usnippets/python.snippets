@@ -36,13 +36,19 @@ if t[2] != 'object':
 if t[4]:
 	indented = False
 	for arg in t[4].strip(',').split(','):
+		arg = arg.strip()
+		arg = arg.replace('*', '')
+		if arg == 'args' or arg == 'kwargs':
+			break
+		if '=' in arg:
+			arg = arg.split('=')[0]
 		if not snip.rv:
-			snip.rv = 'self.{a} = {a}'.format(a=arg.strip())
+			snip.rv = 'self.{a} = {a}'.format(a=arg)
 		else:
 			if not indented:
 				snip >> 2
 				indented = True
-			snip += 'self.{a} = {a}'.format(a=arg.strip())`
+			snip += 'self.{a} = {a}'.format(a=arg)`
 	$0
 endsnippet
 
