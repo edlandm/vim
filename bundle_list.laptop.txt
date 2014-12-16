@@ -13,3 +13,8 @@ Shougo/vimproc.vim
 vim-scripts/matchit.zip
 Yggdroot/indentLine
 idanarye/vim-merginal
+pangloss/vim-javascript
+Wolfy87/vim-expand
+bling/vim-airline
+tpope/vim-abolish
+kien/rainbow_parentheses.vim
