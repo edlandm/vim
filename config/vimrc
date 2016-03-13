@@ -96,3 +96,6 @@ runtime! psettings/*.vim
 if &term =~ 'xterm-256color'
     set t_ut=
 endif
+
+let g:nofrils_strbackgrounds=1
+colo nofrils-dark
