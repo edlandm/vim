@@ -18,14 +18,14 @@ else
 endif
 
 " Make sure that all of the directories we'll need are available
-if exists("*mkdir")
+if exists("*mkdir") " {{{
     let dirs = [ 'bundle', 'config', 'psettings']
     for dir in dirs
         if !isdirectory($HOME . '/.vim/' . dir)
             call mkdir($HOME . '/.vim/' . dir)
         endif
     endfor
-endif
+endif " }}}
 
 " NeoBundle ==================================================================={{{
 " Start NeoBundle
