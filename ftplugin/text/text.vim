@@ -1,12 +1,10 @@
 set nocindent
-
 set wrap
-
 set linebreak
-
 set nolist
-
 set formatoptions+=1
+set shiftwidth=2
+set tabstop=2
 
 " Highlight markers
 " Conceal "**" markers
