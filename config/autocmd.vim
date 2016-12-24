@@ -46,9 +46,6 @@ augroup omnifuncs "{{{
                 \ | endif
 augroup END "}}}
 
-" Remove trailing white spaces when file is saved
-autocmd BufWritePre * :%s/\s\+$//
-
 " Source file-specific vimrcs
 autocmd BufReadPost * if filereadable(expand("%") . ".vimrc") == 1
             \ | execute "source " . expand("%") . ".vimrc"
