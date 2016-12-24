@@ -13,6 +13,7 @@ set cdpath=~/,.,./*
 set colorcolumn=80,85,90,95,100
 set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
+set cryptmethod=blowfish2
 set cursorline
 set diffopt=filler,vertical
 set display=lastline,uhex
